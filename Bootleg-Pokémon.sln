@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29911.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bootleg-Pokémon", "Bootleg-Pokémon\Bootleg-Pokémon.csproj", "{F563ED8C-06AB-4583-9142-35B5873E1B97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameConfig", "GameConfig\GameConfig.csproj", "{E20B6770-739A-4862-8922-10F260A8E245}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F563ED8C-06AB-4583-9142-35B5873E1B97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F563ED8C-06AB-4583-9142-35B5873E1B97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F563ED8C-06AB-4583-9142-35B5873E1B97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F563ED8C-06AB-4583-9142-35B5873E1B97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E20B6770-739A-4862-8922-10F260A8E245}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E20B6770-739A-4862-8922-10F260A8E245}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E20B6770-739A-4862-8922-10F260A8E245}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E20B6770-739A-4862-8922-10F260A8E245}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3D63ACF0-02E5-4207-BAA3-94CC54D97C9E}
+	EndGlobalSection
+EndGlobal

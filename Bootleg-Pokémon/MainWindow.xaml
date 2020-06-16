@@ -1,0 +1,343 @@
+﻿<Window x:Class="Bootleg_Pokémon.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bootleg_Pokémon"
+        mc:Ignorable="d"
+        Title="Pokémon" Height="550" Width="800"
+        ResizeMode="NoResize">
+    
+    <Grid>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <Grid Grid.Row="0">
+            <Menu Height="auto" x:Name="MenuBar" Width="auto" VerticalAlignment="Top">
+                <MenuItem Header="_File">
+                    <MenuItem Header="_New"/>
+                    <MenuItem Header="_Load"/>
+                    <MenuItem Header="_Save"/>
+                    <MenuItem Header="_Close"/>
+                </MenuItem>
+                <MenuItem Header="_Actions">
+                    <MenuItem Header="Fight a Trainer">
+                        <MenuItem Header="_Trainers">
+                            <MenuItem Header="_Beginner">
+                                <MenuItem Header="Red" x:Name="Red"/>
+                                <MenuItem Header="Blue" x:Name="Blue"/>
+                                <MenuItem Header="Green" x:Name="Green"/>
+                                <MenuItem Header="Yellow" x:Name="Yellow"/>
+                                <MenuItem Header="Gold" x:Name="Gold"/>
+                                <MenuItem Header="Silver" x:Name="Silver"/>
+                                <MenuItem Header="Crystal" x:Name="Crystal"/>
+                            </MenuItem>
+                            <MenuItem Header="_Novice">
+                                <MenuItem Header="Ruby" x:Name="Ruby"/>
+                                <MenuItem Header="Sapphire" x:Name="Sapphire"/>
+                                <MenuItem Header="Emrald" x:Name="Emrald"/>
+                            </MenuItem>
+                            <MenuItem Header="_Intermediate">
+                                <MenuItem Header="Prof.Oak" x:Name="Oak"/>
+                                <MenuItem Header="Prof.Elm" x:Name="Elm"/>
+                                <MenuItem Header="Prof.Birch" x:Name="Birch"/>
+                            </MenuItem>
+                            <MenuItem Header="_Advanced">
+                                <MenuItem Header="Jesse" x:Name="Jesse"/>
+                                <MenuItem Header="James" x:Name="James"/>
+                            </MenuItem>
+                            <MenuItem Header="_Expert">
+                                <MenuItem Header="Giovanni" x:Name="Giovanni"/>
+                            </MenuItem>
+                        </MenuItem>
+                        <MenuItem Header="Kanto Gym Leaders">
+                            <MenuItem Header="Brock" x:Name="Brock"/>
+                            <MenuItem Header="Misty" x:Name="Misty" IsEnabled="False"/>
+                            <MenuItem Header="Lt.Surge" x:Name="Surge" IsEnabled="False"/>
+                            <MenuItem Header="Erika" x:Name="Erika" IsEnabled="False"/>
+                            <MenuItem Header="Sabrina" x:Name="Sabrina" IsEnabled="False"/>
+                            <MenuItem Header="Janine" x:Name="Janine" IsEnabled="False"/>
+                            <MenuItem Header="Blaine" x:Name="Blaine" IsEnabled="False"/>
+                            <MenuItem Header="Gary" x:Name="Gary" IsEnabled="False"/>
+                        </MenuItem>
+                        <MenuItem Header="G/S/C Elite Four" x:Name="EliteFour" IsEnabled="False"/>
+                        <MenuItem Header="Johto Gym Leaders" x:Name="JohtoLeaders" IsEnabled="False">
+                            <MenuItem Header=""/>
+                        </MenuItem>
+                        <MenuItem Header="Hoenn Gym Leaders (Lv.100)" x:Name="HoennLeaders" IsEnabled="False">
+                            <MenuItem Header=""/>
+                        </MenuItem>
+                        <MenuItem Header="Other Elites" x:Name="OtherElites" IsEnabled="False">
+                            <MenuItem Header=""/>
+                        </MenuItem>
+                    </MenuItem>
+                    <MenuItem Header="Fight a wild POKéMON">
+                        <MenuItem Header="Search for a POKéMON" x:Name="WildPokemon"/>
+                        <MenuItem Header="Mewtwo" x:Name="Mewtwo" IsEnabled="False"/>
+                    </MenuItem>
+                    <MenuItem Header="_Tournaments">
+                        <MenuItem Header="Very Easy (Levels 2-10)" x:Name="VeryEasy"/>
+                        <MenuItem Header="Easy (Levels 10-30)" x:Name="Easy"/>
+                        <MenuItem Header="Intermediate (Levels 30-50)" x:Name="Intermediate"/>
+                        <MenuItem Header="Hard (Levels 50-70)" x:Name="Hard"/>
+                        <MenuItem Header="Very Hard (Levels 70-99)" x:Name="VeryHard"/>
+                        <MenuItem Header="Prime Cup (Level 100)" x:Name="PrimeCup"/>
+                    </MenuItem>
+                    <MenuItem Header="Buy Items" x:Name="BuyItems"/>
+                    <MenuItem Header="Evolve a POKéMON" x:Name="Evolve"/>
+                    <MenuItem Header="Release a POKéMON" x:Name="Release"/>
+                    <MenuItem Header="View POKéDEX" x:Name="Pokedex"/>
+                </MenuItem>
+            </Menu>
+        </Grid>
+        
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1.5*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Grid Grid.Column="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0" Content="Charmander" HorizontalAlignment="Center"/>
+                            <Grid Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Content="100" Padding="0" HorizontalAlignment="Right"/>
+                                <Label Grid.Column="1" Content="/" Padding="0"/>
+                                <Label Grid.Column="2" Content="100" Padding="0"/>
+                            </Grid>
+                        </Grid>
+
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Button Grid.Row="0" Content="GO!" Width="65" HorizontalAlignment="Right" Padding="0"/>
+                            <Grid Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Content="Charmander" Padding="0"/>
+                                <Label Grid.Column="1" Content="Level 5" Padding="0" Margin="5 0"/>
+                                <ProgressBar Grid.Column="2" Width="292.6" Value="100"/>
+                                <Label Grid.Column="3" Content="100%" Padding="0" Margin="5 0"/>
+                            </Grid>
+                            <Label Grid.Row="2" Content="Scratch (Normal)" Visibility="Hidden" Padding="0"/>
+                            <RadioButton Grid.Row="3" Content="Scratch (Normal)" Margin="45 0 0 0"/>
+                            <RadioButton Grid.Row="4" Content="Cut (Normal)" Margin="45 0 0 0"/>
+                            <RadioButton Grid.Row="5" Content="Ember (Fire)" Margin="45 0 0 0"/>
+                            <RadioButton Grid.Row="6" Content="Flamethrower (Fire)" Margin="45 0 0 0"/>
+                            <RadioButton Grid.Row="7" Content="Run" Margin="45 0 0 0"/>
+                        </Grid>
+                        
+                    </Grid>
+                    
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Grid Grid.Column="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0" Content="Corphish" HorizontalAlignment="Center"/>
+                            <Grid Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Content="100" Padding="0" HorizontalAlignment="Right"/>
+                                <Label Grid.Column="1" Content="/" Padding="0"/>
+                                <Label Grid.Column="2" Content="100" Padding="0"/>
+                            </Grid>
+                            
+                        </Grid>
+
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Label Content="Enemy" Padding="0" Visibility="Hidden"/>
+                            <Grid Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Content="Enemy" Padding="0"/>
+                                <Label Grid.Column="1" Content="Corphish" Padding="0" Margin="2 0"/>
+                                <Label Grid.Column="2" Content="Level 5" Padding="0" Margin="2 0"/>
+                                <ProgressBar Grid.Column="3" Width="260" Value="100"/>
+                                <Label Grid.Column="4" Content="100%" Padding="0" Margin="5 0"/>
+                            </Grid>
+                            <Label Grid.Row="2" Content="Tackle (Normal)" Visibility="Hidden"/>
+                            <RadioButton Grid.Row="3" Content="Tackle (Normal)" Margin="45 0 0 0" IsEnabled="False"/>
+                            <RadioButton Grid.Row="4" Content="Water Gun (Water)" Margin="45 0 0 0" IsEnabled="False"/>
+                            <RadioButton Grid.Row="5" Content="Bubblebeam (Water)" Margin="45 0 0 0" IsEnabled="False"/>
+                            <RadioButton Grid.Row="6" Content="Take Down (Normal)" Margin="45 0 0 0" IsEnabled="False"/>
+                        </Grid>
+
+                    </Grid>
+                </Grid>
+                
+                <Grid Grid.Row="1">
+                    <RichTextBox x:Name="FightStatus" IsReadOnly="True"/>
+                </Grid>
+                
+            </Grid>
+            
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="0.65*"/>
+                    <RowDefinition Height="1.5*"/>
+                </Grid.RowDefinitions>
+                
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Content="Name:" Padding="0"/>
+                    <Label Grid.Row="0" Grid.Column="1" Content="Ash" Padding="0"/>
+                    <Label Grid.Row="1" Grid.Column="0" Content="Money:" Padding="0"/>
+                    
+                    <Grid Grid.Row="1" Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Content="0" Padding="0"/>
+                        <Label Grid.Column="1" Content="Y" Padding="0 0 10 0" HorizontalAlignment="Right"/>
+                    </Grid>
+                    
+                    <Label Grid.Row="2" Grid.Column="0" Content="Fights:" Padding="0"/>
+                    <Label Grid.Row="2" Grid.Column="1" Content="0" Padding="0"/>
+                    <Label Grid.Row="3" Grid.Column="0" Content="Wins:" Padding="0"/>
+                    <Label Grid.Row="3" Grid.Column="1" Content="0" Padding="0"/>
+                    <Label Grid.Row="4" Grid.Column="0" Content="Catches:" Padding="0"/>
+                    <Label Grid.Row="4" Grid.Column="1" Content="0" Padding="0"/>
+                    <Label Grid.Row="5" Grid.Column="0" Content="Losses/Flees:" Padding="0"/>
+                    <Label Grid.Row="5" Grid.Column="1" Content="0" Padding="0"/>
+                    <Label Grid.Row="6" Grid.Column="0" Content="Win Percentage:" Padding="0"/>
+
+                    <Grid Grid.Row="6" Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Content="0" Padding="0"/>
+                        <Label Grid.Column="1" Content="%" Padding="0 0 10 0" HorizontalAlignment="Right"/>
+                    </Grid>
+
+                    <Label Grid.Row="7" Grid.Column="0" Content="In POKéDEX" Padding="0"/>
+
+                    <Grid Grid.Row="7" Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Content="0" Padding="0"/>
+                        <Label Grid.Column="1" Content="of 386" Padding="0 0 10 0" HorizontalAlignment="Right"/>
+                    </Grid>
+
+                    <Label Grid.Row="8" Grid.Column="0" Content="Items:" Padding="0"/>
+                </Grid>
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" Content="POKéBalls:" Padding="0"/>
+                    <Label Grid.Row="0" Grid.Column="1" Content="0" Padding="0"/>
+                    <Label Grid.Row="1" Grid.Column="0" Content="Great Balls:" Padding="0"/>
+                    <Label Grid.Row="1" Grid.Column="1" Content="0" Padding="0"/>
+                    <Label Grid.Row="2" Grid.Column="0" Content="Ultra Balls:" Padding="0"/>
+                    <Label Grid.Row="2" Grid.Column="1" Content="0" Padding="0"/>
+                    <Label Grid.Row="3" Grid.Column="0" Content="Master Balls:" Padding="0"/>
+                    <Label Grid.Row="3" Grid.Column="1" Content="0" Padding="0"/>
+                    <Label Grid.Row="4" Grid.Column="0" Content="Potions:" Padding="0"/>
+                    <Label Grid.Row="4" Grid.Column="1" Content="0" Padding="0"/>
+                    <Label Grid.Row="5" Grid.Column="0" Content="Super Potions:" Padding="0"/>
+                    <Label Grid.Row="5" Grid.Column="1" Content="0" Padding="0"/>
+                </Grid>
+                
+                <Grid Grid.Row="2">
+                    <DataGrid HeadersVisibility="None"></DataGrid>
+                </Grid>
+                
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
