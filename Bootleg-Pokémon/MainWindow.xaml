@@ -260,7 +260,7 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <Label Grid.Row="0" Grid.Column="0" Content="Name:" Padding="0"/>
-                    <Label Grid.Row="0" Grid.Column="1" Content="Ash" Padding="0"/>
+                    <Label Grid.Row="0" Grid.Column="1" Content="{Binding CurrentPlayer.Name}" Padding="0"/>
                     <Label Grid.Row="1" Grid.Column="0" Content="Money:" Padding="0"/>
                     
                     <Grid Grid.Row="1" Grid.Column="1">
@@ -268,16 +268,16 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0" Content="0" Padding="0"/>
+                        <Label Grid.Column="0" Content="{Binding CurrentPlayer.Money}" Padding="0"/>
                         <Label Grid.Column="1" Content="Y" Padding="0 0 10 0" HorizontalAlignment="Right"/>
                     </Grid>
                     
                     <Label Grid.Row="2" Grid.Column="0" Content="Fights:" Padding="0"/>
-                    <Label Grid.Row="2" Grid.Column="1" Content="0" Padding="0"/>
+                    <Label Grid.Row="2" Grid.Column="1" Content="{Binding CurrentPlayer.Fights}" Padding="0"/>
                     <Label Grid.Row="3" Grid.Column="0" Content="Wins:" Padding="0"/>
-                    <Label Grid.Row="3" Grid.Column="1" Content="0" Padding="0"/>
+                    <Label Grid.Row="3" Grid.Column="1" Content="{Binding CurrentPlayer.Wins}" Padding="0"/>
                     <Label Grid.Row="4" Grid.Column="0" Content="Catches:" Padding="0"/>
-                    <Label Grid.Row="4" Grid.Column="1" Content="0" Padding="0"/>
+                    <Label Grid.Row="4" Grid.Column="1" Content="{Binding CurrentPlayer.Pokemon.Count}" Padding="0"/>
                     <Label Grid.Row="5" Grid.Column="0" Content="Losses/Flees:" Padding="0"/>
                     <Label Grid.Row="5" Grid.Column="1" Content="0" Padding="0"/>
                     <Label Grid.Row="6" Grid.Column="0" Content="Win Percentage:" Padding="0"/>

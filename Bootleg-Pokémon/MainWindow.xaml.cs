@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GameConfig;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,11 +19,14 @@ namespace Bootleg_Pokémon
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+
     public partial class MainWindow : Window
     {
+        private readonly GameSession _gameSession = new GameSession();
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = _gameSession;
         }
     }
 }
