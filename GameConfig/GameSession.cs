@@ -9,7 +9,7 @@ namespace GameConfig
 {
     public class GameSession:INotifyPropertyChanged
     {
-        private Player _player = new Player("Ash Ketchum", 0, 0, 1);
+        private Player _player = new Player("", 0, 0, 1);
         public Player CurrentPlayer
         {
             get => _player;
@@ -19,7 +19,7 @@ namespace GameConfig
                 OnPropertyChanged(nameof(CurrentPlayer));
             }
         }
-        
+
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName)
         {

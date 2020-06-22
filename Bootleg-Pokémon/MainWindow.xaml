@@ -18,7 +18,7 @@
         <Grid Grid.Row="0">
             <Menu Height="auto" x:Name="MenuBar" Width="auto" VerticalAlignment="Top">
                 <MenuItem Header="_File">
-                    <MenuItem Header="_New"/>
+                    <MenuItem Header="_New" Click="New_Click"/>
                     <MenuItem Header="_Load"/>
                     <MenuItem Header="_Save"/>
                     <MenuItem Header="_Close"/>

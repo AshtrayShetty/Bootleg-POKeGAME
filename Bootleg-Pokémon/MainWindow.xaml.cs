@@ -28,5 +28,13 @@ namespace Bootleg_Pokémon
             InitializeComponent();
             DataContext = _gameSession;
         }
+
+        private void New_Click(object sender, RoutedEventArgs e)
+        {
+            NewGame newGame = new NewGame();
+            newGame.DataContext = _gameSession;
+            newGame.Owner = this;
+            newGame.Show();
+        }
     }
 }
