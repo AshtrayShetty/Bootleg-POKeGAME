@@ -1,0 +1,77 @@
+﻿<Window x:Class="Bootleg_Pokémon.Pokedex"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bootleg_Pokémon"
+        mc:Ignorable="d"
+        Title="Pokedex" Height="222.787" Width="441.475">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <ComboBox Grid.Column="0" Width="auto" Height="35" x:Name="PokeName">
+
+            </ComboBox>
+            <Button Grid.Column="1" Height="35" Width="auto" Content="Close POKéDEX" Click="PokedexClose_Click"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0" Source="D:\BSCS\WPF\Bootleg-Pokémon\GameConfig\Sprites\004.png" Width="75"/>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="5*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions> 
+                    <Label Grid.Column="0" Content="Charmander" Padding="10 0 0 0"/>
+                    <Label Grid.Column="1" Content="#004" Padding="10 0 0 0"/>
+                </Grid>
+                <Label Grid.Row="1" Content="Fire" Padding="10 0 0 0"/>
+                <Grid Grid.Row="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Content="Attack 1:" Padding="10 0"/>
+                    <Label Grid.Row="0" Grid.Column="1" Content="Scratch" Padding="10 0 0 0"/>
+                    <Label Grid.Row="0" Grid.Column="2" Content="Normal" Padding="10 0 0 0"/>
+                    <Label Grid.Row="1" Grid.Column="0" Content="Attack 2:" Padding="10 0"/>
+                    <Label Grid.Row="1" Grid.Column="1" Content="Cut" Padding="10 0 0 0"/>
+                    <Label Grid.Row="1" Grid.Column="2" Content="Normal" Padding="10 0 0 0"/>
+                    <Label Grid.Row="2" Grid.Column="0" Content="Attack 3:" Padding="10 0"/>
+                    <Label Grid.Row="2" Grid.Column="1" Content="Ember" Padding="10 0 0 0"/>
+                    <Label Grid.Row="2" Grid.Column="2" Content="Fire" Padding="10 0 0 0"/>
+                    <Label Grid.Row="3" Grid.Column="0" Content="Attack 4:" Padding="10 0"/>
+                    <Label Grid.Row="3" Grid.Column="1" Content="Flamethrower" Padding="10 0 0 0"/>
+                    <Label Grid.Row="3" Grid.Column="2" Content="Fire" Padding="10 0 0 0"/>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Label Grid.Row="2" Content="Can evolve at level 16" HorizontalContentAlignment="Center"/>
+    </Grid>
+</Window>

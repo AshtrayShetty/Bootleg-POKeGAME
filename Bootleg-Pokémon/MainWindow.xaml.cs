@@ -29,8 +29,9 @@ namespace Bootleg_Pokémon
         {
             InitializeComponent();
             DataContext = _gameSession;
+            _gameSession.IsGameCreated = false;
         }
-
+        
         private void New_Click(object sender, RoutedEventArgs e)
         {
             NewGame newGame = new NewGame();
@@ -46,8 +47,16 @@ namespace Bootleg_Pokémon
             {
                 string[] data = File.ReadAllLines(openFile.FileName);
                 _gameSession.CurrentPlayer.Name = data[0].Substring(6);
-                _gameSession.CurrentPlayer.Fights = Int32.Parse(data[1].Substring(data[1].IndexOf(':') + 2));
-                _gameSession.CurrentPlayer.Wins = Int32.Parse(data[2].Substring(data[2].IndexOf(':') + 2));
+                _gameSession.CurrentPlayer.Fights = int.Parse(data[1].Substring(data[1].IndexOf(':') + 2));
+                _gameSession.CurrentPlayer.Wins = int.Parse(data[2].Substring(data[2].IndexOf(':') + 2));
+                _gameSession.IsGameCreated = true;
+                _gameSession.Losses = _gameSession.CurrentPlayer.Fights - _gameSession.CurrentPlayer.Wins;
+
+                if (_gameSession.CurrentPlayer.Fights != 0)
+                {
+                    _gameSession.WinPercentage = Math.Round(Convert.ToDouble(_gameSession.CurrentPlayer.Wins) * 100.0 / Convert.ToDouble(_gameSession.CurrentPlayer.Fights), 2);
+                }
+                else { _gameSession.WinPercentage = 0.0; }
             }
         }
 
@@ -67,5 +76,12 @@ namespace Bootleg_Pokémon
         }
 
         private void Close_Click(object sender, RoutedEventArgs e) { Close(); }
+
+        private void Pokedex_Click(object sender, RoutedEventArgs e)
+        {
+            Pokedex pokedex = new Pokedex();
+            pokedex.Owner = this;
+            pokedex.Show();
+        }
     }
 }

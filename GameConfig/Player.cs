@@ -51,12 +51,12 @@ namespace GameConfig
             }
         }
         public ObservableCollection<object> Pokemon { get; set; }
-        public Player(string name, int money, int fights, int wins)
+        public Player()
         {
-            Name = name;
-            Money = money;
-            Fights = fights;
-            Wins = wins;
+            Name = "";
+            Money = 0;
+            Fights = 0;
+            Wins = 0;
             Pokemon = new ObservableCollection<object>();
         }
 

@@ -48,6 +48,9 @@ namespace Bootleg_Pokémon
                     throw;
                 }
                 Close();
+                Session.IsGameCreated = true;
+                Session.Losses = 0;
+                Session.WinPercentage = 0.0;
             }
         }
     }

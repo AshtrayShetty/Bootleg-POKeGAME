@@ -8,6 +8,10 @@
         Title="Pokémon" Height="550" Width="800"
         ResizeMode="NoResize">
     
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
+    </Window.Resources>
+    
     <Grid>
         
         <Grid.RowDefinitions>
@@ -23,7 +27,7 @@
                     <MenuItem Header="_Save" Click="Save_Click"/>
                     <MenuItem Header="_Close" Click="Close_Click"/>
                 </MenuItem>
-                <MenuItem Header="_Actions">
+                <MenuItem Header="_Actions" IsEnabled="{Binding IsGameCreated}">
                     <MenuItem Header="Fight a Trainer">
                         <MenuItem Header="_Trainers">
                             <MenuItem Header="_Beginner">
@@ -89,7 +93,7 @@
                     <MenuItem Header="Buy Items" x:Name="BuyItems"/>
                     <MenuItem Header="Evolve a POKéMON" x:Name="Evolve"/>
                     <MenuItem Header="Release a POKéMON" x:Name="Release"/>
-                    <MenuItem Header="View POKéDEX" x:Name="Pokedex"/>
+                    <MenuItem Header="View POKéDEX" x:Name="Pokedex" Click="Pokedex_Click"/>
                 </MenuItem>
             </Menu>
         </Grid>
@@ -120,10 +124,10 @@
                         
                         <Grid Grid.Column="0">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
                                 <RowDefinition Height="auto"/>
                             </Grid.RowDefinitions>
-                            <Label Grid.Row="0" Content="Charmander" HorizontalAlignment="Center"/>
+                            <Image Grid.Row="0" Source="D:\BSCS\WPF\Bootleg-Pokémon\GameConfig\Sprites\004.png" HorizontalAlignment="Center" Width="75" VerticalAlignment="Center"/>
                             <Grid Grid.Row="1">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
@@ -178,10 +182,10 @@
                         
                         <Grid Grid.Column="0">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
                                 <RowDefinition Height="auto"/>
                             </Grid.RowDefinitions>
-                            <Label Grid.Row="0" Content="Corphish" HorizontalAlignment="Center"/>
+                            <Image Grid.Row="0" Source="D:\BSCS\WPF\Bootleg-Pokémon\GameConfig\Sprites\341.png" HorizontalAlignment="Center" Width="75"/>
                             <Grid Grid.Row="1">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
@@ -285,7 +289,7 @@
                     <Label Grid.Row="4" Grid.Column="0" Content="Catches:" Padding="0"/>
                     <Label Grid.Row="4" Grid.Column="1" Content="{Binding CurrentPlayer.Pokemon.Count}" Padding="0"/>
                     <Label Grid.Row="5" Grid.Column="0" Content="Losses/Flees:" Padding="0"/>
-                    <Label Grid.Row="5" Grid.Column="1" Content="0" Padding="0"/>
+                    <Label Grid.Row="5" Grid.Column="1" Content="{Binding Losses}" Padding="0"/>
                     <Label Grid.Row="6" Grid.Column="0" Content="Win Percentage:" Padding="0"/>
 
                     <Grid Grid.Row="6" Grid.Column="1">
@@ -293,7 +297,7 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0" Content="0" Padding="0"/>
+                        <Label Grid.Column="0" Content="{Binding WinPercentage}" Padding="0"/>
                         <Label Grid.Column="1" Content="%" Padding="0 0 10 0" HorizontalAlignment="Right"/>
                     </Grid>
 
