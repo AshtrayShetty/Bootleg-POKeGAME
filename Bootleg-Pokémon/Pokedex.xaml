@@ -27,7 +27,7 @@
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Image Grid.Column="0" Source="D:\BSCS\WPF\Bootleg-Pokémon\GameConfig\Sprites\004.png" Width="75"/>
+            <Image Grid.Column="0" Source="/GameConfig;component/Sprites/004.png" Width="75"/>
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
