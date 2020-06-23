@@ -19,9 +19,9 @@
             <Menu Height="auto" x:Name="MenuBar" Width="auto" VerticalAlignment="Top">
                 <MenuItem Header="_File">
                     <MenuItem Header="_New" Click="New_Click"/>
-                    <MenuItem Header="_Load"/>
-                    <MenuItem Header="_Save"/>
-                    <MenuItem Header="_Close"/>
+                    <MenuItem Header="_Load" Click="Load_Click"/>
+                    <MenuItem Header="_Save" Click="Save_Click"/>
+                    <MenuItem Header="_Close" Click="Close_Click"/>
                 </MenuItem>
                 <MenuItem Header="_Actions">
                     <MenuItem Header="Fight a Trainer">
@@ -231,7 +231,13 @@
                 </Grid>
                 
                 <Grid Grid.Row="1">
-                    <RichTextBox x:Name="FightStatus" IsReadOnly="True"/>
+                    <RichTextBox x:Name="FightStatus" IsReadOnly="True">
+                        <RichTextBox.Resources>
+                            <Style TargetType="{x:Type Paragraph}">
+                                <Setter Property="Margin" Value="0"/>
+                            </Style>
+                        </RichTextBox.Resources>
+                    </RichTextBox>
                 </Grid>
                 
             </Grid>

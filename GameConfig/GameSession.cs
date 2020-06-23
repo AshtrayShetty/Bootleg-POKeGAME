@@ -9,7 +9,7 @@ namespace GameConfig
 {
     public class GameSession:INotifyPropertyChanged
     {
-        private Player _player = new Player("", 0, 0, 1);
+        private Player _player = new Player("", 0, 0, 0);
         public Player CurrentPlayer
         {
             get => _player;
@@ -21,9 +21,14 @@ namespace GameConfig
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+        public event EventHandler<GameMessageEventArgs> Event;
         protected virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        protected virtual void RaiseMessage(string message)
+        {
+            Event?.Invoke(this, new GameMessageEventArgs(message));
         }
     }
 }
