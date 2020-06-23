@@ -70,7 +70,7 @@ namespace Bootleg_Pokémon
                     sw.WriteLine($"Name: {_gameSession.CurrentPlayer.Name}");
                     sw.WriteLine($"Fights: {_gameSession.CurrentPlayer.Fights}");
                     sw.WriteLine($"Wins: {_gameSession.CurrentPlayer.Wins}");
-                    sw.WriteLine($"Catches: {_gameSession.CurrentPlayer.Pokemon.Count}");
+                    sw.WriteLine($"Catches: {_gameSession.CurrentPlayer.PokemonCollection.Count}");
                 }
             }
         }

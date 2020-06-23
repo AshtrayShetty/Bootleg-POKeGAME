@@ -23,7 +23,6 @@ namespace Bootleg_Pokémon
         {
             InitializeComponent();
         }
-
         private void PokedexClose_Click(object sender, RoutedEventArgs e) { Close(); }
     }
 }

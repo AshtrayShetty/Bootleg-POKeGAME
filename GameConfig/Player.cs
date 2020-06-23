@@ -50,15 +50,7 @@ namespace GameConfig
                 OnPropertyChanged(nameof(Wins));
             }
         }
-        public ObservableCollection<object> Pokemon { get; set; }
-        public Player()
-        {
-            Name = "";
-            Money = 0;
-            Fights = 0;
-            Wins = 0;
-            Pokemon = new ObservableCollection<object>();
-        }
+        public ObservableCollection<Pokemon> PokemonCollection { get; set; } = new ObservableCollection<Pokemon>();
 
         public event PropertyChangedEventHandler PropertyChanged;
 

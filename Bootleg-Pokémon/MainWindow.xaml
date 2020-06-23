@@ -287,7 +287,7 @@
                     <Label Grid.Row="3" Grid.Column="0" Content="Wins:" Padding="0"/>
                     <Label Grid.Row="3" Grid.Column="1" Content="{Binding CurrentPlayer.Wins}" Padding="0"/>
                     <Label Grid.Row="4" Grid.Column="0" Content="Catches:" Padding="0"/>
-                    <Label Grid.Row="4" Grid.Column="1" Content="{Binding CurrentPlayer.Pokemon.Count}" Padding="0"/>
+                    <Label Grid.Row="4" Grid.Column="1" Content="{Binding CurrentPlayer.PokemonCollection.Count}" Padding="0"/>
                     <Label Grid.Row="5" Grid.Column="0" Content="Losses/Flees:" Padding="0"/>
                     <Label Grid.Row="5" Grid.Column="1" Content="{Binding Losses}" Padding="0"/>
                     <Label Grid.Row="6" Grid.Column="0" Content="Win Percentage:" Padding="0"/>
