@@ -1,5 +1,6 @@
 ﻿using GameConfig;
 using Microsoft.Win32;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -30,6 +31,12 @@ namespace Bootleg_Pokémon
             InitializeComponent();
             DataContext = _gameSession;
             _gameSession.IsGameCreated = false;
+            using(StreamReader pokedexJson = new StreamReader("..\\..\\..\\pokedex.json"))
+            {
+                var json = pokedexJson.ReadToEnd();
+                _gameSession.AllPokemon = JsonConvert.DeserializeObject<List<Pokemon>>(json);
+                // MessageBox.Show(_gameSession.AllPokemon.Count().ToString());
+            }
         }
         
         private void New_Click(object sender, RoutedEventArgs e)
@@ -80,6 +87,7 @@ namespace Bootleg_Pokémon
         private void Pokedex_Click(object sender, RoutedEventArgs e)
         {
             Pokedex pokedex = new Pokedex();
+            pokedex.DataContext = _gameSession;
             pokedex.Owner = this;
             pokedex.Show();
         }

@@ -13,6 +13,7 @@ namespace GameConfig
         private bool _isGameCreated;
         private int _losses;
         private double _winPercentage;
+        private string _pokedexImage;
         public Player CurrentPlayer
         {
             get => _player;
@@ -49,6 +50,17 @@ namespace GameConfig
                 OnPropertyChanged(nameof(WinPercentage));
             }
         }
+        public List<Pokemon> AllPokemon { get; set; }
+        public string PokedexImage
+        {
+            get => _pokedexImage;
+            set
+            {
+                _pokedexImage = value;
+                OnPropertyChanged(nameof(PokedexImage));
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
         public event EventHandler<GameMessageEventArgs> Event;
         protected virtual void OnPropertyChanged(string propertyName)

@@ -26,10 +26,9 @@ namespace Bootleg_Pokémon
         {
             InitializeComponent();
         }
-
         private void Start_Click(object sender, RoutedEventArgs e)
         {
-            if(CharName.Text.Trim().Length !=0 || SaveFile.Text.Trim().Length != 0)
+            if (CharName.Text.Trim().Length != 0 || SaveFile.Text.Trim().Length != 0)
             {
                 Session.CurrentPlayer.Name = CharName.Text;
                 string path = $"..\\..\\..\\SaveFiles\\{SaveFile.Text}.txt";

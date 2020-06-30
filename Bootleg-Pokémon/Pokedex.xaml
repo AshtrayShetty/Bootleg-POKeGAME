@@ -17,9 +17,7 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <ComboBox Grid.Column="0" Width="auto" Height="35" x:Name="PokeName">
-
-            </ComboBox>
+            <ComboBox Grid.Column="0" Width="auto" Height="35" SelectionChanged="PokeName_Selected" x:Name="PokeName" ItemsSource="{Binding AllPokemon}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" DisplayMemberPath="Name" SelectedValuePath="Id"/>
             <Button Grid.Column="1" Height="35" Width="auto" Content="Close POKéDEX" Click="PokedexClose_Click"/>
         </Grid>
         <Grid Grid.Row="1">
@@ -27,7 +25,15 @@
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Image Grid.Column="0" Source="/GameConfig;component/Sprites/004.png" Width="75"/>
+            <Image Grid.Column="0" Width="75" Margin="8 0 0 0">
+                <Image.Source>
+                    <Binding Path="PokedexImage">
+                        <Binding.TargetNullValue>
+                            <ImageSource>/GameConfig;component/Sprites/001.png</ImageSource>
+                        </Binding.TargetNullValue>
+                    </Binding>
+                </Image.Source>
+            </Image>
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
@@ -40,10 +46,10 @@
                         <ColumnDefinition Width="auto"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions> 
-                    <Label Grid.Column="0" Content="Charmander" Padding="10 0 0 0"/>
-                    <Label Grid.Column="1" Content="#004" Padding="10 0 0 0"/>
+                    <Label Grid.Column="0" Content="Bulbasaur" Padding="10 0 0 0" x:Name="PokeNameDesc"/>
+                    <Label Grid.Column="1" Content="#1" Padding="10 0 0 0" x:Name="PokeId"/>
                 </Grid>
-                <Label Grid.Row="1" Content="Fire" Padding="10 0 0 0"/>
+                <Label Grid.Row="1" Content="Grass/Poison" Padding="10 0 0 0" x:Name="PokeType"/>
                 <Grid Grid.Row="3">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
@@ -58,20 +64,20 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Label Grid.Row="0" Grid.Column="0" Content="Attack 1:" Padding="10 0"/>
-                    <Label Grid.Row="0" Grid.Column="1" Content="Scratch" Padding="10 0 0 0"/>
+                    <Label Grid.Row="0" Grid.Column="1" Content="Tackle" Padding="10 0 0 0"/>
                     <Label Grid.Row="0" Grid.Column="2" Content="Normal" Padding="10 0 0 0"/>
                     <Label Grid.Row="1" Grid.Column="0" Content="Attack 2:" Padding="10 0"/>
                     <Label Grid.Row="1" Grid.Column="1" Content="Cut" Padding="10 0 0 0"/>
                     <Label Grid.Row="1" Grid.Column="2" Content="Normal" Padding="10 0 0 0"/>
                     <Label Grid.Row="2" Grid.Column="0" Content="Attack 3:" Padding="10 0"/>
-                    <Label Grid.Row="2" Grid.Column="1" Content="Ember" Padding="10 0 0 0"/>
-                    <Label Grid.Row="2" Grid.Column="2" Content="Fire" Padding="10 0 0 0"/>
+                    <Label Grid.Row="2" Grid.Column="1" Content="Leech Seed" Padding="10 0 0 0"/>
+                    <Label Grid.Row="2" Grid.Column="2" Content="Grass" Padding="10 0 0 0"/>
                     <Label Grid.Row="3" Grid.Column="0" Content="Attack 4:" Padding="10 0"/>
-                    <Label Grid.Row="3" Grid.Column="1" Content="Flamethrower" Padding="10 0 0 0"/>
-                    <Label Grid.Row="3" Grid.Column="2" Content="Fire" Padding="10 0 0 0"/>
+                    <Label Grid.Row="3" Grid.Column="1" Content="Razor Leaf" Padding="10 0 0 0"/>
+                    <Label Grid.Row="3" Grid.Column="2" Content="Grass" Padding="10 0 0 0"/>
                 </Grid>
             </Grid>
         </Grid>
-        <Label Grid.Row="2" Content="Can evolve at level 16" HorizontalContentAlignment="Center"/>
+        <Label Grid.Row="2" Content="Can evolve at level 16" HorizontalContentAlignment="Center" x:Name="Pokevolution"/>
     </Grid>
 </Window>

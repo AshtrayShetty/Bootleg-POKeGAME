@@ -9,12 +9,25 @@ namespace GameConfig
 {
     public class Pokemon : INotifyPropertyChanged
     {
+        private int _id;
         private string _name;
-        private int _hp;
-        private int _level;
-        private int _attack;
-        private int _defense;
-        private int _xp;
+        private string[] _type;
+        private BaseStats _base;
+        private string _growth;
+        private int _evolutionLevel;
+        private int _baseLevel;
+        private int[] _evolutionId;
+        private string _image;
+        private string _findType;
+        public int Id
+        {
+            get => _id;
+            set
+            {
+                _id = value;
+                OnPropertyChanged(nameof(Id));
+            }
+        }
         public string Name
         {
             get => _name;
@@ -24,59 +37,78 @@ namespace GameConfig
                 OnPropertyChanged(nameof(Name));
             }
         }
-        public string Type { get; set; }
-        public int BaseHp { get; set; }
-        public int HP
+        public string[] Type
         {
-            get => _hp;
+            get => _type;
             set
             {
-                _hp = value;
-                OnPropertyChanged(nameof(HP));
+                _type = value;
+                OnPropertyChanged(nameof(Type));
             }
         }
-        public int Level
+        public BaseStats Base
         {
-            get => _level;
+            get => _base;
             set
             {
-                _level = value;
-                OnPropertyChanged(nameof(Level));
+                _base = value;
+                OnPropertyChanged(nameof(BaseStats));
             }
         }
-        public int BaseAttack { get; set; }
-        public int Attack
+        public string Growth
         {
-            get => _attack;
+            get => _growth;
             set
             {
-                _attack = value;
-                OnPropertyChanged(nameof(Attack));
+                _growth = value;
+                OnPropertyChanged(nameof(Growth));
             }
         }
-        public int BaseDefense { get; set; }
-        public int Defense
+        public int EvolutionLevel
         {
-            get => _defense;
+            get => _evolutionLevel;
             set
             {
-                _defense = value;
-                OnPropertyChanged(nameof(Defense));
+                _evolutionLevel = value;
+                OnPropertyChanged(nameof(EvolutionLevel));
             }
         }
-        public int XP
+        public int BaseLevel
         {
-            get => _xp;
+            get => _baseLevel;
             set
             {
-                _xp = value;
-                OnPropertyChanged(nameof(XP));
+                _baseLevel = value;
+                OnPropertyChanged(nameof(BaseLevel));
             }
         }
-        public int BaseLevel { get; set; }
-        public int EvolutionLevel { get; set; }
-        public List<object> Moves { get; set; } = new List<object>();
-
+        public int[] EvolutionId
+        {
+            get => _evolutionId;
+            set
+            {
+                _evolutionId = value;
+                OnPropertyChanged(nameof(EvolutionId));
+            }
+        }
+        public string Image
+        {
+            get => _image;
+            set
+            {
+                _image = value;
+                OnPropertyChanged(nameof(Image));
+            }
+        }
+        public string FindType
+        {
+            get => _findType;
+            set
+            {
+                _findType = value;
+                OnPropertyChanged(nameof(FindType));
+            }
+        }
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string propertyName)
         {
