@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GameConfig
 {
-    public class GameSession:INotifyPropertyChanged
+    public class GameSession : INotifyPropertyChanged
     {
         private Player _player = new Player();
         private bool _isGameCreated;

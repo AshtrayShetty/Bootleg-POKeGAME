@@ -82,7 +82,11 @@ namespace Bootleg_Pokémon
             }
         }
 
-        private void Close_Click(object sender, RoutedEventArgs e) { Close(); }
+        private void Close_Click(object sender, RoutedEventArgs e)
+        {
+            Save_Click(sender, e);
+            Close();
+        }
 
         private void Pokedex_Click(object sender, RoutedEventArgs e)
         {

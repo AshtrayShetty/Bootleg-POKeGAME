@@ -13,12 +13,15 @@ namespace GameConfig
         private string _name;
         private string[] _type;
         private BaseStats _base;
+        private int _xp;
+        private int _catchRate;
         private string _growth;
         private int _evolutionLevel;
         private int _baseLevel;
         private int[] _evolutionId;
         private string _image;
         private string _findType;
+        private Move[] _moves;
         public int Id
         {
             get => _id;
@@ -53,6 +56,24 @@ namespace GameConfig
             {
                 _base = value;
                 OnPropertyChanged(nameof(BaseStats));
+            }
+        }
+        public int XP
+        {
+            get => _xp;
+            set
+            {
+                _xp = value;
+                OnPropertyChanged(nameof(XP));
+            }
+        }
+        public int CatchRate
+        {
+            get => _catchRate;
+            set
+            {
+                _catchRate = value;
+                OnPropertyChanged(nameof(CatchRate));
             }
         }
         public string Growth
@@ -109,6 +130,16 @@ namespace GameConfig
                 OnPropertyChanged(nameof(FindType));
             }
         }
+        public Move[] Moves
+        {
+            get => _moves;
+            set
+            {
+                _moves = value;
+                OnPropertyChanged(nameof(Moves));
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string propertyName)
         {

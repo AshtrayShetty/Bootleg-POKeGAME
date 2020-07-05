@@ -46,10 +46,16 @@ namespace Bootleg_Pokémon
                     MessageBox.Show(Directory.GetCurrentDirectory());
                     throw;
                 }
-                Close();
-                Session.IsGameCreated = true;
-                Session.Losses = 0;
-                Session.WinPercentage = 0.0;
+                if (StarterPokemon.SelectedItem != null)
+                {
+                    Close();
+                    Session.IsGameCreated = true;
+                    Session.Losses = 0;
+                    Session.WinPercentage = 0.0;
+                    Session.CurrentPlayer.PokemonCollection.Add(Session.AllPokemon.First(p => p.Id == (2 * StarterPokemon.SelectedIndex) + StarterPokemon.SelectedIndex + 1));
+                    MessageBox.Show(Session.CurrentPlayer.PokemonCollection[0].Name);
+                }
+                else { MessageBox.Show("Fill all the required parameters"); }
             }
         }
     }

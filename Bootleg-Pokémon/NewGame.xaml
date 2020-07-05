@@ -6,9 +6,11 @@
         xmlns:local="clr-namespace:Bootleg_Pokémon"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="NewGame" Height="120" Width="290">
+        Title="NewGame" Height="369" Width="300">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
@@ -29,6 +31,21 @@
             <Label Grid.Column="0" Content="Save File Name" VerticalAlignment="Center"/>
             <TextBox Grid.Column="1" x:Name="SaveFile" Width="200" Text="Enter File Name" VerticalAlignment="Center" HorizontalAlignment="Left"/>
         </Grid>
-        <Button Grid.Row="2" x:Name="StartGame" Width="70" Height="25" Content="Start" HorizontalAlignment="Right" Click="Start_Click"/>
+        <Label Grid.Row="2" Content="Choose Starter Pokémon:" Padding="0 5 0 2"/>
+        <ListBox Grid.Row="3" Height="230" Width="auto" x:Name="StarterPokemon">
+            <StackPanel Orientation="Horizontal" Margin="0 0 0 20">
+                <Image Source="/GameConfig;Component/Sprites/001.png" Height="50" />
+                <TextBlock Text="Bulbasaur" VerticalAlignment="Center" Margin="10 0 0 0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0 0 0 20">
+                <Image Source="/GameConfig;Component/Sprites/004.png" Height="50"/>
+                <TextBlock Text="Charmander" VerticalAlignment="Center" Margin="10 0 0 0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0 0 0 20">
+                <Image Source="/GameConfig;Component/Sprites/007.png" Height="50"/>
+                <TextBlock Text="Squirtle" VerticalAlignment="Center" Margin="10 0 0 0"/>
+            </StackPanel>
+        </ListBox>
+        <Button Grid.Row="4" x:Name="StartGame" Width="70" Height="25" Content="Start" HorizontalAlignment="Right" Click="Start_Click"/>
     </Grid>
 </Window>

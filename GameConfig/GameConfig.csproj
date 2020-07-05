@@ -47,6 +47,7 @@
     <Compile Include="BaseStats.cs" />
     <Compile Include="GameMessageEventArgs.cs" />
     <Compile Include="GameSession.cs" />
+    <Compile Include="Move.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Pokemon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -859,8 +860,6 @@
     <Resource Include="Sprites\805.png" />
     <Resource Include="Sprites\806.png" />
     <Resource Include="Sprites\807.png" />
-    <Resource Include="Sprites\808.png" />
-    <Resource Include="Sprites\809.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
