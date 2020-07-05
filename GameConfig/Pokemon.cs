@@ -21,7 +21,7 @@ namespace GameConfig
         private int[] _evolutionId;
         private string _image;
         private string _findType;
-        private Move[] _moves;
+        private List<Move> _moves;
         public int Id
         {
             get => _id;
@@ -130,7 +130,7 @@ namespace GameConfig
                 OnPropertyChanged(nameof(FindType));
             }
         }
-        public Move[] Moves
+        public List<Move> Moves
         {
             get => _moves;
             set

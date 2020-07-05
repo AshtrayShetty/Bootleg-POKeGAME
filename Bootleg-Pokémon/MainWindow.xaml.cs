@@ -3,6 +3,7 @@ using Microsoft.Win32;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -94,6 +95,26 @@ namespace Bootleg_Pokémon
             pokedex.DataContext = _gameSession;
             pokedex.Owner = this;
             pokedex.Show();
+        }
+
+        private void Brock_Click(object sender, RoutedEventArgs e)
+        {
+            _gameSession.EnemyPokemon = _gameSession.AllPokemon.First(p => p.Id == 74);
+            Random rnd = new Random();
+            int rndEvSum = 0;
+            int[] evVals=new int[6];
+            for(int i=0; i<6; ++i)
+            {
+                if (rndEvSum > 510) { break; }
+                evVals[i] = rnd.Next(0, 256);
+                rndEvSum += evVals[i];
+            }
+            int[] stats = StatGenFunctions.BattleStatsGenerator(evVals, _gameSession.EnemyPokemon);
+            _gameSession.EnemyPokemon.Moves = StatGenFunctions.MoveList(_gameSession.EnemyPokemon.Type);
+            EnemyCurrentHP.Content = stats[0];
+            Slash.Visibility = Visibility.Visible;
+            EnemyMaxHP.Content = stats[0];
+            MenuBar.IsEnabled = false;
         }
     }
 }

@@ -10,6 +10,7 @@ namespace GameConfig
     public class GameSession : INotifyPropertyChanged
     {
         private Player _player = new Player();
+        private Pokemon _enemy = new Pokemon();
         private bool _isGameCreated;
         private int _losses;
         private double _winPercentage;
@@ -21,6 +22,15 @@ namespace GameConfig
             {
                 _player = value;
                 OnPropertyChanged(nameof(CurrentPlayer));
+            }
+        }
+        public Pokemon EnemyPokemon
+        {
+            get => _enemy;
+            set
+            {
+                _enemy = value;
+                OnPropertyChanged(nameof(EnemyPokemon));
             }
         }
         public bool IsGameCreated

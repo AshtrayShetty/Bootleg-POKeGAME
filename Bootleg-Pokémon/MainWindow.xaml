@@ -66,7 +66,7 @@
                             </MenuItem>
                         </MenuItem>
                         <MenuItem Header="Kanto Gym Leaders">
-                            <MenuItem Header="Brock" x:Name="Brock"/>
+                            <MenuItem Header="Brock" x:Name="Brock" Click="Brock_Click"/>
                             <MenuItem Header="Misty" x:Name="Misty" IsEnabled="False"/>
                             <MenuItem Header="Lt.Surge" x:Name="Surge" IsEnabled="False"/>
                             <MenuItem Header="Erika" x:Name="Erika" IsEnabled="False"/>
@@ -193,16 +193,16 @@
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="auto"/>
                             </Grid.RowDefinitions>
-                            <Image Grid.Row="0" Source="/GameConfig;component/Sprites/341.png" HorizontalAlignment="Center" Width="75"/>
+                            <Image Grid.Row="0" Source="{Binding EnemyPokemon.Image}" HorizontalAlignment="Center" Width="75" x:Name="EnemyPokemonImage"/>
                             <Grid Grid.Row="1">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="auto"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <Label Grid.Column="0" Content="100" Padding="0" HorizontalAlignment="Right"/>
-                                <Label Grid.Column="1" Content="/" Padding="0"/>
-                                <Label Grid.Column="2" Content="100" Padding="0"/>
+                                <Label Grid.Column="0" Content="" Padding="0"  HorizontalAlignment="Right" x:Name="EnemyCurrentHP"/>
+                                <Label Grid.Column="1" Content="/" Visibility="Hidden" Padding="0" x:Name="Slash"/>
+                                <Label Grid.Column="2" Content="" Padding="0" x:Name="EnemyMaxHP"/>
                             </Grid>
                             
                         </Grid>
