@@ -22,8 +22,11 @@ namespace GameConfig
         private string _image;
         private string _findType;
         private int _curLevel;
+        private int _maxHp;
+        private int _curHp;
         private int _curHpPercent;
         private List<Move> _moves;
+
         public int Id
         {
             get => _id;
@@ -33,6 +36,7 @@ namespace GameConfig
                 OnPropertyChanged(nameof(Id));
             }
         }
+
         public string Name
         {
             get => _name;
@@ -42,6 +46,7 @@ namespace GameConfig
                 OnPropertyChanged(nameof(Name));
             }
         }
+
         public string[] Type
         {
             get => _type;
@@ -51,6 +56,7 @@ namespace GameConfig
                 OnPropertyChanged(nameof(Type));
             }
         }
+
         public BaseStats Base
         {
             get => _base;
@@ -60,6 +66,7 @@ namespace GameConfig
                 OnPropertyChanged(nameof(BaseStats));
             }
         }
+
         public int XP
         {
             get => _xp;
@@ -69,6 +76,7 @@ namespace GameConfig
                 OnPropertyChanged(nameof(XP));
             }
         }
+
         public int CatchRate
         {
             get => _catchRate;
@@ -78,6 +86,7 @@ namespace GameConfig
                 OnPropertyChanged(nameof(CatchRate));
             }
         }
+
         public string Growth
         {
             get => _growth;
@@ -87,6 +96,7 @@ namespace GameConfig
                 OnPropertyChanged(nameof(Growth));
             }
         }
+
         public int EvolutionLevel
         {
             get => _evolutionLevel;
@@ -96,6 +106,7 @@ namespace GameConfig
                 OnPropertyChanged(nameof(EvolutionLevel));
             }
         }
+
         public int BaseLevel
         {
             get => _baseLevel;
@@ -105,6 +116,7 @@ namespace GameConfig
                 OnPropertyChanged(nameof(BaseLevel));
             }
         }
+
         public int[] EvolutionId
         {
             get => _evolutionId;
@@ -114,6 +126,7 @@ namespace GameConfig
                 OnPropertyChanged(nameof(EvolutionId));
             }
         }
+
         public string Image
         {
             get => _image;
@@ -123,6 +136,7 @@ namespace GameConfig
                 OnPropertyChanged(nameof(Image));
             }
         }
+
         public string FindType
         {
             get => _findType;
@@ -132,6 +146,7 @@ namespace GameConfig
                 OnPropertyChanged(nameof(FindType));
             }
         }
+
         public int CurLevel
         {
             get => _curLevel;
@@ -141,6 +156,27 @@ namespace GameConfig
                 OnPropertyChanged(nameof(CurLevel));
             }
         }
+
+        public int MaxHp
+        {
+            get => _maxHp;
+            set
+            {
+                _maxHp = value;
+                OnPropertyChanged(nameof(MaxHp));
+            }
+        }
+
+        public int CurHp
+        {
+            get => _curHp;
+            set
+            {
+                _curHp = value;
+                OnPropertyChanged(nameof(CurHp));
+            }
+        }
+
         public int CurHpPercent
         {
             get => _curHpPercent;
@@ -150,6 +186,7 @@ namespace GameConfig
                 OnPropertyChanged(nameof(CurHpPercent));
             }
         }
+
         public List<Move> Moves
         {
             get => _moves;
@@ -161,6 +198,7 @@ namespace GameConfig
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
         protected void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

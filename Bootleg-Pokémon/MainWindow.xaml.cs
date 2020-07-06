@@ -32,6 +32,7 @@ namespace Bootleg_Pokémon
             InitializeComponent();
             DataContext = _gameSession;
             _gameSession.IsGameCreated = false;
+            _gameSession.IsBattle = false;
             using(StreamReader pokedexJson = new StreamReader("..\\..\\..\\pokedex.json"))
             {
                 var json = pokedexJson.ReadToEnd();
@@ -99,31 +100,17 @@ namespace Bootleg_Pokémon
 
         private void Brock_Click(object sender, RoutedEventArgs e)
         {
+            _gameSession.IsBattle = true;
             _gameSession.EnemyPokemon = _gameSession.AllPokemon.First(p => p.Id == 74);
-            Random rnd = new Random();
-            int rndEvSum = 0;
-            int[] evVals=new int[6];
-            for(int i=0; i<6; ++i)
-            {
-                if (rndEvSum > 510) { break; }
-                evVals[i] = rnd.Next(0, 256);
-                rndEvSum += evVals[i];
-            }
-            int[] stats = GenFunctions.BattleStatsGenerator(evVals, _gameSession.EnemyPokemon);
-            _gameSession.EnemyPokemon.CurLevel = stats[6];
-            _gameSession.EnemyPokemon.Moves = GenFunctions.MoveList(_gameSession.EnemyPokemon.Type);
-            EnemyCurrentHP.Content = stats[0];
-            EnemyMaxHP.Content = stats[0];
-            _gameSession.EnemyPokemon.CurHpPercent = (Convert.ToInt32(EnemyCurrentHP.Content) / Convert.ToInt32(EnemyMaxHP.Content)) * 100;
+            _gameSession.GeneratePokemonStats(_gameSession.EnemyPokemon);
             EnemyCorner.Visibility = Visibility.Visible;
-            PlayerCorner.Visibility = Visibility.Visible;
             MenuBar.IsEnabled = false;
             FightStatus.Document.Blocks.Add(new Paragraph(new Run($"Brock chose {_gameSession.EnemyPokemon.Name}")));
         }
 
         private void Pokemon_Choose_Click(object sender, RoutedEventArgs e)
         {
-            if (PlayerPokemon.SelectedItem != null)
+            if (PlayerPokemon.SelectedItem != null && _gameSession.IsBattle)
             {
                 _gameSession.CurrentPlayer.ChosenPokemon = PlayerPokemon.SelectedItem as Pokemon;
                 _gameSession.CurrentPlayer.ChosenPokemon.Moves = _gameSession.CurrentPlayer.PokemonCollection[PlayerPokemon.SelectedIndex].Moves;

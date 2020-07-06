@@ -15,6 +15,8 @@ namespace GameConfig
         private int _losses;
         private double _winPercentage;
         private string _pokedexImage;
+        private bool _isBattle;
+
         public Player CurrentPlayer
         {
             get => _player;
@@ -24,6 +26,7 @@ namespace GameConfig
                 OnPropertyChanged(nameof(CurrentPlayer));
             }
         }
+
         public Pokemon EnemyPokemon
         {
             get => _enemy;
@@ -33,6 +36,7 @@ namespace GameConfig
                 OnPropertyChanged(nameof(EnemyPokemon));
             }
         }
+
         public bool IsGameCreated
         {
             get => _isGameCreated;
@@ -42,6 +46,17 @@ namespace GameConfig
                 OnPropertyChanged(nameof(IsGameCreated));
             }
         }
+
+        public bool IsBattle
+        {
+            get => _isBattle;
+            set
+            {
+                _isBattle = value;
+                OnPropertyChanged(nameof(IsBattle));
+            }
+        }
+
         public int Losses
         {
             get => _losses;
@@ -51,6 +66,7 @@ namespace GameConfig
                 OnPropertyChanged(nameof(Losses));
             }
         }
+
         public double WinPercentage
         {
             get => _winPercentage;
@@ -60,7 +76,9 @@ namespace GameConfig
                 OnPropertyChanged(nameof(WinPercentage));
             }
         }
+
         public List<Pokemon> AllPokemon { get; set; }
+
         public string PokedexImage
         {
             get => _pokedexImage;
@@ -71,12 +89,33 @@ namespace GameConfig
             }
         }
 
+        public void GeneratePokemonStats(Pokemon pokemon)
+        {
+            Random rnd = new Random();
+            int rndEvSum = 0;
+            int[] evVals = new int[6];
+            for (int i = 0; i < 6; ++i)
+            {
+                if (rndEvSum > 510) { break; }
+                evVals[i] = rnd.Next(0, 256);
+                rndEvSum += evVals[i];
+            }
+            int[] stats = GenFunctions.BattleStatsGenerator(evVals, pokemon);
+            pokemon.CurLevel = stats[6];
+            pokemon.Moves = GenFunctions.MoveList(pokemon.Type);
+            pokemon.MaxHp = stats[0];
+            pokemon.CurHp = stats[0];
+            pokemon.CurHpPercent = (Convert.ToInt32(pokemon.CurHp) / Convert.ToInt32(pokemon.MaxHp)) * 100;
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
         public event EventHandler<GameMessageEventArgs> Event;
+
         protected virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
         private void RaiseMessage(string message)
         {
             Event?.Invoke(this, new GameMessageEventArgs(message));

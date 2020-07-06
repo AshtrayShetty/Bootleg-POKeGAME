@@ -22,6 +22,7 @@ namespace Bootleg_Pokémon
     public partial class NewGame : Window
     {
         public GameSession Session => DataContext as GameSession;
+
         public NewGame()
         {
             InitializeComponent();
@@ -32,6 +33,7 @@ namespace Bootleg_Pokémon
             {
                 Session.CurrentPlayer.Name = CharName.Text;
                 string path = $"..\\..\\..\\SaveFiles\\{SaveFile.Text}.txt";
+
                 try
                 {
                     if (File.Exists(path)) { File.Delete(path); }
@@ -46,15 +48,21 @@ namespace Bootleg_Pokémon
                     MessageBox.Show(Directory.GetCurrentDirectory());
                     throw;
                 }
+
                 if (StarterPokemon.SelectedItem != null)
                 {
                     Close();
                     Session.IsGameCreated = true;
                     Session.Losses = 0;
                     Session.WinPercentage = 0.0;
-                    Session.CurrentPlayer.PokemonCollection.Add(Session.AllPokemon.First(p => p.Id == (2 * StarterPokemon.SelectedIndex) + StarterPokemon.SelectedIndex + 1));
-                    Session.CurrentPlayer.PokemonCollection[0].CurLevel = Session.CurrentPlayer.PokemonCollection[0].BaseLevel;
-                    Session.CurrentPlayer.PokemonCollection[0].Moves = GenFunctions.MoveList(Session.CurrentPlayer.PokemonCollection[0].Type);
+
+                    Session.CurrentPlayer.PokemonCollection.Add(
+                        Session.AllPokemon.First(
+                            p => p.Id == (2 * StarterPokemon.SelectedIndex) + StarterPokemon.SelectedIndex + 1
+                        )
+                    );
+
+                    Session.GeneratePokemonStats(Session.CurrentPlayer.PokemonCollection[0]);
                     // MessageBox.Show(Session.CurrentPlayer.PokemonCollection[0].Moves[0].Ename);
                 }
                 else { MessageBox.Show("Fill all the required parameters"); }

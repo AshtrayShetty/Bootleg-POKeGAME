@@ -142,9 +142,9 @@
                                     <ColumnDefinition Width="auto"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <Label Grid.Column="0" Content="100" Padding="0" HorizontalAlignment="Right"/>
+                                <Label Grid.Column="0" Content="{Binding CurrentPlayer.ChosenPokemon.CurHp}" Padding="0" HorizontalAlignment="Right"/>
                                 <Label Grid.Column="1" Content="/" Padding="0"/>
-                                <Label Grid.Column="2" Content="100" Padding="0"/>
+                                <Label Grid.Column="2" Content="{Binding CurrentPlayer.ChosenPokemon.MaxHp}" Padding="0"/>
                             </Grid>
                         </Grid>
 
@@ -204,9 +204,9 @@
                                     <ColumnDefinition Width="auto"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <Label Grid.Column="0" Content="" Padding="0"  HorizontalAlignment="Right" x:Name="EnemyCurrentHP"/>
+                                <Label Grid.Column="0" Content="{Binding EnemyPokemon.CurHp}" Padding="0"  HorizontalAlignment="Right"/>
                                 <Label Grid.Column="1" Content="/" Padding="0"/>
-                                <Label Grid.Column="2" Content="" Padding="0" x:Name="EnemyMaxHP"/>
+                                <Label Grid.Column="2" Content="{Binding EnemyPokemon.MaxHp}" Padding="0"/>
                             </Grid>
                             
                         </Grid>
@@ -328,7 +328,7 @@
                             <ColumnDefinition Width="auto"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0" Content="0" Padding="0"/>
+                        <Label Grid.Column="0" Content="{Binding CurrentPlayer.PokemonCollection.Count}" Padding="0"/>
                         <Label Grid.Column="2" Content="of" Padding="0 0 3 0" HorizontalAlignment="Right"/>
                         <Label Grid.Column="3" Content="{Binding AllPokemon.Count}" Padding="0"/>
                     </Grid>
