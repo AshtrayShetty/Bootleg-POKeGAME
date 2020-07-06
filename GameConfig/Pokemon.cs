@@ -21,6 +21,8 @@ namespace GameConfig
         private int[] _evolutionId;
         private string _image;
         private string _findType;
+        private int _curLevel;
+        private int _curHpPercent;
         private List<Move> _moves;
         public int Id
         {
@@ -128,6 +130,24 @@ namespace GameConfig
             {
                 _findType = value;
                 OnPropertyChanged(nameof(FindType));
+            }
+        }
+        public int CurLevel
+        {
+            get => _curLevel;
+            set
+            {
+                _curLevel = value;
+                OnPropertyChanged(nameof(CurLevel));
+            }
+        }
+        public int CurHpPercent
+        {
+            get => _curHpPercent;
+            set
+            {
+                _curHpPercent = value;
+                OnPropertyChanged(nameof(CurHpPercent));
             }
         }
         public List<Move> Moves

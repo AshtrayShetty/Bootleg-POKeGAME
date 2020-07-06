@@ -123,13 +123,13 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    
-                    <Grid Grid.Row="0">
+
+                    <Grid Grid.Row="0" x:Name="PlayerCorner" Visibility="Hidden">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="3*"/>
                         </Grid.ColumnDefinitions>
-                        
+
                         <Grid Grid.Column="0">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*"/>
@@ -172,7 +172,7 @@
                                 <ProgressBar Grid.Column="2" Width="292.6" Value="100"/>
                                 <Label Grid.Column="3" Content="100%" Padding="0" Margin="5 0"/>
                             </Grid>
-                            <Label Grid.Row="2" Content="Scratch (Normal)" Visibility="Hidden" Padding="0"/>
+                            <Label Grid.Row="2" Content="" Visibility="Hidden" Padding="0"/>
                             <RadioButton Grid.Row="3" Content="Scratch (Normal)" Margin="45 0 0 0"/>
                             <RadioButton Grid.Row="4" Content="Cut (Normal)" Margin="45 0 0 0"/>
                             <RadioButton Grid.Row="5" Content="Ember (Fire)" Margin="45 0 0 0"/>
@@ -181,8 +181,8 @@
                         </Grid>
                         
                     </Grid>
-                    
-                    <Grid Grid.Row="1">
+
+                    <Grid Grid.Row="1"  x:Name="EnemyCorner" Visibility="Hidden">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="3*"/>
@@ -201,7 +201,7 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <Label Grid.Column="0" Content="" Padding="0"  HorizontalAlignment="Right" x:Name="EnemyCurrentHP"/>
-                                <Label Grid.Column="1" Content="/" Visibility="Hidden" Padding="0" x:Name="Slash"/>
+                                <Label Grid.Column="1" Content="/" Padding="0"/>
                                 <Label Grid.Column="2" Content="" Padding="0" x:Name="EnemyMaxHP"/>
                             </Grid>
                             
@@ -214,10 +214,8 @@
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition Height="auto"/>
-                                <RowDefinition Height="auto"/>
-                                <RowDefinition Height="auto"/>
                             </Grid.RowDefinitions>
-                            <Label Content="Enemy" Padding="0" Visibility="Hidden"/>
+                            <Label Content="" Padding="0" Visibility="Hidden"/>
                             <Grid Grid.Row="1">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="auto"/>
@@ -225,18 +223,25 @@
                                     <ColumnDefinition Width="auto"/>
                                     <ColumnDefinition Width="auto"/>
                                     <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
                                 </Grid.ColumnDefinitions>
                                 <Label Grid.Column="0" Content="Enemy" Padding="0"/>
-                                <Label Grid.Column="1" Content="Corphish" Padding="0" Margin="2 0"/>
-                                <Label Grid.Column="2" Content="Level 5" Padding="0" Margin="2 0"/>
-                                <ProgressBar Grid.Column="3" Width="260" Value="100"/>
-                                <Label Grid.Column="4" Content="100%" Padding="0" Margin="5 0"/>
+                                <Label Grid.Column="1" Content="{Binding EnemyPokemon.Name}" Padding="0" Margin="2 0"/>
+                                <Label Grid.Column="2" Content="Level" Padding="0" Margin="2 0"/>
+                                <Label Grid.Column="3" Content="{Binding EnemyPokemon.CurLevel}" Padding="0" Margin="2 0"/>
+                                <ProgressBar Grid.Column="4" Width="260" Value="{Binding EnemyPokemon.CurHpPercent}"/>
+                                <Label Grid.Column="5" Content="{Binding EnemyPokemon.CurHpPercent}" Padding="0" Margin="5 0"/>
+                                <Label Grid.Column="6" Content="%" Padding="0"/>
                             </Grid>
-                            <Label Grid.Row="2" Content="Tackle (Normal)" Visibility="Hidden"/>
-                            <RadioButton Grid.Row="3" Content="Tackle (Normal)" Margin="45 0 0 0" IsEnabled="False"/>
-                            <RadioButton Grid.Row="4" Content="Water Gun (Water)" Margin="45 0 0 0" IsEnabled="False"/>
-                            <RadioButton Grid.Row="5" Content="Bubblebeam (Water)" Margin="45 0 0 0" IsEnabled="False"/>
-                            <RadioButton Grid.Row="6" Content="Take Down (Normal)" Margin="45 0 0 0" IsEnabled="False"/>
+                            <Label Grid.Row="2" Content="" Visibility="Hidden"/>
+                            <ItemsControl Grid.Row="3" ItemsSource="{Binding EnemyPokemon.Moves}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <RadioButton GroupName="EnemyMoves" Content="{Binding Ename}" Margin="45 0 0 0" IsEnabled="False"/>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
                         </Grid>
 
                     </Grid>

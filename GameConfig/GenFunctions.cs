@@ -8,18 +8,19 @@ using System.Threading.Tasks;
 
 namespace GameConfig
 {
-    public static class StatGenFunctions
+    public static class GenFunctions
     {
         private static int[] IVGenerator(BaseStats stats, int level)
         {
             int evSum= stats.HP[1] + stats.Attack[1] + stats.Defense[1] + stats.SpecialAttack[1] + stats.SpecialDefense[1] + stats.Speed[1];
-            int[] ivArr = new int[6];
+            int[] ivArr = new int[7];
             ivArr[0]= ((stats.HP[0] - level - 10) * 100 / level) - 2 * stats.HP[0] - Convert.ToInt32(Math.Floor(Convert.ToDecimal(evSum / 6)));
             ivArr[1]= ((stats.Attack[0] - 5) * 100 / level) - 2 * stats.Attack[0] - Convert.ToInt32(Math.Floor(Convert.ToDecimal(evSum / 6)));
             ivArr[2]= ((stats.Defense[0] - 5) * 100 / level) - 2 * stats.Defense[0] - Convert.ToInt32(Math.Floor(Convert.ToDecimal(evSum / 6)));
             ivArr[3]= ((stats.SpecialAttack[0] - 5) * 100 / level) - 2 * stats.SpecialAttack[0] - Convert.ToInt32(Math.Floor(Convert.ToDecimal(evSum / 6)));
             ivArr[4]= ((stats.SpecialDefense[0] - 5) * 100 / level) - 2 * stats.SpecialDefense[0] - Convert.ToInt32(Math.Floor(Convert.ToDecimal(evSum / 6)));
             ivArr[5]= ((stats.Speed[0] - 5) * 100 / level) - 2 * stats.Speed[0] - Convert.ToInt32(Math.Floor(Convert.ToDecimal(evSum / 6)));
+            ivArr[6] = level;
             return ivArr;
         }
         public static int[] BattleStatsGenerator(int[] battleEv, Pokemon pokemon)

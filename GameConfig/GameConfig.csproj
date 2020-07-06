@@ -51,7 +51,7 @@
     <Compile Include="Player.cs" />
     <Compile Include="Pokemon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StatGenFunctions.cs" />
+    <Compile Include="GenFunctions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Sprites\001.png" />

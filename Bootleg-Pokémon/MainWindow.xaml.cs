@@ -109,12 +109,16 @@ namespace Bootleg_Pokémon
                 evVals[i] = rnd.Next(0, 256);
                 rndEvSum += evVals[i];
             }
-            int[] stats = StatGenFunctions.BattleStatsGenerator(evVals, _gameSession.EnemyPokemon);
-            _gameSession.EnemyPokemon.Moves = StatGenFunctions.MoveList(_gameSession.EnemyPokemon.Type);
+            int[] stats = GenFunctions.BattleStatsGenerator(evVals, _gameSession.EnemyPokemon);
+            _gameSession.EnemyPokemon.CurLevel = stats[6];
+            _gameSession.EnemyPokemon.Moves = GenFunctions.MoveList(_gameSession.EnemyPokemon.Type);
             EnemyCurrentHP.Content = stats[0];
-            Slash.Visibility = Visibility.Visible;
             EnemyMaxHP.Content = stats[0];
+            _gameSession.EnemyPokemon.CurHpPercent = (Convert.ToInt32(EnemyCurrentHP.Content) / Convert.ToInt32(EnemyMaxHP.Content)) * 100;
+            EnemyCorner.Visibility = Visibility.Visible;
+            PlayerCorner.Visibility = Visibility.Visible;
             MenuBar.IsEnabled = false;
+            FightStatus.Document.Blocks.Add(new Paragraph(new Run($"Brock chose {_gameSession.EnemyPokemon.Name}")));
         }
     }
 }
