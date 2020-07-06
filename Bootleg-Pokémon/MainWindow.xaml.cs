@@ -120,5 +120,15 @@ namespace Bootleg_Pokémon
             MenuBar.IsEnabled = false;
             FightStatus.Document.Blocks.Add(new Paragraph(new Run($"Brock chose {_gameSession.EnemyPokemon.Name}")));
         }
+
+        private void Pokemon_Choose_Click(object sender, RoutedEventArgs e)
+        {
+            if (PlayerPokemon.SelectedItem != null)
+            {
+                _gameSession.CurrentPlayer.ChosenPokemon = PlayerPokemon.SelectedItem as Pokemon;
+                _gameSession.CurrentPlayer.ChosenPokemon.Moves = _gameSession.CurrentPlayer.PokemonCollection[PlayerPokemon.SelectedIndex].Moves;
+                PlayerCorner.Visibility = Visibility.Visible;
+            }
+        }
     }
 }

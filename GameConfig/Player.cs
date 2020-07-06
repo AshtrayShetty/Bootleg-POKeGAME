@@ -14,6 +14,7 @@ namespace GameConfig
         private int _money;
         private int _fights;
         private int _wins;
+        private Pokemon _chosenPokemon;
         public string Name
         {
             get => _name;
@@ -48,6 +49,15 @@ namespace GameConfig
             {
                 _wins = value;
                 OnPropertyChanged(nameof(Wins));
+            }
+        }
+        public Pokemon ChosenPokemon
+        {
+            get => _chosenPokemon;
+            set
+            {
+                _chosenPokemon = value;
+                OnPropertyChanged(nameof(ChosenPokemon));
             }
         }
         public ObservableCollection<Pokemon> PokemonCollection { get; set; } = new ObservableCollection<Pokemon>();

@@ -135,7 +135,7 @@
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="auto"/>
                             </Grid.RowDefinitions>
-                            <Image Grid.Row="0" Source="/GameConfig;component/Sprites/004.png" HorizontalAlignment="Center" Width="75" VerticalAlignment="Center"/>
+                            <Image Grid.Row="0" Source="{Binding CurrentPlayer.ChosenPokemon.Image}" HorizontalAlignment="Center" Width="75" VerticalAlignment="Center"/>
                             <Grid Grid.Row="1">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
@@ -155,9 +155,6 @@
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition Height="auto"/>
-                                <RowDefinition Height="auto"/>
-                                <RowDefinition Height="auto"/>
-                                <RowDefinition Height="auto"/>
                             </Grid.RowDefinitions>
                             <Button Grid.Row="0" Content="GO!" Width="65" HorizontalAlignment="Right" Padding="0"/>
                             <Grid Grid.Row="1">
@@ -166,18 +163,25 @@
                                     <ColumnDefinition Width="auto"/>
                                     <ColumnDefinition Width="auto"/>
                                     <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
                                 </Grid.ColumnDefinitions>
-                                <Label Grid.Column="0" Content="Charmander" Padding="0"/>
-                                <Label Grid.Column="1" Content="Level 5" Padding="0" Margin="5 0"/>
-                                <ProgressBar Grid.Column="2" Width="292.6" Value="100"/>
-                                <Label Grid.Column="3" Content="100%" Padding="0" Margin="5 0"/>
+                                <Label Grid.Column="0" Content="{Binding CurrentPlayer.ChosenPokemon.Name}" Padding="0"/>
+                                <Label Grid.Column="1" Content="Level" Padding="0" Margin="5 0"/>
+                                <Label Grid.Column="2" Content="{Binding CurrentPlayer.ChosenPokemon.CurLevel}" Padding="0" Margin="5 0"/>
+                                <ProgressBar Grid.Column="3" Width="292.6" Value="{Binding CurrentPlayer.ChosenPokemon.CurHpPercent}"/>
+                                <Label Grid.Column="4" Content="{Binding CurrentPlayer.ChosenPokemon.CurHpPercent}" Padding="0" Margin="5 0"/>
+                                <Label Grid.Column="5" Content="%" Padding="0"/>
                             </Grid>
                             <Label Grid.Row="2" Content="" Visibility="Hidden" Padding="0"/>
-                            <RadioButton Grid.Row="3" Content="Scratch (Normal)" Margin="45 0 0 0"/>
-                            <RadioButton Grid.Row="4" Content="Cut (Normal)" Margin="45 0 0 0"/>
-                            <RadioButton Grid.Row="5" Content="Ember (Fire)" Margin="45 0 0 0"/>
-                            <RadioButton Grid.Row="6" Content="Flamethrower (Fire)" Margin="45 0 0 0"/>
-                            <RadioButton Grid.Row="7" Content="Run" Margin="45 0 0 0"/>
+                            <ItemsControl Grid.Row="3" ItemsSource="{Binding CurrentPlayer.ChosenPokemon.Moves}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <RadioButton GroupName="PlayerMoves" Content="{Binding Ename}" Margin="45 0 0 0"/>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                            <RadioButton Grid.Row="4" Content="Run" Margin="45 0 0 0"/>
                         </Grid>
                         
                     </Grid>
@@ -264,6 +268,7 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="0.65*"/>
                     <RowDefinition Height="1.5*"/>
+                    <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
                 
                 <Grid Grid.Row="0">
@@ -358,9 +363,9 @@
                     <Label Grid.Row="5" Grid.Column="0" Content="Super Potions:" Padding="0"/>
                     <Label Grid.Row="5" Grid.Column="1" Content="0" Padding="0"/>
                 </Grid>
-                
+
                 <Grid Grid.Row="2">
-                    <ListBox ItemsSource="{Binding CurrentPlayer.PokemonCollection}" ItemTemplate="{StaticResource PokemonList}">
+                    <ListBox ItemsSource="{Binding CurrentPlayer.PokemonCollection}" ItemTemplate="{StaticResource PokemonList}" x:Name="PlayerPokemon">
                         <ListBox.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <VirtualizingStackPanel IsItemsHost="True" Orientation="Horizontal" Margin="0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
@@ -368,7 +373,7 @@
                         </ListBox.ItemsPanel>
                     </ListBox>
                 </Grid>
-                
+                <Button Grid.Row="4" Content="Choose Pokémon" Padding="0" Click="Pokemon_Choose_Click"/>
             </Grid>
         </Grid>
     </Grid>

@@ -53,6 +53,7 @@ namespace Bootleg_Pokémon
                     Session.Losses = 0;
                     Session.WinPercentage = 0.0;
                     Session.CurrentPlayer.PokemonCollection.Add(Session.AllPokemon.First(p => p.Id == (2 * StarterPokemon.SelectedIndex) + StarterPokemon.SelectedIndex + 1));
+                    Session.CurrentPlayer.PokemonCollection[0].CurLevel = Session.CurrentPlayer.PokemonCollection[0].BaseLevel;
                     Session.CurrentPlayer.PokemonCollection[0].Moves = GenFunctions.MoveList(Session.CurrentPlayer.PokemonCollection[0].Type);
                     // MessageBox.Show(Session.CurrentPlayer.PokemonCollection[0].Moves[0].Ename);
                 }
