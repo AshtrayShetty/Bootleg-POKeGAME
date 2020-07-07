@@ -9,13 +9,13 @@ namespace GameConfig
 {
     public class BaseStats : INotifyPropertyChanged 
     {
-        private int[] _hp;
-        private int[] _attack;
-        private int[] _defense;
-        private int[] _specialAttack;
-        private int[] _specialDefense;
-        private int[] _speed;
-        public int[] HP
+        private List<int> _hp;
+        private List<int> _attack;
+        private List<int> _defense;
+        private List<int> _specialAttack;
+        private List<int> _specialDefense;
+        private List<int> _speed;
+        public List<int> HP
         {
             get => _hp;
             set
@@ -24,7 +24,7 @@ namespace GameConfig
                 OnPropertyChanged(nameof(HP));
             }
         }
-        public int[] Attack
+        public List<int> Attack
         {
             get => _attack;
             set
@@ -33,7 +33,7 @@ namespace GameConfig
                 OnPropertyChanged(nameof(Attack));
             }
         }
-        public int[] Defense
+        public List<int> Defense
         {
             get => _defense;
             set
@@ -42,7 +42,7 @@ namespace GameConfig
                 OnPropertyChanged(nameof(Defense));
             }
         }
-        public int[] SpecialAttack
+        public List<int> SpecialAttack
         {
             get => _specialAttack;
             set
@@ -51,7 +51,7 @@ namespace GameConfig
                 OnPropertyChanged(nameof(SpecialAttack));
             }
         }
-        public int[] SpecialDefense
+        public List<int> SpecialDefense
         {
             get => _specialDefense;
             set
@@ -60,7 +60,7 @@ namespace GameConfig
                 OnPropertyChanged(nameof(SpecialDefense));
             }
         }
-        public int[] Speed
+        public List<int> Speed
         {
             get => _speed;
             set

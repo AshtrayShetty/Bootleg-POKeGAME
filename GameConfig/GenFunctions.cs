@@ -23,43 +23,64 @@ namespace GameConfig
             ivArr[6] = level;
             return ivArr;
         }
-        public static int[] BattleStatsGenerator(int[] battleEv, Pokemon pokemon)
+        public static void BattleStatsGenerator(int[] battleEv, Pokemon pokemon)
         {
             Random rnd = new Random();
-            int level = rnd.Next(pokemon.BaseLevel, pokemon.EvolutionLevel);
-            int[] battleStats = IVGenerator(pokemon.Base, level);
-            battleStats[0]= Convert.ToInt32(
+
+            if (pokemon.CurLevel == 0) { pokemon.CurLevel = rnd.Next(pokemon.BaseLevel, pokemon.EvolutionLevel); }
+
+            int[] battleStats = IVGenerator(pokemon.Base, pokemon.CurLevel);
+
+            pokemon.Base.HP.Add(
+                Convert.ToInt32(
                     Math.Floor(
-                        ((pokemon.Base.HP[0] + battleStats[0]) * 2 + Math.Floor(Math.Ceiling(Math.Sqrt(battleEv[0])) / 4)) * level / 100
-                    ) + level + 10
-                );
-            battleStats[1] = Convert.ToInt32(
+                        ((pokemon.Base.HP[0] + battleStats[0]) * 2 + Math.Floor(Math.Ceiling(Math.Sqrt(battleEv[0])) / 4)) * pokemon.CurLevel / 100
+                    ) + pokemon.CurLevel + 10
+                )
+            );
+
+            pokemon.Base.Attack.Add(
+                Convert.ToInt32(
                     Math.Floor(
-                        ((pokemon.Base.Attack[0] + battleStats[1]) * 2 + Math.Floor(Math.Ceiling(Math.Sqrt(battleEv[1])) / 4)) * level / 100
+                        ((pokemon.Base.Attack[0] + battleStats[1]) * 2 + Math.Floor(Math.Ceiling(Math.Sqrt(battleEv[1])) / 4)) * pokemon.CurLevel / 100
                     ) + 5
-                );
-            battleStats[2] = Convert.ToInt32(
+                )
+            );
+
+            pokemon.Base.Defense.Add(
+                Convert.ToInt32(
                     Math.Floor(
-                        ((pokemon.Base.Defense[0] + battleStats[2]) * 2 + Math.Floor(Math.Ceiling(Math.Sqrt(battleEv[2])) / 4)) * level / 100
+                        ((pokemon.Base.Defense[0] + battleStats[2]) * 2 + Math.Floor(Math.Ceiling(Math.Sqrt(battleEv[2])) / 4)) * pokemon.CurLevel / 100
                     ) + 5
-                );
-            battleStats[3] = Convert.ToInt32(
+                )
+            );
+
+            pokemon.Base.SpecialAttack.Add(
+                Convert.ToInt32(
                     Math.Floor(
-                        ((pokemon.Base.SpecialAttack[0] + battleStats[3]) * 2 + Math.Floor(Math.Ceiling(Math.Sqrt(battleEv[3])) / 4)) * level / 100
+                        ((pokemon.Base.SpecialAttack[0] + battleStats[3]) * 2 + Math.Floor(Math.Ceiling(Math.Sqrt(battleEv[3])) / 4)) * pokemon.CurLevel / 100
                     ) + 5
-                );
-            battleStats[4] = Convert.ToInt32(
+                )
+            );
+
+            pokemon.Base.SpecialDefense.Add(
+                Convert.ToInt32(
                     Math.Floor(
-                        ((pokemon.Base.SpecialDefense[0] + battleStats[4]) * 2 + Math.Floor(Math.Ceiling(Math.Sqrt(battleEv[4])) / 4)) * level / 100
+                        ((pokemon.Base.SpecialDefense[0] + battleStats[4]) * 2 + Math.Floor(Math.Ceiling(Math.Sqrt(battleEv[4])) / 4)) * pokemon.CurLevel / 100
                     ) + 5
-                );
-            battleStats[5] = Convert.ToInt32(
+                )
+            );
+
+            pokemon.Base.Speed.Add(
+                Convert.ToInt32(
                     Math.Floor(
-                        ((pokemon.Base.Speed[0] + battleStats[5]) * 2 + Math.Floor(Math.Ceiling(Math.Sqrt(battleEv[5])) / 4)) * level / 100
+                        ((pokemon.Base.Speed[0] + battleStats[5]) * 2 + Math.Floor(Math.Ceiling(Math.Sqrt(battleEv[5])) / 4)) * pokemon.CurLevel / 100
                     ) + 5
-                );
-            return battleStats;
+                )
+            );
+
         }
+
         public static List<Move> MoveList(string[] type)
         {
             List<Move> moveList = new List<Move>();
@@ -68,11 +89,12 @@ namespace GameConfig
                 var json = JsonConvert.DeserializeObject<List<Move>>(movesJson.ReadToEnd());
                 var moves = json.FindAll(move => type.Contains(move.Type));
                 Random rnd = new Random();
+
                 for (int i = 0; i < 4; ++i)
                 {
                     int index = rnd.Next(0, moves.Count);
                     Move move = moves[index];
-                    if (moveList.Any(m => m.Id == move.Id))
+                    if (moveList.Any(m => m.Id == move.Id) && (move.Power == -1 || move.Accuracy == -1))
                     {
                         i -= 1;
                         continue;

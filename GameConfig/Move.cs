@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GameConfig
 {
-    public class Move
+    public class Move : INotifyPropertyChanged
     {
         public int Accuracy { get; set; }
         public string Category { get; set; }
@@ -16,5 +16,8 @@ namespace GameConfig
         public int Power { get; set; }
         public int PP { get; set; }
         public string Type { get; set; }
+        public bool IsSelected { get; set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

@@ -2320,7 +2320,7 @@
       "Normal"
     ],
     "Base": {
-      "HP": [ 60, 0 ],
+      "HP": [ 60,  ],
       "Attack": [ 48, 0 ],
       "Defense": [ 45, 0 ],
       "SpecialAttack": [ 43, 0 ],

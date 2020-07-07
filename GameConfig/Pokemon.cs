@@ -22,9 +22,10 @@ namespace GameConfig
         private string _image;
         private string _findType;
         private int _curLevel;
-        private int _maxHp;
         private int _curHp;
+        private int _maxHp;
         private int _curHpPercent;
+        private int _curXp;
         private List<Move> _moves;
 
         public int Id
@@ -94,6 +95,36 @@ namespace GameConfig
             {
                 _growth = value;
                 OnPropertyChanged(nameof(Growth));
+
+                switch (Growth)
+                {
+                    case "fluctuating":
+                        MAX_XP = 1640000;
+                        break;
+
+                    case "slow":
+                        MAX_XP = 1250000;
+                        break;
+
+                    case "medium slow":
+                        MAX_XP = 1059860;
+                        break;
+
+                    case "medium fast":
+                        MAX_XP = 1000000;
+                        break;
+
+                    case "fast":
+                        MAX_XP = 800000;
+                        break;
+
+                    case "erratic":
+                        MAX_XP = 600000;
+                        break;
+
+                    default:
+                        break;
+                }
             }
         }
 
@@ -157,16 +188,6 @@ namespace GameConfig
             }
         }
 
-        public int MaxHp
-        {
-            get => _maxHp;
-            set
-            {
-                _maxHp = value;
-                OnPropertyChanged(nameof(MaxHp));
-            }
-        }
-
         public int CurHp
         {
             get => _curHp;
@@ -174,6 +195,16 @@ namespace GameConfig
             {
                 _curHp = value;
                 OnPropertyChanged(nameof(CurHp));
+            }
+        }
+
+        public int MaxHp
+        {
+            get => _maxHp;
+            set
+            {
+                _maxHp = value;
+                OnPropertyChanged(nameof(MaxHp));
             }
         }
 
@@ -187,6 +218,16 @@ namespace GameConfig
             }
         }
 
+        public int CurXp
+        {
+            get => _curXp;
+            set
+            {
+                _curXp = value;
+                OnPropertyChanged(nameof(CurXp));
+            }
+        }
+
         public List<Move> Moves
         {
             get => _moves;
@@ -196,6 +237,8 @@ namespace GameConfig
                 OnPropertyChanged(nameof(Moves));
             }
         }
+
+        public int MAX_XP { get; private set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

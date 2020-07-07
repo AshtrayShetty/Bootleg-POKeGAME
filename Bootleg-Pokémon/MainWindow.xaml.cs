@@ -33,6 +33,7 @@ namespace Bootleg_Pokémon
             DataContext = _gameSession;
             _gameSession.IsGameCreated = false;
             _gameSession.IsBattle = false;
+            _gameSession.Event += RaiseBattleMessages;
             using(StreamReader pokedexJson = new StreamReader("..\\..\\..\\pokedex.json"))
             {
                 var json = pokedexJson.ReadToEnd();
@@ -40,7 +41,7 @@ namespace Bootleg_Pokémon
                 // MessageBox.Show(_gameSession.AllPokemon.Count().ToString());
             }
         }
-        
+
         private void New_Click(object sender, RoutedEventArgs e)
         {
             NewGame newGame = new NewGame();
@@ -102,6 +103,7 @@ namespace Bootleg_Pokémon
         {
             _gameSession.IsBattle = true;
             _gameSession.EnemyPokemon = _gameSession.AllPokemon.First(p => p.Id == 74);
+            _gameSession.EnemyPokemon.CurLevel = 0;
             _gameSession.GeneratePokemonStats(_gameSession.EnemyPokemon);
             EnemyCorner.Visibility = Visibility.Visible;
             MenuBar.IsEnabled = false;
@@ -110,12 +112,33 @@ namespace Bootleg_Pokémon
 
         private void Pokemon_Choose_Click(object sender, RoutedEventArgs e)
         {
-            if (PlayerPokemon.SelectedItem != null && _gameSession.IsBattle)
+            if (PlayerPokemon.SelectedItem != null)
             {
                 _gameSession.CurrentPlayer.ChosenPokemon = PlayerPokemon.SelectedItem as Pokemon;
-                _gameSession.CurrentPlayer.ChosenPokemon.Moves = _gameSession.CurrentPlayer.PokemonCollection[PlayerPokemon.SelectedIndex].Moves;
-                PlayerCorner.Visibility = Visibility.Visible;
+
+                if (_gameSession.IsBattle)
+                {
+                    _gameSession.CurrentPlayer.ChosenPokemon.Moves = _gameSession.CurrentPlayer.PokemonCollection[PlayerPokemon.SelectedIndex].Moves;
+                    PlayerCorner.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    MessageBox.Show($"{_gameSession.CurrentPlayer.ChosenPokemon.Name}: Level {_gameSession.CurrentPlayer.ChosenPokemon.CurLevel}");
+                }
             }
+        }
+
+        public Move PlayerMoveSelected => _gameSession.CurrentPlayer.ChosenPokemon.Moves.FirstOrDefault(m => m.IsSelected);
+
+        private void Move_Click(object sender, RoutedEventArgs e)
+        {
+            _gameSession.MoveOutcome(PlayerMoveSelected);
+        }
+
+        private void RaiseBattleMessages(object sender, GameMessageEventArgs e)
+        {
+            FightStatus.Document.Blocks.Add(new Paragraph(new Run(e.Message)));
+            FightStatus.ScrollToEnd();
         }
     }
 }
