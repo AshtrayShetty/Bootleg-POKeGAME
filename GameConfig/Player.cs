@@ -86,6 +86,9 @@ namespace GameConfig
                 OnPropertyChanged(nameof(ChosenPokemon));
             }
         }
+
+        public List<string> BadgeCollection { get; set; } = new List<string>();
+
         public ObservableCollection<Pokemon> PokemonCollection { get; set; } = new ObservableCollection<Pokemon>();
 
         public event PropertyChangedEventHandler PropertyChanged;

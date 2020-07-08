@@ -138,9 +138,6 @@ namespace GameConfig
 
             CurrentPlayer.Wins += 1;
             CurrentPlayer.WinPercentage = Math.Round((double)CurrentPlayer.Wins * 100 / (double)CurrentPlayer.Fights, 2);
-
-            IsBattle = false;
-
         }
 
         public void OpponentWon()
@@ -161,7 +158,6 @@ namespace GameConfig
             CurrentPlayer.PokemonCollection.First(p => p.Id == CurrentPlayer.ChosenPokemon.Id).Base = CurrentPlayer.ChosenPokemon.Base;
             CurrentPlayer.Losses += 1;
             CurrentPlayer.WinPercentage = CurrentPlayer.Wins * 100 / CurrentPlayer.Fights;
-            IsBattle = false;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

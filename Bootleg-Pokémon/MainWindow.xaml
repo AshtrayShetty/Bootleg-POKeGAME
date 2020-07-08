@@ -156,7 +156,14 @@
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition Height="auto"/>
                             </Grid.RowDefinitions>
-                            <Button Grid.Row="0" Content="GO!" Width="65" HorizontalAlignment="Right" Padding="0" Click="Move_Click"/>
+                            <Grid Grid.Row="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Button Grid.Column="0" x:Name="EndFight" Content="End Fight" Width="65" HorizontalAlignment="Right" Margin="0 0 15 0" Visibility="Hidden" Click="End_Fight_Click"/>
+                                <Button Grid.Column="1" Content="GO!" Width="65" HorizontalAlignment="Right" Padding="0" Click="Move_Click"/>
+                            </Grid>
                             <Grid Grid.Row="1">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="auto"/>
@@ -181,12 +188,12 @@
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>
                             </ItemsControl>
-                            <RadioButton Grid.Row="4" Content="Run" Margin="45 0 0 0"/>
+                            <RadioButton Grid.Row="4" GroupName="PlayerMoves" Content="Run" Margin="45 0 0 0"/>
                         </Grid>
                         
                     </Grid>
 
-                    <Grid Grid.Row="1"  x:Name="EnemyCorner" Visibility="Hidden">
+                    <Grid Grid.Row="1"  x:Name="EnemyCorner" Visibility="{Binding IsBattle, Converter={StaticResource BooleanToVisibility}}">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="3*"/>

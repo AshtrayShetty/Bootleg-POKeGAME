@@ -104,6 +104,7 @@ namespace Bootleg_Pokémon
             _gameSession.IsBattle = true;
             _gameSession.EnemyPokemon = _gameSession.AllPokemon.First(p => p.Id == 74);
             _gameSession.EnemyPokemon.CurLevel = 0;
+            _gameSession.EnemyPokemon.Category = "Trainer";
             _gameSession.GeneratePokemonStats(_gameSession.EnemyPokemon);
             EnemyCorner.Visibility = Visibility.Visible;
             MenuBar.IsEnabled = false;
@@ -112,7 +113,7 @@ namespace Bootleg_Pokémon
 
         private void Pokemon_Choose_Click(object sender, RoutedEventArgs e)
         {
-            if (PlayerPokemon.SelectedItem != null)
+            if (PlayerPokemon.SelectedItem != null && _gameSession.CurrentPlayer.ChosenPokemon == null)
             {
                 _gameSession.CurrentPlayer.ChosenPokemon = PlayerPokemon.SelectedItem as Pokemon;
 
@@ -121,6 +122,7 @@ namespace Bootleg_Pokémon
                     _gameSession.CurrentPlayer.ChosenPokemon.Moves = _gameSession.CurrentPlayer.PokemonCollection[PlayerPokemon.SelectedIndex].Moves;
                     PlayerCorner.Visibility = Visibility.Visible;
                     _gameSession.CurrentPlayer.Fights += 1;
+                    FightStatus.Document.Blocks.Add(new Paragraph(new Run($"You chose {_gameSession.CurrentPlayer.ChosenPokemon.Name}")));
                 }
                 else
                 {
@@ -140,6 +142,17 @@ namespace Bootleg_Pokémon
                 if (_gameSession.EnemyPokemon.CurHp <= 0)
                 {
                     _gameSession.PlayerWon();
+
+                    if (_gameSession.EnemyPokemon.Category.Equals("Trainer"))
+                    {
+                        if (_gameSession.EnemyPokemon.Id == 74 && !_gameSession.CurrentPlayer.BadgeCollection.Any(b => b.Equals("Brock")))
+                        {
+                            MessageBox.Show("You earned the ground badge");
+                            _gameSession.CurrentPlayer.BadgeCollection.Add("Brock");
+                        }
+                    }
+
+                    EndFight.Visibility = Visibility.Visible;
                     return;
                 }
 
@@ -149,9 +162,25 @@ namespace Bootleg_Pokémon
                 if (_gameSession.CurrentPlayer.ChosenPokemon.CurHp <= 0)
                 {
                     _gameSession.OpponentWon();
+                    EndFight.Visibility = Visibility.Visible;
                     return;
                 }
             }
+        }
+
+        private void End_Fight_Click(object sender, RoutedEventArgs e)
+        {
+            _gameSession.EnemyPokemon = null;
+            _gameSession.CurrentPlayer.PokemonCollection.First(p => p.Id == _gameSession.CurrentPlayer.ChosenPokemon.Id).CurHp = _gameSession.CurrentPlayer.ChosenPokemon.MaxHp;
+            _gameSession.CurrentPlayer.PokemonCollection.First(p => p.Id == _gameSession.CurrentPlayer.ChosenPokemon.Id).CurHpPercent = 100;
+            _gameSession.CurrentPlayer.ChosenPokemon = null;
+
+            PlayerCorner.Visibility = Visibility.Hidden;
+            EnemyCorner.Visibility = Visibility.Hidden;
+            EndFight.Visibility = Visibility.Hidden;
+            _gameSession.IsBattle = false;
+            MenuBar.IsEnabled = true;
+            FightStatus.Document.Blocks.Clear();
         }
 
         private void RaiseBattleMessages(object sender, GameMessageEventArgs e)

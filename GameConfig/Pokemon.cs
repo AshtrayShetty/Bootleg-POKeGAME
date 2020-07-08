@@ -26,6 +26,7 @@ namespace GameConfig
         private int _maxHp;
         private int _curHpPercent;
         private int _curXp;
+        private string _category;
         private List<Move> _moves;
 
         public int Id
@@ -235,6 +236,16 @@ namespace GameConfig
             {
                 _moves = value;
                 OnPropertyChanged(nameof(Moves));
+            }
+        }
+
+        public string Category
+        {
+            get => _category;
+            set
+            {
+                _category = value;
+                OnPropertyChanged(nameof(Category));
             }
         }
 
