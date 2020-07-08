@@ -32,8 +32,8 @@ namespace Bootleg_Pokémon
             InitializeComponent();
             DataContext = _gameSession;
             _gameSession.IsGameCreated = false;
-            _gameSession.IsBattle = false;
             _gameSession.Event += RaiseBattleMessages;
+
             using(StreamReader pokedexJson = new StreamReader("..\\..\\..\\pokedex.json"))
             {
                 var json = pokedexJson.ReadToEnd();
@@ -99,16 +99,26 @@ namespace Bootleg_Pokémon
             pokedex.Show();
         }
 
-        private void Brock_Click(object sender, RoutedEventArgs e)
+        private void InitializeOpponent(int id, string category)
         {
-            _gameSession.IsBattle = true;
-            _gameSession.EnemyPokemon = _gameSession.AllPokemon.First(p => p.Id == 74);
+            _gameSession.EnemyPokemon = _gameSession.AllPokemon.First(p => p.Id == id);
             _gameSession.EnemyPokemon.CurLevel = 0;
-            _gameSession.EnemyPokemon.Category = "Trainer";
+            _gameSession.EnemyPokemon.Category = category;
             _gameSession.GeneratePokemonStats(_gameSession.EnemyPokemon);
             EnemyCorner.Visibility = Visibility.Visible;
             MenuBar.IsEnabled = false;
+        }
+
+        private void Brock_Click(object sender, RoutedEventArgs e)
+        {
+            InitializeOpponent(74, "Trainer");
             FightStatus.Document.Blocks.Add(new Paragraph(new Run($"Brock chose {_gameSession.EnemyPokemon.Name}")));
+        }
+
+        private void Misty_Click(object sender, RoutedEventArgs e)
+        {
+            InitializeOpponent(120, "Trainer");
+            FightStatus.Document.Blocks.Add(new Paragraph(new Run($"Misty chose {_gameSession.EnemyPokemon.Name}")));
         }
 
         private void Pokemon_Choose_Click(object sender, RoutedEventArgs e)
@@ -147,8 +157,16 @@ namespace Bootleg_Pokémon
                     {
                         if (_gameSession.EnemyPokemon.Id == 74 && !_gameSession.CurrentPlayer.BadgeCollection.Any(b => b.Equals("Brock")))
                         {
-                            MessageBox.Show("You earned the ground badge");
+                            MessageBox.Show("You earned the BoulderBadge");
                             _gameSession.CurrentPlayer.BadgeCollection.Add("Brock");
+                            Misty.IsEnabled = true;
+                        }
+
+                        if (_gameSession.EnemyPokemon.Id == 120 && !_gameSession.CurrentPlayer.BadgeCollection.Any(b => b.Equals("Misty")))
+                        {
+                            MessageBox.Show("You earned the CascadeBadge");
+                            _gameSession.CurrentPlayer.BadgeCollection.Add("Misty");
+                            Surge.IsEnabled = true;
                         }
                     }
 
@@ -178,7 +196,6 @@ namespace Bootleg_Pokémon
             PlayerCorner.Visibility = Visibility.Hidden;
             EnemyCorner.Visibility = Visibility.Hidden;
             EndFight.Visibility = Visibility.Hidden;
-            _gameSession.IsBattle = false;
             MenuBar.IsEnabled = true;
             FightStatus.Document.Blocks.Clear();
         }

@@ -67,7 +67,7 @@
                         </MenuItem>
                         <MenuItem Header="Kanto Gym Leaders">
                             <MenuItem Header="Brock" x:Name="Brock" Click="Brock_Click"/>
-                            <MenuItem Header="Misty" x:Name="Misty" IsEnabled="False"/>
+                            <MenuItem Header="Misty" x:Name="Misty" IsEnabled="False" Click="Misty_Click"/>
                             <MenuItem Header="Lt.Surge" x:Name="Surge" IsEnabled="False"/>
                             <MenuItem Header="Erika" x:Name="Erika" IsEnabled="False"/>
                             <MenuItem Header="Sabrina" x:Name="Sabrina" IsEnabled="False"/>
@@ -193,7 +193,7 @@
                         
                     </Grid>
 
-                    <Grid Grid.Row="1"  x:Name="EnemyCorner" Visibility="{Binding IsBattle, Converter={StaticResource BooleanToVisibility}}">
+                    <Grid Grid.Row="1"  x:Name="EnemyCorner" Visibility="Hidden">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="3*"/>

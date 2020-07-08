@@ -13,7 +13,6 @@ namespace GameConfig
         private Pokemon _enemy = new Pokemon();
         private bool _isGameCreated;
         private string _pokedexImage;
-        private bool _isBattle;
 
         public Player CurrentPlayer
         {
@@ -42,16 +41,6 @@ namespace GameConfig
             {
                 _isGameCreated = value;
                 OnPropertyChanged(nameof(IsGameCreated));
-            }
-        }
-
-        public bool IsBattle
-        {
-            get => _isBattle;
-            set
-            {
-                _isBattle = value;
-                OnPropertyChanged(nameof(IsBattle));
             }
         }
 
@@ -96,6 +85,8 @@ namespace GameConfig
 
             if (IsBattle)
             {
+                RaiseMessage($"{attackingPokemon.Name} used {move.Ename}");
+
                 if (chanceHit >= 1 || chanceHit > chanceMiss)
                 {
                     double attDefRatio = move.Category == "Physical" ? ((double)PokemonStats.Attack[2] / (double)PokemonStats.Defense[2]) : ((double)PokemonStats.SpecialAttack[2] / (double)PokemonStats.SpecialDefense[2]);
@@ -107,7 +98,6 @@ namespace GameConfig
                     defendingPokemon.CurHp -= damage;
                     defendingPokemon.CurHpPercent = defendingPokemon.CurHp * 100 / defendingPokemon.MaxHp;
 
-                    RaiseMessage($"{attackingPokemon.Name} used {move.Ename}");
                     if (critical == 2) { RaiseMessage("It's a critical hit!!!"); }
                     RaiseMessage($"{defendingPokemon.Name} took {damage} points of damage");
                 }
@@ -159,6 +149,8 @@ namespace GameConfig
             CurrentPlayer.Losses += 1;
             CurrentPlayer.WinPercentage = CurrentPlayer.Wins * 100 / CurrentPlayer.Fights;
         }
+
+        public bool IsBattle => EnemyPokemon != null && (CurrentPlayer.ChosenPokemon.CurHp > 0 && EnemyPokemon.CurHp > 0) ? true : false;
 
         public event PropertyChangedEventHandler PropertyChanged;
         public event EventHandler<GameMessageEventArgs> Event;
