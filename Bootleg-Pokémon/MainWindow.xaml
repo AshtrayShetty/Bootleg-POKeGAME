@@ -297,7 +297,7 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Label Grid.Column="0" Content="{Binding CurrentPlayer.Money}" Padding="0"/>
-                        <Label Grid.Column="1" Content="Y" Padding="0 0 10 0" HorizontalAlignment="Right"/>
+                        <Label Grid.Column="1" Content="¥" Padding="0 0 10 0" HorizontalAlignment="Right"/>
                     </Grid>
                     
                     <Label Grid.Row="2" Grid.Column="0" Content="Fights:" Padding="0"/>
@@ -307,7 +307,7 @@
                     <Label Grid.Row="4" Grid.Column="0" Content="Catches:" Padding="0"/>
                     <Label Grid.Row="4" Grid.Column="1" Content="{Binding CurrentPlayer.PokemonCollection.Count}" Padding="0"/>
                     <Label Grid.Row="5" Grid.Column="0" Content="Losses/Flees:" Padding="0"/>
-                    <Label Grid.Row="5" Grid.Column="1" Content="{Binding Losses}" Padding="0"/>
+                    <Label Grid.Row="5" Grid.Column="1" Content="{Binding CurrentPlayer.Losses}" Padding="0"/>
                     <Label Grid.Row="6" Grid.Column="0" Content="Win Percentage:" Padding="0"/>
 
                     <Grid Grid.Row="6" Grid.Column="1">
@@ -315,7 +315,7 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0" Content="{Binding WinPercentage}" Padding="0"/>
+                        <Label Grid.Column="0" Content="{Binding CurrentPlayer.WinPercentage}" Padding="0"/>
                         <Label Grid.Column="1" Content="%" Padding="0 0 10 0" HorizontalAlignment="Right"/>
                     </Grid>
 

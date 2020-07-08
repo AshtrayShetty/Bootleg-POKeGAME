@@ -53,8 +53,8 @@ namespace Bootleg_Pokémon
                 {
                     Close();
                     Session.IsGameCreated = true;
-                    Session.Losses = 0;
-                    Session.WinPercentage = 0.0;
+                    Session.CurrentPlayer.Losses = 0;
+                    Session.CurrentPlayer.WinPercentage = 0.0;
 
                     Session.CurrentPlayer.PokemonCollection.Add(
                         Session.AllPokemon.First(

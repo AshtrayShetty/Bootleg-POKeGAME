@@ -60,13 +60,13 @@ namespace Bootleg_Pokémon
                 _gameSession.CurrentPlayer.Fights = int.Parse(data[1].Substring(data[1].IndexOf(':') + 2));
                 _gameSession.CurrentPlayer.Wins = int.Parse(data[2].Substring(data[2].IndexOf(':') + 2));
                 _gameSession.IsGameCreated = true;
-                _gameSession.Losses = _gameSession.CurrentPlayer.Fights - _gameSession.CurrentPlayer.Wins;
+                _gameSession.CurrentPlayer.Losses = _gameSession.CurrentPlayer.Fights - _gameSession.CurrentPlayer.Wins;
 
                 if (_gameSession.CurrentPlayer.Fights != 0)
                 {
-                    _gameSession.WinPercentage = Math.Round(Convert.ToDouble(_gameSession.CurrentPlayer.Wins) * 100.0 / Convert.ToDouble(_gameSession.CurrentPlayer.Fights), 2);
+                    _gameSession.CurrentPlayer.WinPercentage = Math.Round(Convert.ToDouble(_gameSession.CurrentPlayer.Wins) * 100.0 / Convert.ToDouble(_gameSession.CurrentPlayer.Fights), 2);
                 }
-                else { _gameSession.WinPercentage = 0.0; }
+                else { _gameSession.CurrentPlayer.WinPercentage = 0.0; }
             }
         }
 
@@ -120,6 +120,7 @@ namespace Bootleg_Pokémon
                 {
                     _gameSession.CurrentPlayer.ChosenPokemon.Moves = _gameSession.CurrentPlayer.PokemonCollection[PlayerPokemon.SelectedIndex].Moves;
                     PlayerCorner.Visibility = Visibility.Visible;
+                    _gameSession.CurrentPlayer.Fights += 1;
                 }
                 else
                 {
@@ -132,7 +133,25 @@ namespace Bootleg_Pokémon
 
         private void Move_Click(object sender, RoutedEventArgs e)
         {
-            _gameSession.MoveOutcome(PlayerMoveSelected);
+            if (_gameSession.IsBattle && PlayerMoveSelected != null)
+            {
+                _gameSession.MoveOutcome(PlayerMoveSelected, _gameSession.CurrentPlayer.ChosenPokemon, _gameSession.EnemyPokemon);
+
+                if (_gameSession.EnemyPokemon.CurHp <= 0)
+                {
+                    _gameSession.PlayerWon();
+                    return;
+                }
+
+                Random rnd = new Random();
+                _gameSession.MoveOutcome(_gameSession.EnemyPokemon.Moves[rnd.Next(0, 4)], _gameSession.EnemyPokemon, _gameSession.CurrentPlayer.ChosenPokemon);
+
+                if (_gameSession.CurrentPlayer.ChosenPokemon.CurHp <= 0)
+                {
+                    _gameSession.OpponentWon();
+                    return;
+                }
+            }
         }
 
         private void RaiseBattleMessages(object sender, GameMessageEventArgs e)

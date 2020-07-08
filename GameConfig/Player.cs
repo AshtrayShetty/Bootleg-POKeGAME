@@ -14,7 +14,10 @@ namespace GameConfig
         private int _money;
         private int _fights;
         private int _wins;
+        private int _losses;
+        private double _winPercentage;
         private Pokemon _chosenPokemon;
+
         public string Name
         {
             get => _name;
@@ -24,6 +27,7 @@ namespace GameConfig
                 OnPropertyChanged(nameof(Name));
             }
         }
+
         public int Money
         {
             get => _money;
@@ -33,6 +37,7 @@ namespace GameConfig
                 OnPropertyChanged(nameof(Money));
             }
         }
+
         public int Fights
         {
             get => _fights;
@@ -42,6 +47,7 @@ namespace GameConfig
                 OnPropertyChanged(nameof(Fights));
             }
         }
+
         public int Wins
         {
             get => _wins;
@@ -51,6 +57,26 @@ namespace GameConfig
                 OnPropertyChanged(nameof(Wins));
             }
         }
+
+        public int Losses
+        {
+            get => _losses;
+            set
+            {
+                _losses = value;
+                OnPropertyChanged(nameof(Losses));
+            }
+        }
+        public double WinPercentage
+        {
+            get => _winPercentage;
+            set
+            {
+                _winPercentage = value;
+                OnPropertyChanged(nameof(WinPercentage));
+            }
+        }
+
         public Pokemon ChosenPokemon
         {
             get => _chosenPokemon;
