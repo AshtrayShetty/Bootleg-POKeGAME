@@ -64,21 +64,25 @@ namespace GameConfig
 
             for (int i = 0; i < 6; ++i)
             {
-                if (rndEvSum > 510) { break; }
+                if (rndEvSum > 510) { evVals[i] = 0; continue; }
                 evVals[i] = rnd.Next(0, 256);
                 rndEvSum += evVals[i];
             }
 
+            pokemon.Base.HP.Add(evVals[0]);
+            pokemon.Base.Attack.Add(evVals[1]);
+            pokemon.Base.Defense.Add(evVals[2]);
+            pokemon.Base.SpecialAttack.Add(evVals[3]);
+            pokemon.Base.SpecialDefense.Add(evVals[4]);
+            pokemon.Base.Speed.Add(evVals[5]);
+
             GenFunctions.BattleStatsGenerator(evVals, pokemon);
             pokemon.Moves = GenFunctions.MoveList(pokemon.Type);
-            pokemon.MaxHp = pokemon.Base.HP[2];
-            pokemon.CurHp = pokemon.MaxHp;
-            pokemon.CurHpPercent = pokemon.CurHp * 100 / pokemon.MaxHp;
         }
 
         public void MoveOutcome(Move move, Pokemon attackingPokemon, Pokemon defendingPokemon)
         {
-            double chanceHit = (double)move.Accuracy / (double)defendingPokemon.Base.Speed[2];
+            double chanceHit = (double)move.Accuracy / (double)defendingPokemon.Base.Speed[3];
             Random rnd = new Random();
             double chanceMiss = rnd.NextDouble();
             BaseStats PokemonStats = attackingPokemon.Base;
@@ -89,7 +93,7 @@ namespace GameConfig
 
                 if (chanceHit >= 1 || chanceHit > chanceMiss)
                 {
-                    double attDefRatio = move.Category == "Physical" ? ((double)PokemonStats.Attack[2] / (double)PokemonStats.Defense[2]) : ((double)PokemonStats.SpecialAttack[2] / (double)PokemonStats.SpecialDefense[2]);
+                    double attDefRatio = move.Category == "Physical" ? ((double)PokemonStats.Attack[3] / (double)PokemonStats.Defense[3]) : ((double)PokemonStats.SpecialAttack[3] / (double)PokemonStats.SpecialDefense[3]);
                     double probCritHit = (double)PokemonStats.Speed[0] / 256;
                     double critical = rnd.NextDouble() < probCritHit ? 2 : 1;
                     double STAB = defendingPokemon.Type.Any(m => m == move.Type) ? 1.5 : 1;
@@ -117,13 +121,10 @@ namespace GameConfig
             CurrentPlayer.Money += moneyEarned;
             RaiseMessage($"\nYou earned {moneyEarned}¥");
 
-            double term = Math.Pow(
-                (2 * Convert.ToDouble(EnemyPokemon.CurLevel) + 10) / (Convert.ToDouble(EnemyPokemon.CurLevel + CurrentPlayer.ChosenPokemon.CurLevel) + 10),
-                2.5
-            );
+            double a = EnemyPokemon.Category.Equals("Trainer") ? 1.5 : 1;
 
-            int xpEarned = (EnemyPokemon.XP * EnemyPokemon.CurLevel / 5) * Convert.ToInt32(term) + 1;
-            CurrentPlayer.PokemonCollection.First(p => p.Id == CurrentPlayer.ChosenPokemon.Id).XP += xpEarned;
+            int xpEarned = Convert.ToInt32(a * EnemyPokemon.XP * EnemyPokemon.CurLevel / 14);            
+            CurrentPlayer.PokemonCollection.First(p => p.Id == CurrentPlayer.ChosenPokemon.Id).CurXp += xpEarned;
             RaiseMessage($"\nYour {CurrentPlayer.ChosenPokemon.Name} earned {xpEarned}XP");
 
             CurrentPlayer.Wins += 1;
@@ -146,6 +147,7 @@ namespace GameConfig
             CurrentPlayer.ChosenPokemon.Base.Speed[1] += EnemyPokemon.Base.Speed[1];
 
             CurrentPlayer.PokemonCollection.First(p => p.Id == CurrentPlayer.ChosenPokemon.Id).Base = CurrentPlayer.ChosenPokemon.Base;
+
             CurrentPlayer.Losses += 1;
             CurrentPlayer.WinPercentage = CurrentPlayer.Wins * 100 / CurrentPlayer.Fights;
         }

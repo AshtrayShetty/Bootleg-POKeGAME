@@ -101,8 +101,15 @@ namespace Bootleg_Pokémon
 
         private void InitializeOpponent(int id, string category)
         {
+            Random rnd = new Random();
+            int max = 0;
+            foreach (Pokemon pokemon in _gameSession.CurrentPlayer.PokemonCollection)
+            {
+                if (pokemon.CurLevel > max) { max = pokemon.CurLevel; }
+            }
+
             _gameSession.EnemyPokemon = _gameSession.AllPokemon.First(p => p.Id == id);
-            _gameSession.EnemyPokemon.CurLevel = 0;
+            _gameSession.EnemyPokemon.CurLevel = rnd.Next(1, max + 7);
             _gameSession.EnemyPokemon.Category = category;
             _gameSession.GeneratePokemonStats(_gameSession.EnemyPokemon);
             EnemyCorner.Visibility = Visibility.Visible;
@@ -189,8 +196,20 @@ namespace Bootleg_Pokémon
         private void End_Fight_Click(object sender, RoutedEventArgs e)
         {
             _gameSession.EnemyPokemon = null;
-            _gameSession.CurrentPlayer.PokemonCollection.First(p => p.Id == _gameSession.CurrentPlayer.ChosenPokemon.Id).CurHp = _gameSession.CurrentPlayer.ChosenPokemon.MaxHp;
-            _gameSession.CurrentPlayer.PokemonCollection.First(p => p.Id == _gameSession.CurrentPlayer.ChosenPokemon.Id).CurHpPercent = 100;
+
+            BaseStats baseStats = _gameSession.CurrentPlayer.ChosenPokemon.Base;
+            int[] evVals = {
+                baseStats.HP[2],
+                baseStats.Attack[2],
+                baseStats.Defense[2],
+                baseStats.SpecialAttack[2],
+                baseStats.SpecialDefense[2],
+                baseStats.Speed[2]
+            };
+            foreach (int evVal in evVals){ MessageBox.Show(evVal.ToString()); }
+            GenFunctions.BattleStatsGenerator(evVals, _gameSession.CurrentPlayer.PokemonCollection.First(p => p.Id == _gameSession.CurrentPlayer.ChosenPokemon.Id));
+            GenFunctions.PokemonLeveller(_gameSession.CurrentPlayer.PokemonCollection.First(p => p.Id == _gameSession.CurrentPlayer.ChosenPokemon.Id));
+
             _gameSession.CurrentPlayer.ChosenPokemon = null;
 
             PlayerCorner.Visibility = Visibility.Hidden;

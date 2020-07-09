@@ -25,13 +25,10 @@ namespace GameConfig
         }
         public static void BattleStatsGenerator(int[] battleEv, Pokemon pokemon)
         {
-            Random rnd = new Random();
-
-            if (pokemon.CurLevel == 0) { pokemon.CurLevel = rnd.Next(pokemon.BaseLevel, pokemon.EvolutionLevel); }
-
             int[] battleStats = IVGenerator(pokemon.Base, pokemon.CurLevel);
 
-            pokemon.Base.HP.Add(
+            pokemon.Base.HP.Insert(
+                3,
                 Convert.ToInt32(
                     Math.Floor(
                         ((pokemon.Base.HP[0] + battleStats[0]) * 2 + Math.Floor(Math.Ceiling(Math.Sqrt(battleEv[0])) / 4)) * pokemon.CurLevel / 100
@@ -39,7 +36,8 @@ namespace GameConfig
                 )
             );
 
-            pokemon.Base.Attack.Add(
+            pokemon.Base.Attack.Insert(
+                3,
                 Convert.ToInt32(
                     Math.Floor(
                         ((pokemon.Base.Attack[0] + battleStats[1]) * 2 + Math.Floor(Math.Ceiling(Math.Sqrt(battleEv[1])) / 4)) * pokemon.CurLevel / 100
@@ -47,7 +45,8 @@ namespace GameConfig
                 )
             );
 
-            pokemon.Base.Defense.Add(
+            pokemon.Base.Defense.Insert(
+                3,
                 Convert.ToInt32(
                     Math.Floor(
                         ((pokemon.Base.Defense[0] + battleStats[2]) * 2 + Math.Floor(Math.Ceiling(Math.Sqrt(battleEv[2])) / 4)) * pokemon.CurLevel / 100
@@ -55,7 +54,8 @@ namespace GameConfig
                 )
             );
 
-            pokemon.Base.SpecialAttack.Add(
+            pokemon.Base.SpecialAttack.Insert(
+                3,
                 Convert.ToInt32(
                     Math.Floor(
                         ((pokemon.Base.SpecialAttack[0] + battleStats[3]) * 2 + Math.Floor(Math.Ceiling(Math.Sqrt(battleEv[3])) / 4)) * pokemon.CurLevel / 100
@@ -63,7 +63,8 @@ namespace GameConfig
                 )
             );
 
-            pokemon.Base.SpecialDefense.Add(
+            pokemon.Base.SpecialDefense.Insert(
+                3,
                 Convert.ToInt32(
                     Math.Floor(
                         ((pokemon.Base.SpecialDefense[0] + battleStats[4]) * 2 + Math.Floor(Math.Ceiling(Math.Sqrt(battleEv[4])) / 4)) * pokemon.CurLevel / 100
@@ -71,7 +72,8 @@ namespace GameConfig
                 )
             );
 
-            pokemon.Base.Speed.Add(
+            pokemon.Base.Speed.Insert(
+                3,
                 Convert.ToInt32(
                     Math.Floor(
                         ((pokemon.Base.Speed[0] + battleStats[5]) * 2 + Math.Floor(Math.Ceiling(Math.Sqrt(battleEv[5])) / 4)) * pokemon.CurLevel / 100
@@ -79,6 +81,9 @@ namespace GameConfig
                 )
             );
 
+            pokemon.CurHp = pokemon.Base.HP[3];
+            pokemon.MaxHp = pokemon.Base.HP[3];
+            pokemon.CurHpPercent = 100;
         }
 
         public static List<Move> MoveList(string[] type)
@@ -103,6 +108,108 @@ namespace GameConfig
                 }
                 return moveList;
             }
+        }
+
+        public static void PokemonLeveller(Pokemon pokemon)
+        {
+            int xpRequired = 0;
+            switch (pokemon.Growth)
+            {
+                case "erratic":
+                    if (pokemon.CurLevel >= 0 && pokemon.CurLevel + 1 <= 50)
+                    {
+                        xpRequired = 
+                            Convert.ToInt32(
+                                Math.Pow(Convert.ToDouble(pokemon.CurLevel + 1), 3) 
+                                * (double)pokemon.CurLevel 
+                                / 50
+                            );
+                    }
+                    else if (pokemon.CurLevel + 1 >= 50 && pokemon.CurLevel + 1 <= 68)
+                    {
+                        xpRequired = 
+                            Convert.ToInt32(
+                                Math.Pow(Convert.ToDouble(pokemon.CurLevel + 1), 3) 
+                                * (149 - pokemon.CurLevel) 
+                                / 100
+                            );
+                    }
+                    else if (pokemon.CurLevel + 1 >= 68 && pokemon.CurLevel + 1 <= 98)
+                    {
+                        xpRequired =
+                            Convert.ToInt32(
+                                Math.Pow(Convert.ToDouble(pokemon.CurLevel + 1), 3)
+                                * Math.Floor((1901 - (10 * (double)pokemon.CurLevel)) / 3) 
+                                / 500
+                            );
+                    }
+                    else if (pokemon.CurLevel + 1 >= 98 && pokemon.CurLevel + 1 <= 100)
+                    {
+                        xpRequired = 
+                            Convert.ToInt32(
+                                Math.Pow(Convert.ToDouble(pokemon.CurLevel + 1), 3) 
+                                * (159 - pokemon.CurLevel) 
+                                / 100
+                            );
+                    }
+                    break;
+
+                case "fast":
+                    xpRequired = Convert.ToInt32(4 * Math.Pow(Convert.ToDouble(pokemon.CurLevel + 1), 3) / 5);
+                    break;
+
+                case "medium fast":
+                    xpRequired = Convert.ToInt32(Math.Pow(Convert.ToDouble(pokemon.CurLevel + 1), 3));
+                    break;
+
+                case "medium slow":
+                    xpRequired = Convert.ToInt32(
+                        (6 * Math.Pow(Convert.ToDouble(pokemon.CurLevel + 1), 3) / 5)
+                        - (15 * Math.Pow(Convert.ToDouble(pokemon.CurLevel + 1), 2))
+                        + (100 * (pokemon.CurLevel + 1)) 
+                        - 140
+                    );
+                    break;
+
+                case "slow":
+                    xpRequired = Convert.ToInt32(5 * Math.Pow(Convert.ToDouble(pokemon.CurLevel + 1), 3) / 4);
+                    break;
+
+                case "fluctuating":
+                    if (pokemon.CurLevel >= 0 && pokemon.CurLevel + 1 <= 15)
+                    {
+                        xpRequired =
+                            Convert.ToInt32(
+                                Math.Pow(Convert.ToDouble(pokemon.CurLevel + 1), 3)
+                                * (Math.Floor(Convert.ToDouble(pokemon.CurLevel + 2) / 3) + 24)
+                                / 50
+                            );
+                    }
+                    else if (pokemon.CurLevel >= 15 && pokemon.CurLevel <= 36)
+                    {
+                        xpRequired =
+                            Convert.ToInt32(
+                                Math.Pow(Convert.ToDouble(pokemon.CurLevel + 1), 3)
+                                * (pokemon.CurLevel + 15)
+                                / 50
+                            );
+                    }
+                    else if (pokemon.CurLevel + 1 >= 36 && pokemon.CurLevel + 1 <= 100)
+                    {
+                        xpRequired =
+                            Convert.ToInt32(
+                                Math.Pow(Convert.ToDouble(pokemon.CurLevel + 1), 3)
+                                * (Math.Floor(Convert.ToDouble((pokemon.CurLevel + 1) / 2)) + 32)
+                                / 50
+                            );
+                    }
+                    break;
+
+                default:
+                    break;
+            }
+
+            if (pokemon.CurXp >= xpRequired) { pokemon.CurLevel += 1; }
         }
     }
 }
