@@ -97,18 +97,30 @@ namespace GameConfig
             using (StreamReader movesJson = new StreamReader("..\\..\\..\\moves.json"))
             {
                 var json = JsonConvert.DeserializeObject<List<Move>>(movesJson.ReadToEnd());
-                var moves = json.FindAll(move => type.Contains(move.Type));
+                var moves = json.FindAll(move => type.Contains(move.Type) || move.Type.Equals("Normal"));
                 Random rnd = new Random();
+                int normal = 0;
 
                 for (int i = 0; i < 4; ++i)
                 {
                     int index = rnd.Next(0, moves.Count);
                     Move move = moves[index];
+
                     if (moveList.Any(m => m.Id == move.Id) || (move.Power == -1 || move.Accuracy == -1))
                     {
                         i -= 1;
                         continue;
                     }
+                    if (move.Type == "Normal")
+                    {
+                        if ((type.Length == 1 && normal >= 2) || (type.Length == 2 && normal >= 1))
+                        {
+                            i -= 1;
+                            continue;
+                        }
+                        normal += 1;
+                    }
+
                     moveList.Add(move);
                 }
                 return moveList;

@@ -5,7 +5,6 @@
     "Type": [
       "Grass",
       "Poison",
-      "Normal"
     ],
     "Base": {
       "HP": [ 45, 0 ],
@@ -30,7 +29,6 @@
     "Type": [
       "Grass",
       "Poison",
-      "Normal"
     ],
     "Base": {
       "HP": [ 60, 0 ],
@@ -55,7 +53,6 @@
     "Type": [
       "Grass",
       "Poison",
-      "Normal"
     ],
     "Base": {
       "HP": [ 80, 0 ],
@@ -78,8 +75,7 @@
     "Id": 4,
     "Name": "Charmander",
     "Type": [
-      "Fire",
-      "Normal"
+      "Fire"
     ],
     "Base": {
       "HP": [ 39, 0 ],
@@ -102,8 +98,7 @@
     "Id": 5,
     "Name": "Charmeleon",
     "Type": [
-      "Fire",
-      "Normal"
+      "Fire"
     ],
     "Base": {
       "HP": [ 58, 0 ],
@@ -128,7 +123,6 @@
     "Type": [
       "Fire",
       "Flying",
-      "Normal"
     ],
     "Base": {
       "HP": [ 78, 0 ],
@@ -151,8 +145,7 @@
     "Id": 7,
     "Name": "Squirtle",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 44, 0 ],
@@ -175,8 +168,7 @@
     "Id": 8,
     "Name": "Wartortle",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 59, 0 ],
@@ -199,8 +191,7 @@
     "Id": 9,
     "Name": "Blastoise",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 79, 0 ],
@@ -223,8 +214,7 @@
     "Id": 10,
     "Name": "Caterpie",
     "Type": [
-      "Bug",
-      "Normal"
+      "Bug"
     ],
     "Base": {
       "HP": [ 45, 1 ],
@@ -247,8 +237,7 @@
     "Id": 11,
     "Name": "Metapod",
     "Type": [
-      "Bug",
-      "Normal"
+      "Bug"
     ],
     "Base": {
       "HP": [ 50, 0 ],
@@ -272,8 +261,7 @@
     "Name": "Butterfree",
     "Type": [
       "Bug",
-      "Flying",
-      "Normal"
+      "Flying"
     ],
     "Base": {
       "HP": [ 60, 0 ],
@@ -297,8 +285,7 @@
     "Name": "Weedle",
     "Type": [
       "Bug",
-      "Poison",
-      "Normal"
+      "Poison"
     ],
     "Base": {
       "HP": [ 40, 0 ],
@@ -322,8 +309,7 @@
     "Name": "Kakuna",
     "Type": [
       "Bug",
-      "Poison",
-      "Normal"
+      "Poison"
     ],
     "Base": {
       "HP": [ 45, 0 ],
@@ -347,8 +333,7 @@
     "Name": "Beedrill",
     "Type": [
       "Bug",
-      "Poison",
-      "Normal"
+      "Poison"
     ],
     "Base": {
       "HP": [ 65, 0 ],
@@ -537,8 +522,7 @@
     "Id": 23,
     "Name": "Ekans",
     "Type": [
-      "Poison",
-      "Normal"
+      "Poison"
     ],
     "Base": {
       "HP": [ 35, 0 ],
@@ -561,8 +545,7 @@
     "Id": 24,
     "Name": "Arbok",
     "Type": [
-      "Poison",
-      "Normal"
+      "Poison"
     ],
     "Base": {
       "HP": [ 60, 0 ],
@@ -585,8 +568,7 @@
     "Id": 25,
     "Name": "Pikachu",
     "Type": [
-      "Electric",
-      "Normal"
+      "Electric"
     ],
     "Base": {
       "HP": [ 35, 0 ],
@@ -609,8 +591,7 @@
     "Id": 26,
     "Name": "Raichu",
     "Type": [
-      "Electric",
-      "Normal"
+      "Electric"
     ],
     "Base": {
       "HP": [ 60, 0 ],
@@ -633,8 +614,7 @@
     "Id": 27,
     "Name": "Sandshrew",
     "Type": [
-      "Ground",
-      "Normal"
+      "Ground"
     ],
     "Base": {
       "HP": [ 50, 0 ],
@@ -657,8 +637,7 @@
     "Id": 28,
     "Name": "Sandslash",
     "Type": [
-      "Ground",
-      "Normal"
+      "Ground"
     ],
     "Base": {
       "HP": [ 75, 0 ],
@@ -681,8 +660,7 @@
     "Id": 29,
     "Name": "Nidoran (♀)",
     "Type": [
-      "Poison",
-      "Normal"
+      "Poison"
     ],
     "Base": {
       "HP": [ 55, 1 ],
@@ -705,8 +683,7 @@
     "Id": 30,
     "Name": "Nidorina",
     "Type": [
-      "Poison",
-      "Normal"
+      "Poison"
     ],
     "Base": {
       "HP": [ 70, 2 ],
@@ -730,8 +707,7 @@
     "Name": "Nidoqueen",
     "Type": [
       "Poison",
-      "Ground",
-      "Normal"
+      "Ground"
     ],
     "Base": {
       "HP": [ 90, 3 ],
@@ -754,8 +730,7 @@
     "Id": 32,
     "Name": "Nidoran (♂)",
     "Type": [
-      "Poison",
-      "Normal"
+      "Poison"
     ],
     "Base": {
       "HP": [ 46, 0 ],
@@ -778,8 +753,7 @@
     "Id": 33,
     "Name": "Nidorino",
     "Type": [
-      "Poison",
-      "Normal"
+      "Poison"
     ],
     "Base": {
       "HP": [ 61, 0 ],
@@ -803,8 +777,7 @@
     "Name": "Nidoking",
     "Type": [
       "Poison",
-      "Ground",
-      "Normal"
+      "Ground"
     ],
     "Base": {
       "HP": [ 81, 0 ],
@@ -827,8 +800,7 @@
     "Id": 35,
     "Name": "Clefairy",
     "Type": [
-      "Fairy",
-      "Normal"
+      "Fairy"
     ],
     "Base": {
       "HP": [ 70, 2 ],
@@ -851,8 +823,7 @@
     "Id": 36,
     "Name": "Clefable",
     "Type": [
-      "Fairy",
-      "Normal"
+      "Fairy"
     ],
     "Base": {
       "HP": [ 95, 3 ],
@@ -875,8 +846,7 @@
     "Id": 37,
     "Name": "Vulpix",
     "Type": [
-      "Fire",
-      "Normal"
+      "Fire"
     ],
     "Base": {
       "HP": [ 38, 0 ],
@@ -899,8 +869,7 @@
     "Id": 38,
     "Name": "Ninetales",
     "Type": [
-      "Fire",
-      "Normal"
+      "Fire"
     ],
     "Base": {
       "HP": [ 73, 0 ],
@@ -972,8 +941,7 @@
     "Name": "Zubat",
     "Type": [
       "Poison",
-      "Flying",
-      "Normal"
+      "Flying"
     ],
     "Base": {
       "HP": [ 40, 0 ],
@@ -997,8 +965,7 @@
     "Name": "Golbat",
     "Type": [
       "Poison",
-      "Flying",
-      "Normal"
+      "Flying"
     ],
     "Base": {
       "HP": [ 75, 0 ],
@@ -1022,8 +989,7 @@
     "Name": "Oddish",
     "Type": [
       "Grass",
-      "Poison",
-      "Normal"
+      "Poison"
     ],
     "Base": {
       "HP": [ 45, 0 ],
@@ -1047,8 +1013,7 @@
     "Name": "Gloom",
     "Type": [
       "Grass",
-      "Poison",
-      "Normal"
+      "Poison"
     ],
     "Base": {
       "HP": [ 60, 0 ],
@@ -1072,8 +1037,7 @@
     "Name": "Vileplume",
     "Type": [
       "Grass",
-      "Poison",
-      "Normal"
+      "Poison"
     ],
     "Base": {
       "HP": [ 75, 0 ],
@@ -1097,8 +1061,7 @@
     "Name": "Paras",
     "Type": [
       "Bug",
-      "Grass",
-      "Normal"
+      "Grass"
     ],
     "Base": {
       "HP": [ 35, 0 ],
@@ -1122,8 +1085,7 @@
     "Name": "Parasect",
     "Type": [
       "Bug",
-      "Grass",
-      "Normal"
+      "Grass"
     ],
     "Base": {
       "HP": [ 60, 0 ],
@@ -1147,8 +1109,7 @@
     "Name": "Venonat",
     "Type": [
       "Bug",
-      "Poison",
-      "Normal"
+      "Poison"
     ],
     "Base": {
       "HP": [ 60, 0 ],
@@ -1172,8 +1133,7 @@
     "Name": "Venomoth",
     "Type": [
       "Bug",
-      "Poison",
-      "Normal"
+      "Poison"
     ],
     "Base": {
       "HP": [ 70, 0 ],
@@ -1196,8 +1156,7 @@
     "Id": 50,
     "Name": "Diglett",
     "Type": [
-      "Ground",
-      "Normal"
+      "Ground"
     ],
     "Base": {
       "HP": [ 10, 0 ],
@@ -1220,8 +1179,7 @@
     "Id": 51,
     "Name": "Dugtrio",
     "Type": [
-      "Ground",
-      "Normal"
+      "Ground"
     ],
     "Base": {
       "HP": [ 35, 0 ],
@@ -1290,8 +1248,7 @@
     "Id": 54,
     "Name": "Psyduck",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 50, 0 ],
@@ -1314,8 +1271,7 @@
     "Id": 55,
     "Name": "Golduck",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 80, 0 ],
@@ -1338,8 +1294,7 @@
     "Id": 56,
     "Name": "Mankey",
     "Type": [
-      "Fighting",
-      "Normal"
+      "Fighting"
     ],
     "Base": {
       "HP": [ 40, 0 ],
@@ -1362,8 +1317,7 @@
     "Id": 57,
     "Name": "Primeape",
     "Type": [
-      "Fighting",
-      "Normal"
+      "Fighting"
     ],
     "Base": {
       "HP": [ 65, 0 ],
@@ -1386,8 +1340,7 @@
     "Id": 58,
     "Name": "Growlithe",
     "Type": [
-      "Fire",
-      "Normal"
+      "Fire"
     ],
     "Base": {
       "HP": [ 55, 0 ],
@@ -1410,8 +1363,7 @@
     "Id": 59,
     "Name": "Arcanine",
     "Type": [
-      "Fire",
-      "Normal"
+      "Fire"
     ],
     "Base": {
       "HP": [ 90, 0 ],
@@ -1434,8 +1386,7 @@
     "Id": 60,
     "Name": "Poliwag",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 40, 0 ],
@@ -1458,8 +1409,7 @@
     "Id": 61,
     "Name": "Poliwhirl",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 65, 0 ],
@@ -1483,8 +1433,7 @@
     "Name": "Poliwrath",
     "Type": [
       "Water",
-      "Fighting",
-      "Normal"
+      "Fighting"
     ],
     "Base": {
       "HP": [ 90, 0 ],
@@ -1507,8 +1456,7 @@
     "Id": 63,
     "Name": "Abra",
     "Type": [
-      "Psychic",
-      "Normal"
+      "Psychic"
     ],
     "Base": {
       "HP": [ 25, 0 ],
@@ -1531,8 +1479,7 @@
     "Id": 64,
     "Name": "Kadabra",
     "Type": [
-      "Psychic",
-      "Normal"
+      "Psychic"
     ],
     "Base": {
       "HP": [ 40, 0 ],
@@ -1555,8 +1502,7 @@
     "Id": 65,
     "Name": "Alakazam",
     "Type": [
-      "Psychic",
-      "Normal"
+      "Psychic"
     ],
     "Base": {
       "HP": [ 55, 0 ],
@@ -1579,8 +1525,7 @@
     "Id": 66,
     "Name": "Machop",
     "Type": [
-      "Fighting",
-      "Normal"
+      "Fighting"
     ],
     "Base": {
       "HP": [ 70, 0 ],
@@ -1603,8 +1548,7 @@
     "Id": 67,
     "Name": "Machoke",
     "Type": [
-      "Fighting",
-      "Normal"
+      "Fighting"
     ],
     "Base": {
       "HP": [ 80, 0 ],
@@ -1627,8 +1571,7 @@
     "Id": 68,
     "Name": "Machamp",
     "Type": [
-      "Fighting",
-      "Normal"
+      "Fighting"
     ],
     "Base": {
       "HP": [ 90, 0 ],
@@ -1652,8 +1595,7 @@
     "Name": "Bellsprout",
     "Type": [
       "Grass",
-      "Poison",
-      "Normal"
+      "Poison"
     ],
     "Base": {
       "HP": [ 50, 0 ],
@@ -1677,8 +1619,7 @@
     "Name": "Weepinbell",
     "Type": [
       "Grass",
-      "Poison",
-      "Normal"
+      "Poison"
     ],
     "Base": {
       "HP": [ 65, 0 ],
@@ -1702,8 +1643,7 @@
     "Name": "Victreebel",
     "Type": [
       "Grass",
-      "Poison",
-      "Normal"
+      "Poison"
     ],
     "Base": {
       "HP": [ 80, 0 ],
@@ -1727,8 +1667,7 @@
     "Name": "Tentacool",
     "Type": [
       "Water",
-      "Poison",
-      "Normal"
+      "Poison"
     ],
     "Base": {
       "HP": [ 40, 0 ],
@@ -1752,8 +1691,7 @@
     "Name": "Tentacruel",
     "Type": [
       "Water",
-      "Poison",
-      "Normal"
+      "Poison"
     ],
     "Base": {
       "HP": [ 80, 0 ],
@@ -1777,8 +1715,7 @@
     "Name": "Geodude",
     "Type": [
       "Rock",
-      "Ground",
-      "Normal"
+      "Ground"
     ],
     "Base": {
       "HP": [ 40, 0 ],
@@ -1802,8 +1739,7 @@
     "Name": "Graveler",
     "Type": [
       "Rock",
-      "Ground",
-      "Normal"
+      "Ground"
     ],
     "Base": {
       "HP": [ 55, 0 ],
@@ -1827,8 +1763,7 @@
     "Name": "Golem",
     "Type": [
       "Rock",
-      "Ground",
-      "Normal"
+      "Ground"
     ],
     "Base": {
       "HP": [ 80, 0 ],
@@ -1851,8 +1786,7 @@
     "Id": 77,
     "Name": "Ponyta",
     "Type": [
-      "Fire",
-      "Normal"
+      "Fire"
     ],
     "Base": {
       "HP": [ 50, 0 ],
@@ -1875,8 +1809,7 @@
     "Id": 78,
     "Name": "Rapidash",
     "Type": [
-      "Fire",
-      "Normal"
+      "Fire"
     ],
     "Base": {
       "HP": [ 65, 0 ],
@@ -1900,8 +1833,7 @@
     "Name": "Slowpoke",
     "Type": [
       "Water",
-      "Psychic",
-      "Normal"
+      "Psychic"
     ],
     "Base": {
       "HP": [ 90, 1 ],
@@ -1925,8 +1857,7 @@
     "Name": "Slowbro",
     "Type": [
       "Water",
-      "Psychic",
-      "Normal"
+      "Psychic"
     ],
     "Base": {
       "HP": [ 95, 0 ],
@@ -1950,8 +1881,7 @@
     "Name": "Magnemite",
     "Type": [
       "Electric",
-      "Steel",
-      "Normal"
+      "Steel"
     ],
     "Base": {
       "HP": [ 25, 0 ],
@@ -1975,8 +1905,7 @@
     "Name": "Magneton",
     "Type": [
       "Electric",
-      "Steel",
-      "Normal"
+      "Steel"
     ],
     "Base": {
       "HP": [ 50, 0 ],
@@ -2071,8 +2000,7 @@
     "Id": 86,
     "Name": "Seel",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 65, 0 ],
@@ -2096,8 +2024,7 @@
     "Name": "Dewgong",
     "Type": [
       "Water",
-      "Ice",
-      "Normal"
+      "Ice"
     ],
     "Base": {
       "HP": [ 90, 0 ],
@@ -2120,8 +2047,7 @@
     "Id": 88,
     "Name": "Grimer",
     "Type": [
-      "Poison",
-      "Normal"
+      "Poison"
     ],
     "Base": {
       "HP": [ 80, 1 ],
@@ -2144,8 +2070,7 @@
     "Id": 89,
     "Name": "Muk",
     "Type": [
-      "Poison",
-      "Normal"
+      "Poison"
     ],
     "Base": {
       "HP": [ 105, 1 ],
@@ -2168,8 +2093,7 @@
     "Id": 90,
     "Name": "Shellder",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 30, 0 ],
@@ -2193,8 +2117,7 @@
     "Name": "Cloyster",
     "Type": [
       "Water",
-      "Ice",
-      "Normal"
+      "Ice"
     ],
     "Base": {
       "HP": [ 50, 0 ],
@@ -2242,8 +2165,7 @@
     "Name": "Haunter",
     "Type": [
       "Ghost",
-      "Poison",
-      "Normal"
+      "Poison"
     ],
     "Base": {
       "HP": [ 45, 0 ],
@@ -2267,8 +2189,7 @@
     "Name": "Gengar",
     "Type": [
       "Ghost",
-      "Poison",
-      "Normal"
+      "Poison"
     ],
     "Base": {
       "HP": [ 60, 0 ],
@@ -2292,8 +2213,7 @@
     "Name": "Onix",
     "Type": [
       "Rock",
-      "Ground",
-      "Normal"
+      "Ground"
     ],
     "Base": {
       "HP": [ 35, 0 ],
@@ -2316,8 +2236,7 @@
     "Id": 96,
     "Name": "Drowzee",
     "Type": [
-      "Psychic",
-      "Normal"
+      "Psychic"
     ],
     "Base": {
       "HP": [ 60, 0 ],
@@ -2340,8 +2259,7 @@
     "Id": 97,
     "Name": "Hypno",
     "Type": [
-      "Psychic",
-      "Normal"
+      "Psychic"
     ],
     "Base": {
       "HP": [ 85, 0 ],
@@ -2364,8 +2282,7 @@
     "Id": 98,
     "Name": "Krabby",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 30, 0 ],
@@ -2388,8 +2305,7 @@
     "Id": 99,
     "Name": "Kingler",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 55, 0 ],
@@ -2412,8 +2328,7 @@
     "Id": 100,
     "Name": "Voltorb",
     "Type": [
-      "Electric",
-      "Normal"
+      "Electric"
     ],
     "Base": {
       "HP": [ 40, 0 ],
@@ -2436,8 +2351,7 @@
     "Id": 101,
     "Name": "Electrode",
     "Type": [
-      "Electric",
-      "Normal"
+      "Electric"
     ],
     "Base": {
       "HP": [ 60, 0 ],
@@ -2485,8 +2399,7 @@
     "Name": "Exeggutor",
     "Type": [
       "Grass",
-      "Psychic",
-      "Normal"
+      "Psychic"
     ],
     "Base": {
       "HP": [ 95, 0 ],
@@ -2509,8 +2422,7 @@
     "Id": 104,
     "Name": "Cubone",
     "Type": [
-      "Ground",
-      "Normal"
+      "Ground"
     ],
     "Base": {
       "HP": [ 50, 0 ],
@@ -2533,8 +2445,7 @@
     "Id": 105,
     "Name": "Marowak",
     "Type": [
-      "Ground",
-      "Normal"
+      "Ground"
     ],
     "Base": {
       "HP": [ 60, 0 ],
@@ -2557,8 +2468,7 @@
     "Id": 106,
     "Name": "Hitmonlee",
     "Type": [
-      "Fighting",
-      "Normal"
+      "Fighting"
     ],
     "Base": {
       "HP": [ 50, 0 ],
@@ -2581,8 +2491,7 @@
     "Id": 107,
     "Name": "Hitmonchan",
     "Type": [
-      "Fighting",
-      "Normal"
+      "Fighting"
     ],
     "Base": {
       "HP": [ 50, 0 ],
@@ -2628,8 +2537,7 @@
     "Id": 109,
     "Name": "Koffing",
     "Type": [
-      "Poison",
-      "Normal"
+      "Poison"
     ],
     "Base": {
       "HP": [ 40, 0 ],
@@ -2652,8 +2560,7 @@
     "Id": 110,
     "Name": "Weezing",
     "Type": [
-      "Poison",
-      "Normal"
+      "Poison"
     ],
     "Base": {
       "HP": [ 65, 0 ],
@@ -2677,8 +2584,7 @@
     "Name": "Rhyhorn",
     "Type": [
       "Ground",
-      "Rock",
-      "Normal"
+      "Rock"
     ],
     "Base": {
       "HP": [ 80, 0 ],
@@ -2702,8 +2608,7 @@
     "Name": "Rhydon",
     "Type": [
       "Ground",
-      "Rock",
-      "Normal"
+      "Rock"
     ],
     "Base": {
       "HP": [ 105, 0 ],
@@ -2749,8 +2654,7 @@
     "Id": 114,
     "Name": "Tangela",
     "Type": [
-      "Grass",
-      "Normal"
+      "Grass"
     ],
     "Base": {
       "HP": [ 65, 0 ],
@@ -2796,8 +2700,7 @@
     "Id": 116,
     "Name": "Horsea",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 30, 0 ],
@@ -2820,8 +2723,7 @@
     "Id": 117,
     "Name": "Seadra",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 55, 0 ],
@@ -2844,8 +2746,7 @@
     "Id": 118,
     "Name": "Goldeen",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 45, 0 ],
@@ -2868,8 +2769,7 @@
     "Id": 119,
     "Name": "Seaking",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 80, 0 ],
@@ -2892,8 +2792,7 @@
     "Id": 120,
     "Name": "Staryu",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 30, 0 ],
@@ -2917,8 +2816,7 @@
     "Name": "Starmie",
     "Type": [
       "Water",
-      "Psychic",
-      "Normal"
+      "Psychic"
     ],
     "Base": {
       "HP": [ 60, 0 ],
@@ -2942,8 +2840,7 @@
     "Name": "Mr. Mime",
     "Type": [
       "Psychic",
-      "Fairy",
-      "Normal"
+      "Fairy"
     ],
     "Base": {
       "HP": [ 40, 0 ],
@@ -2967,8 +2864,7 @@
     "Name": "Scyther",
     "Type": [
       "Bug",
-      "Flying",
-      "Normal"
+      "Flying"
     ],
     "Base": {
       "HP": [ 70, 0 ],
@@ -2992,8 +2888,7 @@
     "Name": "Jynx",
     "Type": [
       "Ice",
-      "Psychic",
-      "Normal"
+      "Psychic"
     ],
     "Base": {
       "HP": [ 65, 0 ],
@@ -3016,8 +2911,7 @@
     "Id": 125,
     "Name": "Electabuzz",
     "Type": [
-      "Electric",
-      "Normal"
+      "Electric"
     ],
     "Base": {
       "HP": [ 65, 0 ],
@@ -3040,8 +2934,7 @@
     "Id": 126,
     "Name": "Magmar",
     "Type": [
-      "Fire",
-      "Normal"
+      "Fire"
     ],
     "Base": {
       "HP": [ 65, 0 ],
@@ -3064,8 +2957,7 @@
     "Id": 127,
     "Name": "Pinsir",
     "Type": [
-      "Bug",
-      "Normal"
+      "Bug"
     ],
     "Base": {
       "HP": [ 65, 0 ],
@@ -3135,8 +3027,7 @@
     "Name": "Gyarados",
     "Type": [
       "Water",
-      "Flying",
-      "Normal"
+      "Flying"
     ],
     "Base": {
       "HP": [ 95, 0 ],
@@ -3160,8 +3051,7 @@
     "Name": "Lapras",
     "Type": [
       "Water",
-      "Ice",
-      "Normal"
+      "Ice"
     ],
     "Base": {
       "HP": [ 130, 2 ],
@@ -3230,8 +3120,7 @@
     "Id": 134,
     "Name": "Vaporeon",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 130, 2 ],
@@ -3254,8 +3143,7 @@
     "Id": 135,
     "Name": "Jolteon",
     "Type": [
-      "Electric",
-      "Normal"
+      "Electric"
     ],
     "Base": {
       "HP": [ 65, 0 ],
@@ -3278,8 +3166,7 @@
     "Id": 136,
     "Name": "Flareon",
     "Type": [
-      "Fire",
-      "Normal"
+      "Fire"
     ],
     "Base": {
       "HP": [ 65, 0 ],
@@ -3326,8 +3213,7 @@
     "Name": "Omanyte",
     "Type": [
       "Rock",
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 35, 0 ],
@@ -3351,8 +3237,7 @@
     "Name": "Omastar",
     "Type": [
       "Rock",
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 70, 0 ],
@@ -3400,8 +3285,7 @@
     "Name": "Kabutops",
     "Type": [
       "Rock",
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 60, 0 ],
@@ -3425,8 +3309,7 @@
     "Name": "Aerodactyl",
     "Type": [
       "Rock",
-      "Flying",
-      "Normal"
+      "Flying"
     ],
     "Base": {
       "HP": [ 80, 0 ],
@@ -3473,8 +3356,7 @@
     "Name": "Articuno",
     "Type": [
       "Ice",
-      "Flying",
-      "Normal"
+      "Flying"
     ],
     "Base": {
       "HP": [ 90, 0 ],
@@ -3498,8 +3380,7 @@
     "Name": "Zapdos",
     "Type": [
       "Electric",
-      "Flying",
-      "Normal"
+      "Flying"
     ],
     "Base": {
       "HP": [ 90, 0 ],
@@ -3523,8 +3404,7 @@
     "Name": "Moltres",
     "Type": [
       "Fire",
-      "Flying",
-      "Normal"
+      "Flying"
     ],
     "Base": {
       "HP": [ 90, 0 ],
@@ -3547,8 +3427,7 @@
     "Id": 147,
     "Name": "Dratini",
     "Type": [
-      "Dragon",
-      "Normal"
+      "Dragon"
     ],
     "Base": {
       "HP": [ 41, 0 ],
@@ -3571,8 +3450,7 @@
     "Id": 148,
     "Name": "Dragonair",
     "Type": [
-      "Dragon",
-      "Normal"
+      "Dragon"
     ],
     "Base": {
       "HP": [ 61, 0 ],
@@ -3596,8 +3474,7 @@
     "Name": "Dragonite",
     "Type": [
       "Dragon",
-      "Flying",
-      "Normal"
+      "Flying"
     ],
     "Base": {
       "HP": [ 91, 0 ],
@@ -3620,8 +3497,7 @@
     "Id": 150,
     "Name": "Mewtwo",
     "Type": [
-      "Psychic",
-      "Normal"
+      "Psychic"
     ],
     "Base": {
       "HP": [ 106, 0 ],
@@ -3667,8 +3543,7 @@
     "Id": 152,
     "Name": "Chikorita",
     "Type": [
-      "Grass",
-      "Normal"
+      "Grass"
     ],
     "Base": {
       "HP": [ 45, 0 ],
@@ -3691,8 +3566,7 @@
     "Id": 153,
     "Name": "Bayleef",
     "Type": [
-      "Grass",
-      "Normal"
+      "Grass"
     ],
     "Base": {
       "HP": [ 60, 0 ],
@@ -3715,8 +3589,7 @@
     "Id": 154,
     "Name": "Meganium",
     "Type": [
-      "Grass",
-      "Normal"
+      "Grass"
     ],
     "Base": {
       "HP": [ 80, 0 ],
@@ -3739,8 +3612,7 @@
     "Id": 155,
     "Name": "Cyndaquil",
     "Type": [
-      "Fire",
-      "Normal"
+      "Fire"
     ],
     "Base": {
       "HP": [ 39, 0 ],
@@ -3763,8 +3635,7 @@
     "Id": 156,
     "Name": "Quilava",
     "Type": [
-      "Fire",
-      "Normal"
+      "Fire"
     ],
     "Base": {
       "HP": [ 58, 0 ],
@@ -3787,8 +3658,7 @@
     "Id": 157,
     "Name": "Typhlosion",
     "Type": [
-      "Fire",
-      "Normal"
+      "Fire"
     ],
     "Base": {
       "HP": [ 78, 0 ],
@@ -3811,8 +3681,7 @@
     "Id": 158,
     "Name": "Totodile",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 50, 0 ],
@@ -3835,8 +3704,7 @@
     "Id": 159,
     "Name": "Croconaw",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 65, 0 ],
@@ -3859,8 +3727,7 @@
     "Id": 160,
     "Name": "Feraligatr",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 85, 0 ],
@@ -3978,8 +3845,7 @@
     "Name": "Ledyba",
     "Type": [
       "Bug",
-      "Flying",
-      "Normal"
+      "Flying"
     ],
     "Base": {
       "HP": [ 40, 0 ],
@@ -4003,8 +3869,7 @@
     "Name": "Ledian",
     "Type": [
       "Bug",
-      "Flying",
-      "Normal"
+      "Flying"
     ],
     "Base": {
       "HP": [ 55, 0 ],
@@ -4028,8 +3893,7 @@
     "Name": "Spinarak",
     "Type": [
       "Bug",
-      "Poison",
-      "Normal"
+      "Poison"
     ],
     "Base": {
       "HP": [ 40, 0 ],
@@ -4053,8 +3917,7 @@
     "Name": "Ariados",
     "Type": [
       "Bug",
-      "Poison",
-      "Normal"
+      "Poison"
     ],
     "Base": {
       "HP": [ 70, 0 ],
@@ -4078,8 +3941,7 @@
     "Name": "Crobat",
     "Type": [
       "Poison",
-      "Flying",
-      "Normal"
+      "Flying"
     ],
     "Base": {
       "HP": [ 85, 0 ],
@@ -4150,8 +4012,7 @@
     "Id": 172,
     "Name": "Pichu",
     "Type": [
-      "Electric",
-      "Normal"
+      "Electric"
     ],
     "Base": {
       "HP": [ 20, 0 ],
@@ -4174,8 +4035,7 @@
     "Id": 173,
     "Name": "Cleffa",
     "Type": [
-      "Fairy",
-      "Normal"
+      "Fairy"
     ],
     "Base": {
       "HP": [ 50, 0 ],
@@ -4222,8 +4082,7 @@
     "Id": 175,
     "Name": "Togepi",
     "Type": [
-      "Fairy",
-      "Normal"
+      "Fairy"
     ],
     "Base": {
       "HP": [ 35, 0 ],
@@ -4247,8 +4106,7 @@
     "Name": "Togetic",
     "Type": [
       "Fairy",
-      "Flying",
-      "Normal"
+      "Flying"
     ],
     "Base": {
       "HP": [ 55, 0 ],
@@ -4272,8 +4130,7 @@
     "Name": "Natu",
     "Type": [
       "Psychic",
-      "Flying",
-      "Normal"
+      "Flying"
     ],
     "Base": {
       "HP": [ 40, 0 ],
@@ -4297,8 +4154,7 @@
     "Name": "Xatu",
     "Type": [
       "Psychic",
-      "Flying",
-      "Normal"
+      "Flying"
     ],
     "Base": {
       "HP": [ 65, 0 ],
@@ -4321,8 +4177,7 @@
     "Id": 179,
     "Name": "Mareep",
     "Type": [
-      "Electric",
-      "Normal"
+      "Electric"
     ],
     "Base": {
       "HP": [ 55, 0 ],
@@ -4345,8 +4200,7 @@
     "Id": 180,
     "Name": "Flaaffy",
     "Type": [
-      "Electric",
-      "Normal"
+      "Electric"
     ],
     "Base": {
       "HP": [ 70, 0 ],
@@ -4369,8 +4223,7 @@
     "Id": 181,
     "Name": "Ampharos",
     "Type": [
-      "Electric",
-      "Normal"
+      "Electric"
     ],
     "Base": {
       "HP": [ 90, 0 ],
@@ -4393,8 +4246,7 @@
     "Id": 182,
     "Name": "Bellossom",
     "Type": [
-      "Grass",
-      "Normal"
+      "Grass"
     ],
     "Base": {
       "HP": [ 75, 0 ],
@@ -4418,8 +4270,7 @@
     "Name": "Marill",
     "Type": [
       "Water",
-      "Fairy",
-      "Normal"
+      "Fairy"
     ],
     "Base": {
       "HP": [ 70, 2 ],
@@ -4443,8 +4294,7 @@
     "Name": "Azumarill",
     "Type": [
       "Water",
-      "Fairy",
-      "Normal"
+      "Fairy"
     ],
     "Base": {
       "HP": [ 100, 3 ],
@@ -4467,8 +4317,7 @@
     "Id": 185,
     "Name": "Sudowoodo",
     "Type": [
-      "Rock",
-      "Normal"
+      "Rock"
     ],
     "Base": {
       "HP": [ 70, 0 ],
@@ -4491,8 +4340,7 @@
     "Id": 186,
     "Name": "Politoed",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 90, 0 ],
@@ -4633,8 +4481,7 @@
     "Id": 192,
     "Name": "Sunflora",
     "Type": [
-      "Grass",
-      "Normal"
+      "Grass"
     ],
     "Base": {
       "HP": [ 75, 0 ],
@@ -4658,8 +4505,7 @@
     "Name": "Yanma",
     "Type": [
       "Bug",
-      "Flying",
-      "Normal"
+      "Flying"
     ],
     "Base": {
       "HP": [ 65, 0 ],
@@ -4683,8 +4529,7 @@
     "Name": "Wooper",
     "Type": [
       "Water",
-      "Ground",
-      "Normal"
+      "Ground"
     ],
     "Base": {
       "HP": [ 55, 1 ],
@@ -4708,8 +4553,7 @@
     "Name": "Quagsire",
     "Type": [
       "Water",
-      "Ground",
-      "Normal"
+      "Ground"
     ],
     "Base": {
       "HP": [ 95, 2 ],
@@ -4732,8 +4576,7 @@
     "Id": 196,
     "Name": "Espeon",
     "Type": [
-      "Psychic",
-      "Normal"
+      "Psychic"
     ],
     "Base": {
       "HP": [ 65, 0 ],
@@ -4756,8 +4599,7 @@
     "Id": 197,
     "Name": "Umbreon",
     "Type": [
-      "Dark",
-      "Normal"
+      "Dark"
     ],
     "Base": {
       "HP": [ 95, 0 ],
@@ -4781,8 +4623,7 @@
     "Name": "Murkrow",
     "Type": [
       "Dark",
-      "Flying",
-      "Normal"
+      "Flying"
     ],
     "Base": {
       "HP": [ 60, 0 ],
@@ -4806,8 +4647,7 @@
     "Name": "Slowking",
     "Type": [
       "Water",
-      "Psychic",
-      "Normal"
+      "Psychic"
     ],
     "Base": {
       "HP": [ 95, 0 ],
@@ -4876,8 +4716,7 @@
     "Id": 202,
     "Name": "Wobbuffet",
     "Type": [
-      "Psychic",
-      "Normal"
+      "Psychic"
     ],
     "Base": {
       "HP": [ 190, 2 ],
@@ -4924,8 +4763,7 @@
     "Id": 204,
     "Name": "Pineco",
     "Type": [
-      "Bug",
-      "Normal"
+      "Bug"
     ],
     "Base": {
       "HP": [ 50, 0 ],
@@ -4949,8 +4787,7 @@
     "Name": "Forretress",
     "Type": [
       "Bug",
-      "Steel",
-      "Normal"
+      "Steel"
     ],
     "Base": {
       "HP": [ 75, 0 ],
@@ -4997,8 +4834,7 @@
     "Name": "Gligar",
     "Type": [
       "Ground",
-      "Flying",
-      "Normal"
+      "Flying"
     ],
     "Base": {
       "HP": [ 65, 0 ],
@@ -5022,8 +4858,7 @@
     "Name": "Steelix",
     "Type": [
       "Steel",
-      "Ground",
-      "Normal"
+      "Ground"
     ],
     "Base": {
       "HP": [ 75, 0 ],
@@ -5046,8 +4881,7 @@
     "Id": 209,
     "Name": "Snubbull",
     "Type": [
-      "Fairy",
-      "Normal"
+      "Fairy"
     ],
     "Base": {
       "HP": [ 60, 0 ],
@@ -5070,8 +4904,7 @@
     "Id": 210,
     "Name": "Granbull",
     "Type": [
-      "Fairy",
-      "Normal"
+      "Fairy"
     ],
     "Base": {
       "HP": [ 90, 0 ],
@@ -5119,8 +4952,7 @@
     "Name": "Scizor",
     "Type": [
       "Bug",
-      "Steel",
-      "Normal"
+      "Steel"
     ],
     "Base": {
       "HP": [ 70, 0 ],
@@ -5168,8 +5000,7 @@
     "Name": "Heracross",
     "Type": [
       "Bug",
-      "Fighting",
-      "Normal"
+      "Fighting"
     ],
     "Base": {
       "HP": [ 80, 0 ],
@@ -5193,8 +5024,7 @@
     "Name": "Sneasel",
     "Type": [
       "Dark",
-      "Ice",
-      "Normal"
+      "Ice"
     ],
     "Base": {
       "HP": [ 55, 0 ],
@@ -5405,8 +5235,7 @@
     "Id": 224,
     "Name": "Octillery",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 75, 0 ],
@@ -5430,8 +5259,7 @@
     "Name": "Delibird",
     "Type": [
       "Ice",
-      "Flying",
-      "Normal"
+      "Flying"
     ],
     "Base": {
       "HP": [ 45, 0 ],
@@ -5479,8 +5307,7 @@
     "Name": "Skarmory",
     "Type": [
       "Steel",
-      "Flying",
-      "Normal"
+      "Flying"
     ],
     "Base": {
       "HP": [ 65, 0 ],
@@ -5504,8 +5331,7 @@
     "Name": "Houndour",
     "Type": [
       "Dark",
-      "Fire",
-      "Normal"
+      "Fire"
     ],
     "Base": {
       "HP": [ 45, 0 ],
@@ -5529,8 +5355,7 @@
     "Name": "Houndoom",
     "Type": [
       "Dark",
-      "Fire",
-      "Normal"
+      "Fire"
     ],
     "Base": {
       "HP": [ 75, 0 ],
@@ -5554,8 +5379,7 @@
     "Name": "Kingdra",
     "Type": [
       "Water",
-      "Dragon",
-      "Normal"
+      "Dragon"
     ],
     "Base": {
       "HP": [ 75, 0 ],
@@ -5578,8 +5402,7 @@
     "Id": 231,
     "Name": "Phanpy",
     "Type": [
-      "Ground",
-      "Normal"
+      "Ground"
     ],
     "Base": {
       "HP": [ 90, 1 ],
@@ -5602,8 +5425,7 @@
     "Id": 232,
     "Name": "Donphan",
     "Type": [
-      "Ground",
-      "Normal"
+      "Ground"
     ],
     "Base": {
       "HP": [ 90, 0 ],
@@ -5695,8 +5517,7 @@
     "Id": 236,
     "Name": "Tyrogue",
     "Type": [
-      "Fighting",
-      "Normal"
+      "Fighting"
     ],
     "Base": {
       "HP": [ 35, 0 ],
@@ -5719,8 +5540,7 @@
     "Id": 237,
     "Name": "Hitmontop",
     "Type": [
-      "Fighting",
-      "Normal"
+      "Fighting"
     ],
     "Base": {
       "HP": [ 50, 0 ],
@@ -5744,8 +5564,7 @@
     "Name": "Smoochum",
     "Type": [
       "Ice",
-      "Psychic",
-      "Normal"
+      "Psychic"
     ],
     "Base": {
       "HP": [ 45, 0 ],
@@ -5768,8 +5587,7 @@
     "Id": 239,
     "Name": "Elekid",
     "Type": [
-      "Electric",
-      "Normal"
+      "Electric"
     ],
     "Base": {
       "HP": [ 45, 0 ],
@@ -5792,8 +5610,7 @@
     "Id": 240,
     "Name": "Magby",
     "Type": [
-      "Fire",
-      "Normal"
+      "Fire"
     ],
     "Base": {
       "HP": [ 45, 0 ],
@@ -5862,8 +5679,7 @@
     "Id": 243,
     "Name": "Raikou",
     "Type": [
-      "Electric",
-      "Normal"
+      "Electric"
     ],
     "Base": {
       "HP": [ 90, 0 ],
@@ -5886,8 +5702,7 @@
     "Id": 244,
     "Name": "Entei",
     "Type": [
-      "Fire",
-      "Normal"
+      "Fire"
     ],
     "Base": {
       "HP": [ 115, 1 ],
@@ -5910,8 +5725,7 @@
     "Id": 245,
     "Name": "Suicune",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 100, 0 ],
@@ -5935,8 +5749,7 @@
     "Name": "Larvitar",
     "Type": [
       "Rock",
-      "Ground",
-      "Normal"
+      "Ground"
     ],
     "Base": {
       "HP": [ 50, 0 ],
@@ -5960,8 +5773,7 @@
     "Name": "Pupitar",
     "Type": [
       "Rock",
-      "Ground",
-      "Normal"
+      "Ground"
     ],
     "Base": {
       "HP": [ 70, 0 ],
@@ -5985,8 +5797,7 @@
     "Name": "Tyranitar",
     "Type": [
       "Rock",
-      "Dark",
-      "Normal"
+      "Dark"
     ],
     "Base": {
       "HP": [ 100, 0 ],
@@ -6081,8 +5892,7 @@
     "Id": 252,
     "Name": "Treecko",
     "Type": [
-      "Grass",
-      "Normal"
+      "Grass"
     ],
     "Base": {
       "HP": [ 40, 0 ],
@@ -6105,8 +5915,7 @@
     "Id": 253,
     "Name": "Grovyle",
     "Type": [
-      "Grass",
-      "Normal"
+      "Grass"
     ],
     "Base": {
       "HP": [ 50, 0 ],
@@ -6129,8 +5938,7 @@
     "Id": 254,
     "Name": "Sceptile",
     "Type": [
-      "Grass",
-      "Normal"
+      "Grass"
     ],
     "Base": {
       "HP": [ 70, 0 ],
@@ -6153,8 +5961,7 @@
     "Id": 255,
     "Name": "Torchic",
     "Type": [
-      "Fire",
-      "Normal"
+      "Fire"
     ],
     "Base": {
       "HP": [ 45, 0 ],
@@ -6178,8 +5985,7 @@
     "Name": "Combusken",
     "Type": [
       "Fire",
-      "Fighting",
-      "Normal"
+      "Fighting"
     ],
     "Base": {
       "HP": [ 60, 0 ],
@@ -6203,8 +6009,7 @@
     "Name": "Blaziken",
     "Type": [
       "Fire",
-      "Fighting",
-      "Normal"
+      "Fighting"
     ],
     "Base": {
       "HP": [ 80, 0 ],
@@ -6227,8 +6032,7 @@
     "Id": 258,
     "Name": "Mudkip",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 50, 0 ],
@@ -6252,8 +6056,7 @@
     "Name": "Marshtomp",
     "Type": [
       "Water",
-      "Ground",
-      "Normal"
+      "Ground"
     ],
     "Base": {
       "HP": [ 70, 0 ],
@@ -6277,8 +6080,7 @@
     "Name": "Swampert",
     "Type": [
       "Water",
-      "Ground",
-      "Normal"
+      "Ground"
     ],
     "Base": {
       "HP": [ 100, 0 ],
@@ -6301,8 +6103,7 @@
     "Id": 261,
     "Name": "Poochyena",
     "Type": [
-      "Dark",
-      "Normal"
+      "Dark"
     ],
     "Base": {
       "HP": [ 35, 0 ],
@@ -6325,8 +6126,7 @@
     "Id": 262,
     "Name": "Mightyena",
     "Type": [
-      "Dark",
-      "Normal"
+      "Dark"
     ],
     "Base": {
       "HP": [ 70, 0 ],
@@ -6395,8 +6195,7 @@
     "Id": 265,
     "Name": "Wurmple",
     "Type": [
-      "Bug",
-      "Normal"
+      "Bug"
     ],
     "Base": {
       "HP": [ 45, 1 ],
@@ -6443,8 +6242,7 @@
     "Name": "Beautifly",
     "Type": [
       "Bug",
-      "Flying",
-      "Normal"
+      "Flying"
     ],
     "Base": {
       "HP": [ 60, 0 ],
@@ -6491,8 +6289,7 @@
     "Name": "Dustox",
     "Type": [
       "Bug",
-      "Poison",
-      "Normal"
+      "Poison"
     ],
     "Base": {
       "HP": [ 60, 0 ],
@@ -6540,8 +6337,7 @@
     "Name": "Lombre",
     "Type": [
       "Water",
-      "Grass",
-      "Normal"
+      "Grass"
     ],
     "Base": {
       "HP": [ 60, 0 ],
@@ -6565,8 +6361,7 @@
     "Name": "Ludicolo",
     "Type": [
       "Water",
-      "Grass",
-      "Normal"
+      "Grass"
     ],
     "Base": {
       "HP": [ 80, 0 ],
@@ -6589,8 +6384,7 @@
     "Id": 273,
     "Name": "Seedot",
     "Type": [
-      "Grass",
-      "Normal"
+      "Grass"
     ],
     "Base": {
       "HP": [ 40, 0 ],
@@ -6614,8 +6408,7 @@
     "Name": "Nuzleaf",
     "Type": [
       "Grass",
-      "Dark",
-      "Normal"
+      "Dark"
     ],
     "Base": {
       "HP": [ 70, 0 ],
@@ -6639,8 +6432,7 @@
     "Name": "Shiftry",
     "Type": [
       "Grass",
-      "Dark",
-      "Normal"
+      "Dark"
     ],
     "Base": {
       "HP": [ 90, 0 ],
@@ -6712,8 +6504,7 @@
     "Name": "Wingull",
     "Type": [
       "Water",
-      "Flying",
-      "Normal"
+      "Flying"
     ],
     "Base": {
       "HP": [ 40, 0 ],
@@ -6737,8 +6528,7 @@
     "Name": "Pelipper",
     "Type": [
       "Water",
-      "Flying",
-      "Normal"
+      "Flying"
     ],
     "Base": {
       "HP": [ 60, 0 ],
@@ -6762,8 +6552,7 @@
     "Name": "Ralts",
     "Type": [
       "Psychic",
-      "Fairy",
-      "Normal"
+      "Fairy"
     ],
     "Base": {
       "HP": [ 28, 0 ],
@@ -6787,8 +6576,7 @@
     "Name": "Kirlia",
     "Type": [
       "Psychic",
-      "Fairy",
-      "Normal"
+      "Fairy"
     ],
     "Base": {
       "HP": [ 38, 0 ],
@@ -6812,8 +6600,7 @@
     "Name": "Gardevoir",
     "Type": [
       "Psychic",
-      "Fairy",
-      "Normal"
+      "Fairy"
     ],
     "Base": {
       "HP": [ 68, 0 ],
@@ -6837,8 +6624,7 @@
     "Name": "Surskit",
     "Type": [
       "Bug",
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 40, 0 ],
@@ -6862,8 +6648,7 @@
     "Name": "Masquerain",
     "Type": [
       "Bug",
-      "Flying",
-      "Normal"
+      "Flying"
     ],
     "Base": {
       "HP": [ 70, 0 ],
@@ -6886,8 +6671,7 @@
     "Id": 285,
     "Name": "Shroomish",
     "Type": [
-      "Grass",
-      "Normal"
+      "Grass"
     ],
     "Base": {
       "HP": [ 60, 1 ],
@@ -6911,8 +6695,7 @@
     "Name": "Breloom",
     "Type": [
       "Grass",
-      "Fighting",
-      "Normal"
+      "Fighting"
     ],
     "Base": {
       "HP": [ 60, 0 ],
@@ -7145,8 +6928,7 @@
     "Id": 296,
     "Name": "Makuhita",
     "Type": [
-      "Fighting",
-      "Normal"
+      "Fighting"
     ],
     "Base": {
       "HP": [ 72, 1 ],
@@ -7169,8 +6951,7 @@
     "Id": 297,
     "Name": "Hariyama",
     "Type": [
-      "Fighting",
-      "Normal"
+      "Fighting"
     ],
     "Base": {
       "HP": [ 144, 2 ],
@@ -7217,8 +6998,7 @@
     "Id": 299,
     "Name": "Nosepass",
     "Type": [
-      "Rock",
-      "Normal"
+      "Rock"
     ],
     "Base": {
       "HP": [ 30, 0 ],
@@ -7288,8 +7068,7 @@
     "Name": "Sableye",
     "Type": [
       "Dark",
-      "Ghost",
-      "Normal"
+      "Ghost"
     ],
     "Base": {
       "HP": [ 50, 0 ],
@@ -7313,8 +7092,7 @@
     "Name": "Mawile",
     "Type": [
       "Steel",
-      "Fairy",
-      "Normal"
+      "Fairy"
     ],
     "Base": {
       "HP": [ 50, 0 ],
@@ -7338,8 +7116,7 @@
     "Name": "Aron",
     "Type": [
       "Steel",
-      "Rock",
-      "Normal"
+      "Rock"
     ],
     "Base": {
       "HP": [ 50, 0 ],
@@ -7363,8 +7140,7 @@
     "Name": "Lairon",
     "Type": [
       "Steel",
-      "Rock",
-      "Normal"
+      "Rock"
     ],
     "Base": {
       "HP": [ 60, 0 ],
@@ -7388,8 +7164,7 @@
     "Name": "Aggron",
     "Type": [
       "Steel",
-      "Rock",
-      "Normal"
+      "Rock"
     ],
     "Base": {
       "HP": [ 70, 0 ],
@@ -7413,8 +7188,7 @@
     "Name": "Meditite",
     "Type": [
       "Fighting",
-      "Psychic",
-      "Normal"
+      "Psychic"
     ],
     "Base": {
       "HP": [ 30, 0 ],
@@ -7438,8 +7212,7 @@
     "Name": "Medicham",
     "Type": [
       "Fighting",
-      "Psychic",
-      "Normal"
+      "Psychic"
     ],
     "Base": {
       "HP": [ 60, 0 ],
@@ -7462,8 +7235,7 @@
     "Id": 309,
     "Name": "Electrike",
     "Type": [
-      "Electric",
-      "Normal"
+      "Electric"
     ],
     "Base": {
       "HP": [ 40, 0 ],
@@ -7486,8 +7258,7 @@
     "Id": 310,
     "Name": "Manectric",
     "Type": [
-      "Electric",
-      "Normal"
+      "Electric"
     ],
     "Base": {
       "HP": [ 70, 0 ],
@@ -7510,8 +7281,7 @@
     "Id": 311,
     "Name": "Plusle",
     "Type": [
-      "Electric",
-      "Normal"
+      "Electric"
     ],
     "Base": {
       "HP": [ 60, 0 ],
@@ -7534,8 +7304,7 @@
     "Id": 312,
     "Name": "Minun",
     "Type": [
-      "Electric",
-      "Normal"
+      "Electric"
     ],
     "Base": {
       "HP": [ 60, 0 ],
@@ -7558,8 +7327,7 @@
     "Id": 313,
     "Name": "Volbeat",
     "Type": [
-      "Bug",
-      "Normal"
+      "Bug"
     ],
     "Base": {
       "HP": [ 65, 0 ],
@@ -7582,8 +7350,7 @@
     "Id": 314,
     "Name": "Illumise",
     "Type": [
-      "Bug",
-      "Normal"
+      "Bug"
     ],
     "Base": {
       "HP": [ 65, 0 ],
@@ -7607,8 +7374,7 @@
     "Name": "Roselia",
     "Type": [
       "Grass",
-      "Poison",
-      "Normal"
+      "Poison"
     ],
     "Base": {
       "HP": [ 50, 0 ],
@@ -7702,8 +7468,7 @@
     "Name": "Sharpedo",
     "Type": [
       "Water",
-      "Dark",
-      "Normal"
+      "Dark"
     ],
     "Base": {
       "HP": [ 70, 0 ],
@@ -7749,8 +7514,7 @@
     "Id": 321,
     "Name": "Wailord",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 170, 2 ],
@@ -7774,8 +7538,7 @@
     "Name": "Numel",
     "Type": [
       "Fire",
-      "Ground",
-      "Normal"
+      "Ground"
     ],
     "Base": {
       "HP": [ 60, 0 ],
@@ -7799,8 +7562,7 @@
     "Name": "Camerupt",
     "Type": [
       "Fire",
-      "Ground",
-      "Normal"
+      "Ground"
     ],
     "Base": {
       "HP": [ 70, 0 ],
@@ -7823,8 +7585,7 @@
     "Id": 324,
     "Name": "Torkoal",
     "Type": [
-      "Fire",
-      "Normal"
+      "Fire"
     ],
     "Base": {
       "HP": [ 70, 0 ],
@@ -7870,8 +7631,7 @@
     "Id": 326,
     "Name": "Grumpig",
     "Type": [
-      "Psychic",
-      "Normal"
+      "Psychic"
     ],
     "Base": {
       "HP": [ 80, 0 ],
@@ -7917,8 +7677,7 @@
     "Id": 328,
     "Name": "Trapinch",
     "Type": [
-      "Ground",
-      "Normal"
+      "Ground"
     ],
     "Base": {
       "HP": [ 45, 0 ],
@@ -7942,8 +7701,7 @@
     "Name": "Vibrava",
     "Type": [
       "Ground",
-      "Dragon",
-      "Normal"
+      "Dragon"
     ],
     "Base": {
       "HP": [ 50, 0 ],
@@ -7967,8 +7725,7 @@
     "Name": "Flygon",
     "Type": [
       "Ground",
-      "Dragon",
-      "Normal"
+      "Dragon"
     ],
     "Base": {
       "HP": [ 80, 0 ],
@@ -7991,8 +7748,7 @@
     "Id": 331,
     "Name": "Cacnea",
     "Type": [
-      "Grass",
-      "Normal"
+      "Grass"
     ],
     "Base": {
       "HP": [ 50, 0 ],
@@ -8016,8 +7772,7 @@
     "Name": "Cacturne",
     "Type": [
       "Grass",
-      "Dark",
-      "Normal"
+      "Dark"
     ],
     "Base": {
       "HP": [ 70, 0 ],
@@ -8065,8 +7820,7 @@
     "Name": "Altaria",
     "Type": [
       "Dragon",
-      "Flying",
-      "Normal"
+      "Flying"
     ],
     "Base": {
       "HP": [ 75, 0 ],
@@ -8112,8 +7866,7 @@
     "Id": 336,
     "Name": "Seviper",
     "Type": [
-      "Poison",
-      "Normal"
+      "Poison"
     ],
     "Base": {
       "HP": [ 73, 0 ],
@@ -8137,8 +7890,7 @@
     "Name": "Lunatone",
     "Type": [
       "Rock",
-      "Psychic",
-      "Normal"
+      "Psychic"
     ],
     "Base": {
       "HP": [ 90, 0 ],
@@ -8162,8 +7914,7 @@
     "Name": "Solrock",
     "Type": [
       "Rock",
-      "Psychic",
-      "Normal"
+      "Psychic"
     ],
     "Base": {
       "HP": [ 90, 0 ],
@@ -8234,8 +7985,7 @@
     "Id": 341,
     "Name": "Corphish",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 43, 0 ],
@@ -8259,8 +8009,7 @@
     "Name": "Crawdaunt",
     "Type": [
       "Water",
-      "Dark",
-      "Normal"
+      "Dark"
     ],
     "Base": {
       "HP": [ 63, 0 ],
@@ -8284,8 +8033,7 @@
     "Name": "Baltoy",
     "Type": [
       "Ground",
-      "Psychic",
-      "Normal"
+      "Psychic"
     ],
     "Base": {
       "HP": [ 40, 0 ],
@@ -8309,8 +8057,7 @@
     "Name": "Claydol",
     "Type": [
       "Ground",
-      "Psychic",
-      "Normal"
+      "Psychic"
     ],
     "Base": {
       "HP": [ 60, 0 ],
@@ -8382,8 +8129,7 @@
     "Name": "Anorith",
     "Type": [
       "Rock",
-      "Bug",
-      "Normal"
+      "Bug"
     ],
     "Base": {
       "HP": [ 45, 0 ],
@@ -8407,8 +8153,7 @@
     "Name": "Armaldo",
     "Type": [
       "Rock",
-      "Bug",
-      "Normal"
+      "Bug"
     ],
     "Base": {
       "HP": [ 75, 0 ],
@@ -8454,8 +8199,7 @@
     "Id": 350,
     "Name": "Milotic",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 95, 0 ],
@@ -8570,8 +8314,7 @@
     "Id": 355,
     "Name": "Duskull",
     "Type": [
-      "Ghost",
-      "Normal"
+      "Ghost"
     ],
     "Base": {
       "HP": [ 20, 0 ],
@@ -8594,8 +8337,7 @@
     "Id": 356,
     "Name": "Dusclops",
     "Type": [
-      "Ghost",
-      "Normal"
+      "Ghost"
     ],
     "Base": {
       "HP": [ 40, 0 ],
@@ -8665,8 +8407,7 @@
     "Id": 359,
     "Name": "Absol",
     "Type": [
-      "Dark",
-      "Normal"
+      "Dark"
     ],
     "Base": {
       "HP": [ 65, 0 ],
@@ -8689,8 +8430,7 @@
     "Id": 360,
     "Name": "Wynaut",
     "Type": [
-      "Psychic",
-      "Normal"
+      "Psychic"
     ],
     "Base": {
       "HP": [ 95, 1 ],
@@ -8713,8 +8453,7 @@
     "Id": 361,
     "Name": "Snorunt",
     "Type": [
-      "Ice",
-      "Normal"
+      "Ice"
     ],
     "Base": {
       "HP": [ 50, 1 ],
@@ -8737,8 +8476,7 @@
     "Id": 362,
     "Name": "Glalie",
     "Type": [
-      "Ice",
-      "Normal"
+      "Ice"
     ],
     "Base": {
       "HP": [ 80, 2 ],
@@ -8762,8 +8500,7 @@
     "Name": "Spheal",
     "Type": [
       "Ice",
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 70, 1 ],
@@ -8787,8 +8524,7 @@
     "Name": "Sealeo",
     "Type": [
       "Ice",
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 90, 2 ],
@@ -8812,8 +8548,7 @@
     "Name": "Walrein",
     "Type": [
       "Ice",
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 110, 3 ],
@@ -8952,8 +8687,7 @@
     "Id": 371,
     "Name": "Bagon",
     "Type": [
-      "Dragon",
-      "Normal"
+      "Dragon"
     ],
     "Base": {
       "HP": [ 45, 0 ],
@@ -8976,8 +8710,7 @@
     "Id": 372,
     "Name": "Shelgon",
     "Type": [
-      "Dragon",
-      "Normal"
+      "Dragon"
     ],
     "Base": {
       "HP": [ 65, 0 ],
@@ -9049,8 +8782,7 @@
     "Name": "Metang",
     "Type": [
       "Steel",
-      "Psychic",
-      "Normal"
+      "Psychic"
     ],
     "Base": {
       "HP": [ 60, 0 ],
@@ -9074,8 +8806,7 @@
     "Name": "Metagross",
     "Type": [
       "Steel",
-      "Psychic",
-      "Normal"
+      "Psychic"
     ],
     "Base": {
       "HP": [ 80, 0 ],
@@ -9098,8 +8829,7 @@
     "Id": 377,
     "Name": "Regirock",
     "Type": [
-      "Rock",
-      "Normal"
+      "Rock"
     ],
     "Base": {
       "HP": [ 80, 0 ],
@@ -9122,8 +8852,7 @@
     "Id": 378,
     "Name": "Regice",
     "Type": [
-      "Ice",
-      "Normal"
+      "Ice"
     ],
     "Base": {
       "HP": [ 80, 0 ],
@@ -9146,8 +8875,7 @@
     "Id": 379,
     "Name": "Registeel",
     "Type": [
-      "Steel",
-      "Normal"
+      "Steel"
     ],
     "Base": {
       "HP": [ 80, 0 ],
@@ -9218,8 +8946,7 @@
     "Id": 382,
     "Name": "Kyogre",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 100, 0 ],
@@ -9242,8 +8969,7 @@
     "Id": 383,
     "Name": "Groudon",
     "Type": [
-      "Ground",
-      "Normal"
+      "Ground"
     ],
     "Base": {
       "HP": [ 100, 0 ],
@@ -9291,8 +9017,7 @@
     "Name": "Jirachi",
     "Type": [
       "Steel",
-      "Psychic",
-      "Normal"
+      "Psychic"
     ],
     "Base": {
       "HP": [ 100, 3 ],
@@ -9315,8 +9040,7 @@
     "Id": 386,
     "Name": "Deoxys",
     "Type": [
-      "Psychic",
-      "Normal"
+      "Psychic"
     ],
     "Base": {
       "HP": [ 50, 0 ],
@@ -9339,8 +9063,7 @@
     "Id": 387,
     "Name": "Turtwig",
     "Type": [
-      "Grass",
-      "Normal"
+      "Grass"
     ],
     "Base": {
       "HP": [ 55, 0 ],
@@ -9363,8 +9086,7 @@
     "Id": 388,
     "Name": "Grotle",
     "Type": [
-      "Grass",
-      "Normal"
+      "Grass"
     ],
     "Base": {
       "HP": [ 75, 0 ],
@@ -9388,8 +9110,7 @@
     "Name": "Torterra",
     "Type": [
       "Grass",
-      "Ground",
-      "Normal"
+      "Ground"
     ],
     "Base": {
       "HP": [ 95, 0 ],
@@ -9412,8 +9133,7 @@
     "Id": 390,
     "Name": "Chimchar",
     "Type": [
-      "Fire",
-      "Normal"
+      "Fire"
     ],
     "Base": {
       "HP": [ 44, 0 ],
@@ -9437,8 +9157,7 @@
     "Name": "Monferno",
     "Type": [
       "Fire",
-      "Fighting",
-      "Normal"
+      "Fighting"
     ],
     "Base": {
       "HP": [ 64, 0 ],
@@ -9462,8 +9181,7 @@
     "Name": "Infernape",
     "Type": [
       "Fire",
-      "Fighting",
-      "Normal"
+      "Fighting"
     ],
     "Base": {
       "HP": [ 76, 0 ],
@@ -9486,8 +9204,7 @@
     "Id": 393,
     "Name": "Piplup",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 53, 0 ],
@@ -9510,8 +9227,7 @@
     "Id": 394,
     "Name": "Prinplup",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 64, 0 ],
@@ -9535,8 +9251,7 @@
     "Name": "Empoleon",
     "Type": [
       "Water",
-      "Steel",
-      "Normal"
+      "Steel"
     ],
     "Base": {
       "HP": [ 84, 0 ],
@@ -9678,8 +9393,7 @@
     "Id": 401,
     "Name": "Kricketot",
     "Type": [
-      "Bug",
-      "Normal"
+      "Bug"
     ],
     "Base": {
       "HP": [ 37, 0 ],
@@ -9702,8 +9416,7 @@
     "Id": 402,
     "Name": "Kricketune",
     "Type": [
-      "Bug",
-      "Normal"
+      "Bug"
     ],
     "Base": {
       "HP": [ 77, 0 ],
@@ -9726,8 +9439,7 @@
     "Id": 403,
     "Name": "Shinx",
     "Type": [
-      "Electric",
-      "Normal"
+      "Electric"
     ],
     "Base": {
       "HP": [ 45, 0 ],
@@ -9750,8 +9462,7 @@
     "Id": 404,
     "Name": "Luxio",
     "Type": [
-      "Electric",
-      "Normal"
+      "Electric"
     ],
     "Base": {
       "HP": [ 60, 0 ],
@@ -9774,8 +9485,7 @@
     "Id": 405,
     "Name": "Luxray",
     "Type": [
-      "Electric",
-      "Normal"
+      "Electric"
     ],
     "Base": {
       "HP": [ 80, 0 ],
@@ -10036,8 +9746,7 @@
     "Name": "Vespiquen",
     "Type": [
       "Bug",
-      "Flying",
-      "Normal"
+      "Flying"
     ],
     "Base": {
       "HP": [ 70, 0 ],
@@ -10060,8 +9769,7 @@
     "Id": 417,
     "Name": "Pachirisu",
     "Type": [
-      "Electric",
-      "Normal"
+      "Electric"
     ],
     "Base": {
       "HP": [ 60, 0 ],
@@ -10084,8 +9792,7 @@
     "Id": 418,
     "Name": "Buizel",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 55, 0 ],
@@ -10108,8 +9815,7 @@
     "Id": 419,
     "Name": "Floatzel",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 85, 0 ],
@@ -10249,8 +9955,7 @@
     "Name": "Drifloon",
     "Type": [
       "Ghost",
-      "Flying",
-      "Normal"
+      "Flying"
     ],
     "Base": {
       "HP": [ 90, 1 ],
@@ -10274,8 +9979,7 @@
     "Name": "Drifblim",
     "Type": [
       "Ghost",
-      "Flying",
-      "Normal"
+      "Flying"
     ],
     "Base": {
       "HP": [ 150, 2 ],
@@ -10368,8 +10072,7 @@
     "Name": "Honchkrow",
     "Type": [
       "Dark",
-      "Flying",
-      "Normal"
+      "Flying"
     ],
     "Base": {
       "HP": [ 100, 0 ],
@@ -10462,8 +10165,7 @@
     "Name": "Stunky",
     "Type": [
       "Poison",
-      "Dark",
-      "Normal"
+      "Dark"
     ],
     "Base": {
       "HP": [ 63, 0 ],
@@ -10487,8 +10189,7 @@
     "Name": "Skuntank",
     "Type": [
       "Poison",
-      "Dark",
-      "Normal"
+      "Dark"
     ],
     "Base": {
       "HP": [ 103, 2 ],
@@ -10512,8 +10213,7 @@
     "Name": "Bronzor",
     "Type": [
       "Steel",
-      "Psychic",
-      "Normal"
+      "Psychic"
     ],
     "Base": {
       "HP": [ 57, 0 ],
@@ -10537,8 +10237,7 @@
     "Name": "Bronzong",
     "Type": [
       "Steel",
-      "Psychic",
-      "Normal"
+      "Psychic"
     ],
     "Base": {
       "HP": [ 67, 0 ],
@@ -10561,8 +10260,7 @@
     "Id": 438,
     "Name": "Bonsly",
     "Type": [
-      "Rock",
-      "Normal"
+      "Rock"
     ],
     "Base": {
       "HP": [ 50, 0 ],
@@ -10586,8 +10284,7 @@
     "Name": "Mime Jr.",
     "Type": [
       "Psychic",
-      "Fairy",
-      "Normal"
+      "Fairy"
     ],
     "Base": {
       "HP": [ 20, 0 ],
@@ -10682,8 +10379,7 @@
     "Name": "Gible",
     "Type": [
       "Dragon",
-      "Ground",
-      "Normal"
+      "Ground"
     ],
     "Base": {
       "HP": [ 58, 0 ],
@@ -10707,8 +10403,7 @@
     "Name": "Gabite",
     "Type": [
       "Dragon",
-      "Ground",
-      "Normal"
+      "Ground"
     ],
     "Base": {
       "HP": [ 68, 0 ],
@@ -10732,8 +10427,7 @@
     "Name": "Garchomp",
     "Type": [
       "Dragon",
-      "Ground",
-      "Normal"
+      "Ground"
     ],
     "Base": {
       "HP": [ 108, 0 ],
@@ -10779,8 +10473,7 @@
     "Id": 447,
     "Name": "Riolu",
     "Type": [
-      "Fighting",
-      "Normal"
+      "Fighting"
     ],
     "Base": {
       "HP": [ 40, 0 ],
@@ -10803,8 +10496,7 @@
     "Id": 448,
     "Name": "Lucario",
     "Type": [
-      "Fighting",
-      "Steel"
+      "Fighting"
     ],
     "Base": {
       "HP": [ 70, 0 ],
@@ -10827,8 +10519,7 @@
     "Id": 449,
     "Name": "Hippopotas",
     "Type": [
-      "Ground",
-      "Normal"
+      "Ground"
     ],
     "Base": {
       "HP": [ 68, 0 ],
@@ -10851,8 +10542,7 @@
     "Id": 450,
     "Name": "Hippowdon",
     "Type": [
-      "Ground",
-      "Normal"
+      "Ground"
     ],
     "Base": {
       "HP": [ 108, 0 ],
@@ -10900,8 +10590,7 @@
     "Name": "Drapion",
     "Type": [
       "Poison",
-      "Dark",
-      "Normal"
+      "Dark"
     ],
     "Base": {
       "HP": [ 70, 0 ],
@@ -10925,8 +10614,7 @@
     "Name": "Croagunk",
     "Type": [
       "Poison",
-      "Fighting",
-      "Normal"
+      "Fighting"
     ],
     "Base": {
       "HP": [ 48, 0 ],
@@ -10950,8 +10638,7 @@
     "Name": "Toxicroak",
     "Type": [
       "Poison",
-      "Fighting",
-      "Normal"
+      "Fighting"
     ],
     "Base": {
       "HP": [ 83, 0 ],
@@ -10974,8 +10661,7 @@
     "Id": 455,
     "Name": "Carnivine",
     "Type": [
-      "Grass",
-      "Normal"
+      "Grass"
     ],
     "Base": {
       "HP": [ 74, 0 ],
@@ -10998,8 +10684,7 @@
     "Id": 456,
     "Name": "Finneon",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 49, 0 ],
@@ -11022,8 +10707,7 @@
     "Id": 457,
     "Name": "Lumineon",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 69, 0 ],
@@ -11842,8 +11526,7 @@
     "Id": 491,
     "Name": "Darkrai",
     "Type": [
-      "Dark",
-      "Normal"
+      "Dark"
     ],
     "Base": {
       "HP": [ 70, 0 ],
@@ -12270,8 +11953,7 @@
     "Id": 509,
     "Name": "Purrloin",
     "Type": [
-      "Dark",
-      "Normal"
+      "Dark"
     ],
     "Base": {
       "HP": [ 41, 0 ],
@@ -12294,8 +11976,7 @@
     "Id": 510,
     "Name": "Liepard",
     "Type": [
-      "Dark",
-      "Normal"
+      "Dark"
     ],
     "Base": {
       "HP": [ 64, 0 ],
@@ -12318,8 +11999,7 @@
     "Id": 511,
     "Name": "Pansage",
     "Type": [
-      "Grass",
-      "Normal"
+      "Grass"
     ],
     "Base": {
       "HP": [ 50, 0 ],
@@ -12342,8 +12022,7 @@
     "Id": 512,
     "Name": "Simisage",
     "Type": [
-      "Grass",
-      "Normal"
+      "Grass"
     ],
     "Base": {
       "HP": [ 75, 0 ],
@@ -12366,8 +12045,7 @@
     "Id": 513,
     "Name": "Pansear",
     "Type": [
-      "Fire",
-      "Normal"
+      "Fire"
     ],
     "Base": {
       "HP": [ 50, 0 ],
@@ -12390,8 +12068,7 @@
     "Id": 514,
     "Name": "Simisear",
     "Type": [
-      "Fire",
-      "Normal"
+      "Fire"
     ],
     "Base": {
       "HP": [ 75, 0 ],
@@ -12414,8 +12091,7 @@
     "Id": 515,
     "Name": "Panpour",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 50, 0 ],
@@ -12438,8 +12114,7 @@
     "Id": 516,
     "Name": "Simipour",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 75, 0 ],
@@ -12462,8 +12137,7 @@
     "Id": 517,
     "Name": "Munna",
     "Type": [
-      "Psychic",
-      "Normal"
+      "Psychic"
     ],
     "Base": {
       "HP": [ 76, 1 ],
@@ -12486,8 +12160,7 @@
     "Id": 518,
     "Name": "Musharna",
     "Type": [
-      "Psychic",
-      "Normal"
+      "Psychic"
     ],
     "Base": {
       "HP": [ 116, 2 ],
@@ -12582,8 +12255,7 @@
     "Id": 522,
     "Name": "Blitzle",
     "Type": [
-      "Electric",
-      "Normal"
+      "Electric"
     ],
     "Base": {
       "HP": [ 45, 0 ],
@@ -12606,8 +12278,7 @@
     "Id": 523,
     "Name": "Zebstrika",
     "Type": [
-      "Electric",
-      "Normal"
+      "Electric"
     ],
     "Base": {
       "HP": [ 75, 0 ],
@@ -12653,8 +12324,7 @@
     "Id": 525,
     "Name": "Boldore",
     "Type": [
-      "Rock",
-      "Normal"
+      "Rock"
     ],
     "Base": {
       "HP": [ 70, 0 ],
@@ -12677,8 +12347,7 @@
     "Id": 526,
     "Name": "Gigalith",
     "Type": [
-      "Rock",
-      "Normal"
+      "Rock"
     ],
     "Base": {
       "HP": [ 85, 0 ],
@@ -12702,8 +12371,7 @@
     "Name": "Woobat",
     "Type": [
       "Psychic",
-      "Flying",
-      "Normal"
+      "Flying"
     ],
     "Base": {
       "HP": [ 65, 0 ],
@@ -12727,8 +12395,7 @@
     "Name": "Swoobat",
     "Type": [
       "Psychic",
-      "Flying",
-      "Normal"
+      "Flying"
     ],
     "Base": {
       "HP": [ 67, 0 ],
@@ -12751,8 +12418,7 @@
     "Id": 529,
     "Name": "Drilbur",
     "Type": [
-      "Ground",
-      "Normal"
+      "Ground"
     ],
     "Base": {
       "HP": [ 60, 0 ],
@@ -12776,8 +12442,7 @@
     "Name": "Excadrill",
     "Type": [
       "Ground",
-      "Steel",
-      "Normal"
+      "Steel"
     ],
     "Base": {
       "HP": [ 110, 0 ],
@@ -12823,8 +12488,7 @@
     "Id": 532,
     "Name": "Timburr",
     "Type": [
-      "Fighting",
-      "Normal"
+      "Fighting"
     ],
     "Base": {
       "HP": [ 75, 0 ],
@@ -12847,8 +12511,7 @@
     "Id": 533,
     "Name": "Gurdurr",
     "Type": [
-      "Fighting",
-      "Normal"
+      "Fighting"
     ],
     "Base": {
       "HP": [ 85, 0 ],
@@ -12871,8 +12534,7 @@
     "Id": 534,
     "Name": "Conkeldurr",
     "Type": [
-      "Fighting",
-      "Normal"
+      "Fighting"
     ],
     "Base": {
       "HP": [ 105, 0 ],
@@ -12919,8 +12581,7 @@
     "Name": "Palpitoad",
     "Type": [
       "Water",
-      "Ground",
-      "Normal"
+      "Ground"
     ],
     "Base": {
       "HP": [ 75, 2 ],
@@ -12944,8 +12605,7 @@
     "Name": "Seismitoad",
     "Type": [
       "Water",
-      "Ground",
-      "Normal"
+      "Ground"
     ],
     "Base": {
       "HP": [ 105, 3 ],
@@ -12968,8 +12628,7 @@
     "Id": 538,
     "Name": "Throh",
     "Type": [
-      "Fighting",
-      "Normal"
+      "Fighting"
     ],
     "Base": {
       "HP": [ 120, 2 ],
@@ -12992,8 +12651,7 @@
     "Id": 539,
     "Name": "Sawk",
     "Type": [
-      "Fighting",
-      "Normal"
+      "Fighting"
     ],
     "Base": {
       "HP": [ 75, 0 ],
@@ -13302,8 +12960,7 @@
     "Name": "Krokorok",
     "Type": [
       "Ground",
-      "Dark",
-      "Normal"
+      "Dark"
     ],
     "Base": {
       "HP": [ 60, 0 ],
@@ -13327,8 +12984,7 @@
     "Name": "Krookodile",
     "Type": [
       "Ground",
-      "Dark",
-      "Normal"
+      "Dark"
     ],
     "Base": {
       "HP": [ 95, 0 ],
@@ -13374,8 +13030,7 @@
     "Id": 555,
     "Name": "Darmanitan",
     "Type": [
-      "Fire",
-      "Normal"
+      "Fire"
     ],
     "Base": {
       "HP": [ 105, 0 ],
@@ -13446,8 +13101,7 @@
     "Name": "Crustle",
     "Type": [
       "Bug",
-      "Rock",
-      "Normal"
+      "Rock"
     ],
     "Base": {
       "HP": [ 70, 0 ],
@@ -13471,8 +13125,7 @@
     "Name": "Scraggy",
     "Type": [
       "Dark",
-      "Fighting",
-      "Normal"
+      "Fighting"
     ],
     "Base": {
       "HP": [ 50, 0 ],
@@ -13496,8 +13149,7 @@
     "Name": "Scrafty",
     "Type": [
       "Dark",
-      "Fighting",
-      "Normal"
+      "Fighting"
     ],
     "Base": {
       "HP": [ 65, 0 ],
@@ -13544,8 +13196,7 @@
     "Id": 562,
     "Name": "Yamask",
     "Type": [
-      "Ghost",
-      "Normal"
+      "Ghost"
     ],
     "Base": {
       "HP": [ 38, 0 ],
@@ -13664,8 +13315,7 @@
     "Name": "Archeops",
     "Type": [
       "Rock",
-      "Flying",
-      "Normal"
+      "Flying"
     ],
     "Base": {
       "HP": [ 75, 0 ],
@@ -13688,8 +13338,7 @@
     "Id": 568,
     "Name": "Trubbish",
     "Type": [
-      "Poison",
-      "Normal"
+      "Poison"
     ],
     "Base": {
       "HP": [ 50, 0 ],
@@ -13712,8 +13361,7 @@
     "Id": 569,
     "Name": "Garbodor",
     "Type": [
-      "Poison",
-      "Normal"
+      "Poison"
     ],
     "Base": {
       "HP": [ 80, 0 ],
@@ -13875,8 +13523,7 @@
     "Id": 576,
     "Name": "Gothitelle",
     "Type": [
-      "Psychic",
-      "Normal"
+      "Psychic"
     ],
     "Base": {
       "HP": [ 70, 0 ],
@@ -14300,8 +13947,7 @@
     "Id": 594,
     "Name": "Alomomola",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 165, 2 ],
@@ -14325,8 +13971,7 @@
     "Name": "Joltik",
     "Type": [
       "Bug",
-      "Electric",
-      "Normal"
+      "Electric"
     ],
     "Base": {
       "HP": [ 50, 0 ],
@@ -14421,8 +14066,7 @@
     "Id": 599,
     "Name": "Klink",
     "Type": [
-      "Steel",
-      "Normal"
+      "Steel"
     ],
     "Base": {
       "HP": [ 40, 0 ],
@@ -14445,8 +14089,7 @@
     "Id": 600,
     "Name": "Klang",
     "Type": [
-      "Steel",
-      "Normal"
+      "Steel"
     ],
     "Base": {
       "HP": [ 60, 0 ],
@@ -14469,8 +14112,7 @@
     "Id": 601,
     "Name": "Klinklang",
     "Type": [
-      "Steel",
-      "Normal"
+      "Steel"
     ],
     "Base": {
       "HP": [ 60, 0 ],
@@ -14493,8 +14135,7 @@
     "Id": 602,
     "Name": "Tynamo",
     "Type": [
-      "Electric",
-      "Normal"
+      "Electric"
     ],
     "Base": {
       "HP": [ 35, 0 ],
@@ -14517,8 +14158,7 @@
     "Id": 603,
     "Name": "Eelektrik",
     "Type": [
-      "Electric",
-      "Normal"
+      "Electric"
     ],
     "Base": {
       "HP": [ 65, 0 ],
@@ -14541,8 +14181,7 @@
     "Id": 604,
     "Name": "Eelektross",
     "Type": [
-      "Electric",
-      "Normal"
+      "Electric"
     ],
     "Base": {
       "HP": [ 85, 0 ],
@@ -14565,8 +14204,7 @@
     "Id": 605,
     "Name": "Elgyem",
     "Type": [
-      "Psychic",
-      "Normal"
+      "Psychic"
     ],
     "Base": {
       "HP": [ 55, 0 ],
@@ -14589,8 +14227,7 @@
     "Id": 606,
     "Name": "Beheeyem",
     "Type": [
-      "Psychic",
-      "Normal"
+      "Psychic"
     ],
     "Base": {
       "HP": [ 75, 0 ],
@@ -14685,8 +14322,7 @@
     "Id": 610,
     "Name": "Axew",
     "Type": [
-      "Dragon",
-      "Normal"
+      "Dragon"
     ],
     "Base": {
       "HP": [ 46, 0 ],
@@ -14709,8 +14345,7 @@
     "Id": 611,
     "Name": "Fraxure",
     "Type": [
-      "Dragon",
-      "Normal"
+      "Dragon"
     ],
     "Base": {
       "HP": [ 66, 0 ],
@@ -14733,8 +14368,7 @@
     "Id": 612,
     "Name": "Haxorus",
     "Type": [
-      "Dragon",
-      "Normal"
+      "Dragon"
     ],
     "Base": {
       "HP": [ 76, 0 ],
@@ -14757,8 +14391,7 @@
     "Id": 613,
     "Name": "Cubchoo",
     "Type": [
-      "Ice",
-      "Normal"
+      "Ice"
     ],
     "Base": {
       "HP": [ 55, 0 ],
@@ -14781,8 +14414,7 @@
     "Id": 614,
     "Name": "Beartic",
     "Type": [
-      "Ice",
-      "Normal"
+      "Ice"
     ],
     "Base": {
       "HP": [ 95, 0 ],
@@ -14805,8 +14437,7 @@
     "Id": 615,
     "Name": "Cryogonal",
     "Type": [
-      "Ice",
-      "Normal"
+      "Ice"
     ],
     "Base": {
       "HP": [ 80, 0 ],
@@ -14829,8 +14460,7 @@
     "Id": 616,
     "Name": "Shelmet",
     "Type": [
-      "Bug",
-      "Normal"
+      "Bug"
     ],
     "Base": {
       "HP": [ 50, 0 ],
@@ -14853,8 +14483,7 @@
     "Id": 617,
     "Name": "Accelgor",
     "Type": [
-      "Bug",
-      "Normal"
+      "Bug"
     ],
     "Base": {
       "HP": [ 80, 0 ],
@@ -14901,8 +14530,7 @@
     "Id": 619,
     "Name": "Mienfoo",
     "Type": [
-      "Fighting",
-      "Normal"
+      "Fighting"
     ],
     "Base": {
       "HP": [ 45, 0 ],
@@ -14925,8 +14553,7 @@
     "Id": 620,
     "Name": "Mienshao",
     "Type": [
-      "Fighting",
-      "Normal"
+      "Fighting"
     ],
     "Base": {
       "HP": [ 65, 0 ],
@@ -14949,8 +14576,7 @@
     "Id": 621,
     "Name": "Druddigon",
     "Type": [
-      "Dragon",
-      "Normal"
+      "Dragon"
     ],
     "Base": {
       "HP": [ 77, 0 ],
@@ -14998,8 +14624,7 @@
     "Name": "Golurk",
     "Type": [
       "Ground",
-      "Ghost",
-      "Normal"
+      "Ghost"
     ],
     "Base": {
       "HP": [ 89, 0 ],
@@ -15023,8 +14648,7 @@
     "Name": "Pawniard",
     "Type": [
       "Dark",
-      "Steel",
-      "Normal"
+      "Steel"
     ],
     "Base": {
       "HP": [ 45, 0 ],
@@ -15048,8 +14672,7 @@
     "Name": "Bisharp",
     "Type": [
       "Dark",
-      "Steel",
-      "Normal"
+      "Steel"
     ],
     "Base": {
       "HP": [ 65, 0 ],
@@ -15191,8 +14814,7 @@
     "Id": 631,
     "Name": "Heatmor",
     "Type": [
-      "Fire",
-      "Normal"
+      "Fire"
     ],
     "Base": {
       "HP": [ 85, 0 ],
@@ -15431,8 +15053,7 @@
     "Id": 641,
     "Name": "Tornadus",
     "Type": [
-      "Flying",
-      "Normal"
+      "Flying"
     ],
     "Base": {
       "HP": [ 79, 0 ],
@@ -15647,8 +15268,7 @@
     "Id": 650,
     "Name": "Chespin",
     "Type": [
-      "Grass",
-      "Normal"
+      "Grass"
     ],
     "Base": {
       "HP": [ 56, 0 ],
@@ -15671,8 +15291,7 @@
     "Id": 651,
     "Name": "Quilladin",
     "Type": [
-      "Grass",
-      "Normal"
+      "Grass"
     ],
     "Base": {
       "HP": [ 61, 0 ],
@@ -15696,8 +15315,7 @@
     "Name": "Chesnaught",
     "Type": [
       "Grass",
-      "Fighting",
-      "Normal"
+      "Fighting"
     ],
     "Base": {
       "HP": [ 88, 0 ],
@@ -15720,8 +15338,7 @@
     "Id": 653,
     "Name": "Fennekin",
     "Type": [
-      "Fire",
-      "Normal"
+      "Fire"
     ],
     "Base": {
       "HP": [ 40, 0 ],
@@ -15744,8 +15361,7 @@
     "Id": 654,
     "Name": "Braixen",
     "Type": [
-      "Fire",
-      "Normal"
+      "Fire"
     ],
     "Base": {
       "HP": [ 59, 0 ],
@@ -15769,8 +15385,7 @@
     "Name": "Delphox",
     "Type": [
       "Fire",
-      "Psychic",
-      "Normal"
+      "Psychic"
     ],
     "Base": {
       "HP": [ 75, 0 ],
@@ -15793,8 +15408,7 @@
     "Id": 656,
     "Name": "Froakie",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 41, 0 ],
@@ -15817,8 +15431,7 @@
     "Id": 657,
     "Name": "Frogadier",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 54, 0 ],
@@ -15842,8 +15455,7 @@
     "Name": "Greninja",
     "Type": [
       "Water",
-      "Dark",
-      "Normal"
+      "Dark"
     ],
     "Base": {
       "HP": [ 72, 0 ],
@@ -15938,8 +15550,7 @@
     "Name": "Fletchinder",
     "Type": [
       "Fire",
-      "Flying",
-      "Normal"
+      "Flying"
     ],
     "Base": {
       "HP": [ 62, 0 ],
@@ -15963,8 +15574,7 @@
     "Name": "Talonflame",
     "Type": [
       "Fire",
-      "Flying",
-      "Normal"
+      "Flying"
     ],
     "Base": {
       "HP": [ 78, 0 ],
@@ -15987,8 +15597,7 @@
     "Id": 664,
     "Name": "Scatterbug",
     "Type": [
-      "Bug",
-      "Normal"
+      "Bug"
     ],
     "Base": {
       "HP": [ 38, 0 ],
@@ -16011,8 +15620,7 @@
     "Id": 665,
     "Name": "Spewpa",
     "Type": [
-      "Bug",
-      "Normal"
+      "Bug"
     ],
     "Base": {
       "HP": [ 45, 0 ],
@@ -16059,8 +15667,7 @@
     "Id": 667,
     "Name": "Litleo",
     "Type": [
-      "Fire",
-      "Normal"
+      "Fire"
     ],
     "Base": {
       "HP": [ 62, 0 ],
@@ -16083,8 +15690,7 @@
     "Id": 668,
     "Name": "Pyroar",
     "Type": [
-      "Fire",
-      "Normal"
+      "Fire"
     ],
     "Base": {
       "HP": [ 86, 0 ],
@@ -16107,8 +15713,7 @@
     "Id": 669,
     "Name": "Flabébé",
     "Type": [
-      "Fairy",
-      "Normal"
+      "Fairy"
     ],
     "Base": {
       "HP": [ 44, 0 ],
@@ -16131,8 +15736,7 @@
     "Id": 670,
     "Name": "Floette",
     "Type": [
-      "Fairy",
-      "Normal"
+      "Fairy"
     ],
     "Base": {
       "HP": [ 54, 0 ],
@@ -16155,8 +15759,7 @@
     "Id": 671,
     "Name": "Florges",
     "Type": [
-      "Fairy",
-      "Normal"
+      "Fairy"
     ],
     "Base": {
       "HP": [ 78, 0 ],
@@ -16179,8 +15782,7 @@
     "Id": 672,
     "Name": "Skiddo",
     "Type": [
-      "Grass",
-      "Normal"
+      "Grass"
     ],
     "Base": {
       "HP": [ 66, 1 ],
@@ -16203,8 +15805,7 @@
     "Id": 673,
     "Name": "Gogoat",
     "Type": [
-      "Grass",
-      "Normal"
+      "Grass"
     ],
     "Base": {
       "HP": [ 123, 2 ],
@@ -16227,8 +15828,7 @@
     "Id": 674,
     "Name": "Pancham",
     "Type": [
-      "Fighting",
-      "Normal"
+      "Fighting"
     ],
     "Base": {
       "HP": [ 67, 0 ],
@@ -16252,8 +15852,7 @@
     "Name": "Pangoro",
     "Type": [
       "Fighting",
-      "Dark",
-      "Normal"
+      "Dark"
     ],
     "Base": {
       "HP": [ 95, 0 ],
@@ -16299,8 +15898,7 @@
     "Id": 677,
     "Name": "Espurr",
     "Type": [
-      "Psychic",
-      "Normal"
+      "Psychic"
     ],
     "Base": {
       "HP": [ 62, 0 ],
@@ -16323,8 +15921,7 @@
     "Id": 678,
     "Name": "Meowstic",
     "Type": [
-      "Psychic",
-      "Normal"
+      "Psychic"
     ],
     "Base": {
       "HP": [ 74, 0 ],
@@ -16348,8 +15945,7 @@
     "Name": "Honedge",
     "Type": [
       "Steel",
-      "Ghost",
-      "Normal"
+      "Ghost"
     ],
     "Base": {
       "HP": [ 45, 0 ],
@@ -16373,8 +15969,7 @@
     "Name": "Doublade",
     "Type": [
       "Steel",
-      "Ghost",
-      "Normal"
+      "Ghost"
     ],
     "Base": {
       "HP": [ 59, 0 ],
@@ -16398,8 +15993,7 @@
     "Name": "Aegislash",
     "Type": [
       "Steel",
-      "Ghost",
-      "Normal"
+      "Ghost"
     ],
     "Base": {
       "HP": [ 60, 0 ],
@@ -16422,8 +16016,7 @@
     "Id": 682,
     "Name": "Spritzee",
     "Type": [
-      "Fairy",
-      "Normal"
+      "Fairy"
     ],
     "Base": {
       "HP": [ 78, 1 ],
@@ -16446,8 +16039,7 @@
     "Id": 683,
     "Name": "Aromatisse",
     "Type": [
-      "Fairy",
-      "Normal"
+      "Fairy"
     ],
     "Base": {
       "HP": [ 101, 2 ],
@@ -16470,8 +16062,7 @@
     "Id": 684,
     "Name": "Swirlix",
     "Type": [
-      "Fairy",
-      "Normal"
+      "Fairy"
     ],
     "Base": {
       "HP": [ 62, 0 ],
@@ -16494,8 +16085,7 @@
     "Id": 685,
     "Name": "Slurpuff",
     "Type": [
-      "Fairy",
-      "Normal"
+      "Fairy"
     ],
     "Base": {
       "HP": [ 82, 0 ],
@@ -16662,8 +16252,7 @@
     "Id": 692,
     "Name": "Clauncher",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 50, 0 ],
@@ -16686,8 +16275,7 @@
     "Id": 693,
     "Name": "Clawitzer",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 71, 0 ],
@@ -16710,8 +16298,7 @@
     "Id": 694,
     "Name": "Helioptile",
     "Type": [
-      "Electric",
-      "Normal"
+      "Electric"
     ],
     "Base": {
       "HP": [ 44, 0 ],
@@ -16734,8 +16321,7 @@
     "Id": 695,
     "Name": "Heliolisk",
     "Type": [
-      "Electric",
-      "Normal"
+      "Electric"
     ],
     "Base": {
       "HP": [ 62, 0 ],
@@ -16759,8 +16345,7 @@
     "Name": "Tyrunt",
     "Type": [
       "Rock",
-      "Dragon",
-      "Normal"
+      "Dragon"
     ],
     "Base": {
       "HP": [ 58, 0 ],
@@ -16784,8 +16369,7 @@
     "Name": "Tyrantrum",
     "Type": [
       "Rock",
-      "Dragon",
-      "Normal"
+      "Dragon"
     ],
     "Base": {
       "HP": [ 82, 0 ],
@@ -16833,8 +16417,7 @@
     "Name": "Aurorus",
     "Type": [
       "Rock",
-      "Ice",
-      "Normal"
+      "Ice"
     ],
     "Base": {
       "HP": [ 123, 2 ],
@@ -16857,8 +16440,7 @@
     "Id": 700,
     "Name": "Sylveon",
     "Type": [
-      "Fairy",
-      "Normal"
+      "Fairy"
     ],
     "Base": {
       "HP": [ 95, 0 ],
@@ -16882,8 +16464,7 @@
     "Name": "Hawlucha",
     "Type": [
       "Fighting",
-      "Flying",
-      "Normal"
+      "Flying"
     ],
     "Base": {
       "HP": [ 78, 0 ],
@@ -16954,8 +16535,7 @@
     "Id": 704,
     "Name": "Goomy",
     "Type": [
-      "Dragon",
-      "Normal"
+      "Dragon"
     ],
     "Base": {
       "HP": [ 45, 0 ],
@@ -16978,8 +16558,7 @@
     "Id": 705,
     "Name": "Sliggoo",
     "Type": [
-      "Dragon",
-      "Normal"
+      "Dragon"
     ],
     "Base": {
       "HP": [ 68, 0 ],
@@ -17002,8 +16581,7 @@
     "Id": 706,
     "Name": "Goodra",
     "Type": [
-      "Dragon",
-      "Normal"
+      "Dragon"
     ],
     "Base": {
       "HP": [ 90, 0 ],
@@ -17146,8 +16724,7 @@
     "Id": 712,
     "Name": "Bergmite",
     "Type": [
-      "Ice",
-      "Normal"
+      "Ice"
     ],
     "Base": {
       "HP": [ 55, 0 ],
@@ -17170,8 +16747,7 @@
     "Id": 713,
     "Name": "Avalugg",
     "Type": [
-      "Ice",
-      "Normal"
+      "Ice"
     ],
     "Base": {
       "HP": [ 95, 0 ],
@@ -17242,8 +16818,7 @@
     "Id": 716,
     "Name": "Xerneas",
     "Type": [
-      "Fairy",
-      "Normal"
+      "Fairy"
     ],
     "Base": {
       "HP": [ 126, 3 ],
@@ -17458,8 +17033,7 @@
     "Id": 725,
     "Name": "Litten",
     "Type": [
-      "Fire",
-      "Normal"
+      "Fire"
     ],
     "Base": {
       "HP": [ 45, 0 ],
@@ -17482,8 +17056,7 @@
     "Id": 726,
     "Name": "Torracat",
     "Type": [
-      "Fire",
-      "Normal"
+      "Fire"
     ],
     "Base": {
       "HP": [ 65, 0 ],
@@ -17507,8 +17080,7 @@
     "Name": "Incineroar",
     "Type": [
       "Fire",
-      "Dark",
-      "Normal"
+      "Dark"
     ],
     "Base": {
       "HP": [ 95, 0 ],
@@ -17531,8 +17103,7 @@
     "Id": 728,
     "Name": "Popplio",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 50, 0 ],
@@ -17555,8 +17126,7 @@
     "Id": 729,
     "Name": "Brionne",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 60, 0 ],
@@ -17580,8 +17150,7 @@
     "Name": "Primarina",
     "Type": [
       "Water",
-      "Fairy",
-      "Normal"
+      "Fairy"
     ],
     "Base": {
       "HP": [ 80, 0 ],
@@ -17722,8 +17291,7 @@
     "Id": 736,
     "Name": "Grubbin",
     "Type": [
-      "Bug",
-      "Normal"
+      "Bug"
     ],
     "Base": {
       "HP": [ 47, 0 ],
@@ -17771,8 +17339,7 @@
     "Name": "Vikavolt",
     "Type": [
       "Bug",
-      "Electric",
-      "Normal"
+      "Electric"
     ],
     "Base": {
       "HP": [ 77, 0 ],
@@ -17795,8 +17362,7 @@
     "Id": 739,
     "Name": "Crabrawler",
     "Type": [
-      "Fighting",
-      "Normal"
+      "Fighting"
     ],
     "Base": {
       "HP": [ 47, 0 ],
@@ -17820,8 +17386,7 @@
     "Name": "Crabominable",
     "Type": [
       "Fighting",
-      "Ice",
-      "Normal"
+      "Ice"
     ],
     "Base": {
       "HP": [ 97, 0 ],
@@ -17916,8 +17481,7 @@
     "Id": 744,
     "Name": "Rockruff",
     "Type": [
-      "Rock",
-      "Normal"
+      "Rock"
     ],
     "Base": {
       "HP": [ 45, 0 ],
@@ -17940,8 +17504,7 @@
     "Id": 745,
     "Name": "Lycanroc",
     "Type": [
-      "Rock",
-      "Normal"
+      "Rock"
     ],
     "Base": {
       "HP": [ 75, 0 ],
@@ -17964,8 +17527,7 @@
     "Id": 746,
     "Name": "Wishiwashi",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 45, 0 ],
@@ -17989,8 +17551,7 @@
     "Name": "Mareanie",
     "Type": [
       "Poison",
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 50, 0 ],
@@ -18014,8 +17575,7 @@
     "Name": "Toxapex",
     "Type": [
       "Poison",
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 50, 0 ],
@@ -18038,8 +17598,7 @@
     "Id": 749,
     "Name": "Mudbray",
     "Type": [
-      "Ground",
-      "Normal"
+      "Ground"
     ],
     "Base": {
       "HP": [ 70, 0 ],
@@ -18062,8 +17621,7 @@
     "Id": 750,
     "Name": "Mudsdale",
     "Type": [
-      "Ground",
-      "Normal"
+      "Ground"
     ],
     "Base": {
       "HP": [ 100, 0 ],
@@ -18134,8 +17692,7 @@
     "Id": 753,
     "Name": "Fomantis",
     "Type": [
-      "Grass",
-      "Normal"
+      "Grass"
     ],
     "Base": {
       "HP": [ 40, 0 ],
@@ -18158,8 +17715,7 @@
     "Id": 754,
     "Name": "Lurantis",
     "Type": [
-      "Grass",
-      "Normal"
+      "Grass"
     ],
     "Base": {
       "HP": [ 70, 0 ],
@@ -18255,8 +17811,7 @@
     "Name": "Salazzle",
     "Type": [
       "Poison",
-      "Fire",
-      "Normal"
+      "Fire"
     ],
     "Base": {
       "HP": [ 68, 0 ],
@@ -18327,8 +17882,7 @@
     "Id": 761,
     "Name": "Bounsweet",
     "Type": [
-      "Grass",
-      "Normal"
+      "Grass"
     ],
     "Base": {
       "HP": [ 42, 1 ],
@@ -18351,8 +17905,7 @@
     "Id": 762,
     "Name": "Steenee",
     "Type": [
-      "Grass",
-      "Normal"
+      "Grass"
     ],
     "Base": {
       "HP": [ 52, 0 ],
@@ -18375,8 +17928,7 @@
     "Id": 763,
     "Name": "Tsareena",
     "Type": [
-      "Grass",
-      "Normal"
+      "Grass"
     ],
     "Base": {
       "HP": [ 72, 0 ],
@@ -18399,8 +17951,7 @@
     "Id": 764,
     "Name": "Comfey",
     "Type": [
-      "Fairy",
-      "Normal"
+      "Fairy"
     ],
     "Base": {
       "HP": [ 51, 0 ],
@@ -18447,8 +17998,7 @@
     "Id": 766,
     "Name": "Passimian",
     "Type": [
-      "Fighting",
-      "Normal"
+      "Fighting"
     ],
     "Base": {
       "HP": [ 100, 0 ],
@@ -18496,8 +18046,7 @@
     "Name": "Golisopod",
     "Type": [
       "Bug",
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 75, 0 ],
@@ -18568,8 +18117,7 @@
     "Id": 771,
     "Name": "Pyukumuku",
     "Type": [
-      "Water",
-      "Normal"
+      "Water"
     ],
     "Base": {
       "HP": [ 55, 0 ],
@@ -18710,8 +18258,7 @@
     "Name": "Togedemaru",
     "Type": [
       "Electric",
-      "Steel",
-      "Normal"
+      "Steel"
     ],
     "Base": {
       "HP": [ 65, 0 ],
@@ -18830,8 +18377,7 @@
     "Id": 782,
     "Name": "Jangmo-o",
     "Type": [
-      "Dragon",
-      "Normal"
+      "Dragon"
     ],
     "Base": {
       "HP": [ 45, 0 ],
@@ -18855,8 +18401,7 @@
     "Name": "Hakamo-o",
     "Type": [
       "Dragon",
-      "Fighting",
-      "Normal"
+      "Fighting"
     ],
     "Base": {
       "HP": [ 55, 0 ],
@@ -18880,8 +18425,7 @@
     "Name": "Kommo-o",
     "Type": [
       "Dragon",
-      "Fighting",
-      "Normal"
+      "Fighting"
     ],
     "Base": {
       "HP": [ 75, 0 ],
@@ -19000,8 +18544,7 @@
     "Id": 789,
     "Name": "Cosmog",
     "Type": [
-      "Psychic",
-      "Normal"
+      "Psychic"
     ],
     "Base": {
       "HP": [ 43, 1 ],
@@ -19024,8 +18567,7 @@
     "Id": 790,
     "Name": "Cosmoem",
     "Type": [
-      "Psychic",
-      "Normal"
+      "Psychic"
     ],
     "Base": {
       "HP": [ 43, 0 ],
@@ -19121,8 +18663,7 @@
     "Name": "Buzzwole",
     "Type": [
       "Bug",
-      "Fighting",
-      "Normal"
+      "Fighting"
     ],
     "Base": {
       "HP": [ 107, 0 ],
@@ -19146,8 +18687,7 @@
     "Name": "Pheromosa",
     "Type": [
       "Bug",
-      "Fighting",
-      "Normal"
+      "Fighting"
     ],
     "Base": {
       "HP": [ 71, 0 ],
@@ -19170,8 +18710,7 @@
     "Id": 796,
     "Name": "Xurkitree",
     "Type": [
-      "Electric",
-      "Normal"
+      "Electric"
     ],
     "Base": {
       "HP": [ 83, 0 ],
@@ -19266,8 +18805,7 @@
     "Id": 800,
     "Name": "Necrozma",
     "Type": [
-      "Psychic",
-      "Normal"
+      "Psychic"
     ],
     "Base": {
       "HP": [ 97, 0 ],
@@ -19315,8 +18853,7 @@
     "Name": "Marshadow",
     "Type": [
       "Fighting",
-      "Ghost",
-      "Normal"
+      "Ghost"
     ],
     "Base": {
       "HP": [ 90, 0 ],
@@ -19339,8 +18876,7 @@
     "Id": 803,
     "Name": "Poipole",
     "Type": [
-      "Poison",
-      "Normal"
+      "Poison"
     ],
     "Base": {
       "HP": [ 67, 0 ],
@@ -19435,8 +18971,7 @@
     "Id": 807,
     "Name": "Zeraora",
     "Type": [
-      "Electric",
-      "Normal"
+      "Electric"
     ],
     "Base": {
       "HP": [ 88, 0 ],

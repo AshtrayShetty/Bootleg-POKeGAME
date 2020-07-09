@@ -156,7 +156,7 @@
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition Height="auto"/>
                             </Grid.RowDefinitions>
-                            <Grid Grid.Row="0">
+                            <Grid Grid.Row="0" Margin="5 5">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="auto"/>
