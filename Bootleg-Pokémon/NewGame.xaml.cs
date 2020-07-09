@@ -66,7 +66,6 @@ namespace Bootleg_Pokémon
                     Session.CurrentPlayer.PokemonCollection[0].XP = 0;
                     Session.CurrentPlayer.PokemonCollection[0].CurXp = 0;
                     Session.GeneratePokemonStats(Session.CurrentPlayer.PokemonCollection[0]);
-                    // MessageBox.Show(Session.CurrentPlayer.PokemonCollection[0].Moves[0].Ename);
                 }
                 else { MessageBox.Show("Fill all the required parameters"); }
             }

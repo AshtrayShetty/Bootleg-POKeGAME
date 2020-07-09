@@ -15,6 +15,7 @@ namespace GameConfig
         private List<int> _specialAttack;
         private List<int> _specialDefense;
         private List<int> _speed;
+
         public List<int> HP
         {
             get => _hp;
@@ -24,6 +25,7 @@ namespace GameConfig
                 OnPropertyChanged(nameof(HP));
             }
         }
+
         public List<int> Attack
         {
             get => _attack;
@@ -33,6 +35,7 @@ namespace GameConfig
                 OnPropertyChanged(nameof(Attack));
             }
         }
+
         public List<int> Defense
         {
             get => _defense;
@@ -42,6 +45,7 @@ namespace GameConfig
                 OnPropertyChanged(nameof(Defense));
             }
         }
+
         public List<int> SpecialAttack
         {
             get => _specialAttack;
@@ -51,6 +55,7 @@ namespace GameConfig
                 OnPropertyChanged(nameof(SpecialAttack));
             }
         }
+
         public List<int> SpecialDefense
         {
             get => _specialDefense;
@@ -60,6 +65,7 @@ namespace GameConfig
                 OnPropertyChanged(nameof(SpecialDefense));
             }
         }
+
         public List<int> Speed
         {
             get => _speed;
@@ -69,7 +75,9 @@ namespace GameConfig
                 OnPropertyChanged(nameof(Speed));
             }
         }
+
         public event PropertyChangedEventHandler PropertyChanged;
+
         private void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

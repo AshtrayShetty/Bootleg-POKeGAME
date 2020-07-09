@@ -99,17 +99,10 @@ namespace Bootleg_Pokémon
             pokedex.Show();
         }
 
-        private void InitializeOpponent(int id, string category)
+        private void InitializeOpponent(int id, string category, int level)
         {
-            Random rnd = new Random();
-            int max = 0;
-            foreach (Pokemon pokemon in _gameSession.CurrentPlayer.PokemonCollection)
-            {
-                if (pokemon.CurLevel > max) { max = pokemon.CurLevel; }
-            }
-
             _gameSession.EnemyPokemon = _gameSession.AllPokemon.First(p => p.Id == id);
-            _gameSession.EnemyPokemon.CurLevel = rnd.Next(1, max + 7);
+            _gameSession.EnemyPokemon.CurLevel = level;
             _gameSession.EnemyPokemon.Category = category;
             _gameSession.GeneratePokemonStats(_gameSession.EnemyPokemon);
             EnemyCorner.Visibility = Visibility.Visible;
@@ -118,14 +111,32 @@ namespace Bootleg_Pokémon
 
         private void Brock_Click(object sender, RoutedEventArgs e)
         {
-            InitializeOpponent(74, "Trainer");
+            InitializeOpponent(74, "Trainer", 12);
             FightStatus.Document.Blocks.Add(new Paragraph(new Run($"Brock chose {_gameSession.EnemyPokemon.Name}")));
         }
 
         private void Misty_Click(object sender, RoutedEventArgs e)
         {
-            InitializeOpponent(120, "Trainer");
+            InitializeOpponent(120, "Trainer", 18);
             FightStatus.Document.Blocks.Add(new Paragraph(new Run($"Misty chose {_gameSession.EnemyPokemon.Name}")));
+        }
+
+        private void Surge_Click(object sender, RoutedEventArgs e)
+        {
+            InitializeOpponent(26, "Trainer", 22);
+            FightStatus.Document.Blocks.Add(new Paragraph(new Run($"Lt. Surge chose {_gameSession.EnemyPokemon.Name}")));
+        }
+
+        private void Erika_Click(object sender, RoutedEventArgs e)
+        {
+            InitializeOpponent(45, "Trainer", 25);
+            FightStatus.Document.Blocks.Add(new Paragraph(new Run($"Erika chose {_gameSession.EnemyPokemon.Name}")));
+        }
+
+        private void Sabrina_Click(object sender, RoutedEventArgs e)
+        {
+            InitializeOpponent(49, "Trainer", 28);
+            FightStatus.Document.Blocks.Add(new Paragraph(new Run($"Sabrina chose {_gameSession.EnemyPokemon.Name}")));
         }
 
         private void Pokemon_Choose_Click(object sender, RoutedEventArgs e)
@@ -175,6 +186,24 @@ namespace Bootleg_Pokémon
                             _gameSession.CurrentPlayer.BadgeCollection.Add("Misty");
                             Surge.IsEnabled = true;
                         }
+                        if(_gameSession.EnemyPokemon.Id == 26 && !_gameSession.CurrentPlayer.BadgeCollection.Any(b => b.Equals("Surge")))
+                        {
+                            MessageBox.Show("You earned the ThunderBadge");
+                            _gameSession.CurrentPlayer.BadgeCollection.Add("Surge");
+                            Erika.IsEnabled = true;
+                        }
+                        if (_gameSession.EnemyPokemon.Id == 45 && !_gameSession.CurrentPlayer.BadgeCollection.Any(b => b.Equals("Erika")))
+                        {
+                            MessageBox.Show("You earned the RainbowBadge");
+                            _gameSession.CurrentPlayer.BadgeCollection.Add("Erika");
+                            Sabrina.IsEnabled = true;
+                        }
+                        if (_gameSession.EnemyPokemon.Id == 49 && !_gameSession.CurrentPlayer.BadgeCollection.Any(b => b.Equals("Sabrina")))
+                        {
+                            MessageBox.Show("You earned the RainbowBadge");
+                            _gameSession.CurrentPlayer.BadgeCollection.Add("Sabrina");
+                            Sabrina.IsEnabled = true;
+                        }
                     }
 
                     EndFight.Visibility = Visibility.Visible;
@@ -197,17 +226,7 @@ namespace Bootleg_Pokémon
         {
             _gameSession.EnemyPokemon = null;
 
-            BaseStats baseStats = _gameSession.CurrentPlayer.ChosenPokemon.Base;
-            int[] evVals = {
-                baseStats.HP[2],
-                baseStats.Attack[2],
-                baseStats.Defense[2],
-                baseStats.SpecialAttack[2],
-                baseStats.SpecialDefense[2],
-                baseStats.Speed[2]
-            };
-            foreach (int evVal in evVals){ MessageBox.Show(evVal.ToString()); }
-            GenFunctions.BattleStatsGenerator(evVals, _gameSession.CurrentPlayer.PokemonCollection.First(p => p.Id == _gameSession.CurrentPlayer.ChosenPokemon.Id));
+            GenFunctions.BattleStatsGenerator(_gameSession.CurrentPlayer.PokemonCollection.First(p => p.Id == _gameSession.CurrentPlayer.ChosenPokemon.Id));
             GenFunctions.PokemonLeveller(_gameSession.CurrentPlayer.PokemonCollection.First(p => p.Id == _gameSession.CurrentPlayer.ChosenPokemon.Id));
 
             _gameSession.CurrentPlayer.ChosenPokemon = null;

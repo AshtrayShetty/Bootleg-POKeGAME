@@ -69,14 +69,15 @@ namespace GameConfig
                 rndEvSum += evVals[i];
             }
 
-            pokemon.Base.HP.Add(evVals[0]);
-            pokemon.Base.Attack.Add(evVals[1]);
-            pokemon.Base.Defense.Add(evVals[2]);
-            pokemon.Base.SpecialAttack.Add(evVals[3]);
-            pokemon.Base.SpecialDefense.Add(evVals[4]);
-            pokemon.Base.Speed.Add(evVals[5]);
+            RaiseMessage($"{evVals[0]}, {evVals[1]}, {evVals[2]}, {evVals[3]}, {evVals[4]}, {evVals[5]}");
+            pokemon.Base.HP.Insert(2, evVals[0]);
+            pokemon.Base.Attack.Insert(2, evVals[1]);
+            pokemon.Base.Defense.Insert(2, evVals[2]);
+            pokemon.Base.SpecialAttack.Insert(2, evVals[3]);
+            pokemon.Base.SpecialDefense.Insert(2, evVals[4]);
+            pokemon.Base.Speed.Insert(2, evVals[5]);
 
-            GenFunctions.BattleStatsGenerator(evVals, pokemon);
+            GenFunctions.BattleStatsGenerator(pokemon);
             pokemon.Moves = GenFunctions.MoveList(pokemon.Type);
         }
 
@@ -121,9 +122,10 @@ namespace GameConfig
             CurrentPlayer.Money += moneyEarned;
             RaiseMessage($"\nYou earned {moneyEarned}¥");
 
-            double a = EnemyPokemon.Category.Equals("Trainer") ? 1.5 : 1;
+            double trainer = EnemyPokemon.Category.Equals("Trainer") ? 1.5 : 1;
+            double wild = EnemyPokemon.Category.Equals("Wild") ? 1 : 1.5;
 
-            int xpEarned = Convert.ToInt32(a * EnemyPokemon.XP * EnemyPokemon.CurLevel / 14);            
+            int xpEarned = Convert.ToInt32(trainer * EnemyPokemon.XP * EnemyPokemon.CurLevel * wild / 7);            
             CurrentPlayer.PokemonCollection.First(p => p.Id == CurrentPlayer.ChosenPokemon.Id).CurXp += xpEarned;
             RaiseMessage($"\nYour {CurrentPlayer.ChosenPokemon.Name} earned {xpEarned}XP");
 

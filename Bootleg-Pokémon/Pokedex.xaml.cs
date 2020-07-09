@@ -38,12 +38,28 @@ namespace Bootleg_Pokémon
             else { Pokevolution.Content = $"Can evolve at level {pokemon.EvolutionLevel}"; }
             Session.PokedexImage = pokemon.Image;
             PokeNameDesc.Content = pokemon.Name;
-            PokeId.Content = $"#{pokemon.Id}";
+
+            if (pokemon.Id > 0 && pokemon.Id < 10) { PokeId.Content = $"#00{pokemon.Id}"; }
+            else if (pokemon.Id >- 10 && pokemon.Id < 100) { PokeId.Content = $"#0{pokemon.Id}"; }
+            else { PokeId.Content = $"#{pokemon.Id}"; }
+
             PokeType.Content = pokemon.Type[0];
             if (pokemon.Type.Length > 1)
             {
                 for (int i = 1; i < pokemon.Type.Length; ++i){ PokeType.Content += $"/{pokemon.Type[i]}"; }
             }
+
+            Pokemon playerPokemonMoves = Session.CurrentPlayer.PokemonCollection.FirstOrDefault(p => p.Id == pokemon.Id);
+
+            Move1.Content = playerPokemonMoves != null ? playerPokemonMoves.Moves[0].Ename : "??";
+            Move2.Content = playerPokemonMoves != null ? playerPokemonMoves.Moves[1].Ename : "??";
+            Move3.Content = playerPokemonMoves != null ? playerPokemonMoves.Moves[2].Ename : "??";
+            Move4.Content = playerPokemonMoves != null ? playerPokemonMoves.Moves[3].Ename : "??";
+
+            Move1Type.Content = playerPokemonMoves != null ? playerPokemonMoves.Moves[0].Type : "??";
+            Move2Type.Content = playerPokemonMoves != null ? playerPokemonMoves.Moves[1].Type : "??";
+            Move3Type.Content = playerPokemonMoves != null ? playerPokemonMoves.Moves[2].Type : "??";
+            Move4Type.Content = playerPokemonMoves != null ? playerPokemonMoves.Moves[3].Type : "??";
         }
     }
 }
