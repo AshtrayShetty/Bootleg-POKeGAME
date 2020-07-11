@@ -98,10 +98,10 @@
                         <MenuItem Header="Very Hard (Levels 70-99)" x:Name="VeryHard"/>
                         <MenuItem Header="Prime Cup (Level 100)" x:Name="PrimeCup"/>
                     </MenuItem>
-                    <MenuItem Header="Buy Items" x:Name="BuyItems"/>
+                    <MenuItem Header="Buy Items" Click="Buy_Items_Click"/>
                     <MenuItem Header="Evolve a POKéMON" x:Name="Evolve"/>
                     <MenuItem Header="Release a POKéMON" x:Name="Release"/>
-                    <MenuItem Header="View POKéDEX" x:Name="Pokedex" Click="Pokedex_Click"/>
+                    <MenuItem Header="View POKéDEX" Click="Pokedex_Click"/>
                 </MenuItem>
             </Menu>
         </Grid>
@@ -273,11 +273,11 @@
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="0.65*"/>
-                    <RowDefinition Height="1.5*"/>
+                    <RowDefinition Height="0.95*"/>
+                    <RowDefinition Height="*"/>
                     <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
-                
+
                 <Grid Grid.Row="0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -297,7 +297,7 @@
                     <Label Grid.Row="0" Grid.Column="0" Content="Name:" Padding="0"/>
                     <Label Grid.Row="0" Grid.Column="1" Content="{Binding CurrentPlayer.Name}" Padding="0"/>
                     <Label Grid.Row="1" Grid.Column="0" Content="Money:" Padding="0"/>
-                    
+
                     <Grid Grid.Row="1" Grid.Column="1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
@@ -306,7 +306,7 @@
                         <Label Grid.Column="0" Content="{Binding CurrentPlayer.Money}" Padding="0"/>
                         <Label Grid.Column="1" Content="¥" Padding="0 0 10 0" HorizontalAlignment="Right"/>
                     </Grid>
-                    
+
                     <Label Grid.Row="2" Grid.Column="0" Content="Fights:" Padding="0"/>
                     <Label Grid.Row="2" Grid.Column="1" Content="{Binding CurrentPlayer.Fights}" Padding="0"/>
                     <Label Grid.Row="3" Grid.Column="0" Content="Wins:" Padding="0"/>
@@ -343,33 +343,18 @@
                     <Label Grid.Row="8" Grid.Column="0" Content="Items:" Padding="0"/>
                 </Grid>
 
-                <Grid Grid.Row="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                    </Grid.RowDefinitions>
-
-                    <Label Grid.Row="0" Grid.Column="0" Content="POKéBalls:" Padding="0"/>
-                    <Label Grid.Row="0" Grid.Column="1" Content="0" Padding="0"/>
-                    <Label Grid.Row="1" Grid.Column="0" Content="Great Balls:" Padding="0"/>
-                    <Label Grid.Row="1" Grid.Column="1" Content="0" Padding="0"/>
-                    <Label Grid.Row="2" Grid.Column="0" Content="Ultra Balls:" Padding="0"/>
-                    <Label Grid.Row="2" Grid.Column="1" Content="0" Padding="0"/>
-                    <Label Grid.Row="3" Grid.Column="0" Content="Master Balls:" Padding="0"/>
-                    <Label Grid.Row="3" Grid.Column="1" Content="0" Padding="0"/>
-                    <Label Grid.Row="4" Grid.Column="0" Content="Potions:" Padding="0"/>
-                    <Label Grid.Row="4" Grid.Column="1" Content="0" Padding="0"/>
-                    <Label Grid.Row="5" Grid.Column="0" Content="Super Potions:" Padding="0"/>
-                    <Label Grid.Row="5" Grid.Column="1" Content="0" Padding="0"/>
-                </Grid>
+                <DataGrid Grid.Row="1" IsReadOnly="True" AutoGenerateColumns="False" HeadersVisibility="Column" ItemsSource="{Binding CurrentPlayer.Inventory}">
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Header="Name" Width="*">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="{Binding Name}" HorizontalContentAlignment="Center"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="Quantity" IsReadOnly="True" Binding="{Binding Quantity}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
 
                 <Grid Grid.Row="2">
                     <ListBox ItemsSource="{Binding CurrentPlayer.PokemonCollection}" ItemTemplate="{StaticResource PokemonList}" x:Name="PlayerPokemon">

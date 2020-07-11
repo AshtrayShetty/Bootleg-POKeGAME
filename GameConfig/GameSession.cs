@@ -69,7 +69,6 @@ namespace GameConfig
                 rndEvSum += evVals[i];
             }
 
-            RaiseMessage($"{evVals[0]}, {evVals[1]}, {evVals[2]}, {evVals[3]}, {evVals[4]}, {evVals[5]}");
             pokemon.Base.HP.Insert(2, evVals[0]);
             pokemon.Base.Attack.Insert(2, evVals[1]);
             pokemon.Base.Defense.Insert(2, evVals[2]);
@@ -125,9 +124,19 @@ namespace GameConfig
             double trainer = EnemyPokemon.Category.Equals("Trainer") ? 1.5 : 1;
             double wild = EnemyPokemon.Category.Equals("Wild") ? 1 : 1.5;
 
-            int xpEarned = Convert.ToInt32(trainer * EnemyPokemon.XP * EnemyPokemon.CurLevel * wild / 7);            
-            CurrentPlayer.PokemonCollection.First(p => p.Id == CurrentPlayer.ChosenPokemon.Id).CurXp += xpEarned;
-            RaiseMessage($"\nYour {CurrentPlayer.ChosenPokemon.Name} earned {xpEarned}XP");
+            int xpEarned = Convert.ToInt32(trainer * EnemyPokemon.XP * EnemyPokemon.CurLevel * wild / 7);
+            Pokemon rewardedPokemon = CurrentPlayer.PokemonCollection.First(p => p.Id == CurrentPlayer.ChosenPokemon.Id);
+
+            if (rewardedPokemon.CurXp + xpEarned < rewardedPokemon.MAX_XP)
+            {
+                CurrentPlayer.PokemonCollection.First(p => p.Id == CurrentPlayer.ChosenPokemon.Id).CurXp += xpEarned;
+                RaiseMessage($"\nYour {CurrentPlayer.ChosenPokemon.Name} earned {xpEarned}XP");
+                if (rewardedPokemon.CurLevel < CurrentPlayer.PokemonCollection.First(p => p.Id == CurrentPlayer.ChosenPokemon.Id).CurLevel)
+                {
+                    rewardedPokemon = CurrentPlayer.PokemonCollection.First(p => p.Id == CurrentPlayer.ChosenPokemon.Id);
+                    RaiseMessage($"\nYour {rewardedPokemon.Name} grew to level {rewardedPokemon.CurLevel}");
+                }
+            }
 
             CurrentPlayer.Wins += 1;
             CurrentPlayer.WinPercentage = Math.Round((double)CurrentPlayer.Wins * 100 / (double)CurrentPlayer.Fights, 2);
@@ -152,6 +161,8 @@ namespace GameConfig
 
             CurrentPlayer.Losses += 1;
             CurrentPlayer.WinPercentage = CurrentPlayer.Wins * 100 / CurrentPlayer.Fights;
+            CurrentPlayer.Money /= 2;
+            if (EnemyPokemon.Category.Equals("Trainer")) { RaiseMessage($"You lost {CurrentPlayer.Money}¥"); }
         }
 
         public bool IsBattle => EnemyPokemon != null && (CurrentPlayer.ChosenPokemon.CurHp > 0 && EnemyPokemon.CurHp > 0) ? true : false;

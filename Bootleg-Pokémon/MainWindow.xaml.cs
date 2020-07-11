@@ -34,7 +34,7 @@ namespace Bootleg_Pokémon
             _gameSession.IsGameCreated = false;
             _gameSession.Event += RaiseBattleMessages;
 
-            using(StreamReader pokedexJson = new StreamReader("..\\..\\..\\pokedex.json"))
+            using (StreamReader pokedexJson = new StreamReader("..\\..\\..\\pokedex.json"))
             {
                 var json = pokedexJson.ReadToEnd();
                 _gameSession.AllPokemon = JsonConvert.DeserializeObject<List<Pokemon>>(json);
@@ -101,6 +101,13 @@ namespace Bootleg_Pokémon
 
         private void InitializeOpponent(int id, string category, int level)
         {
+            if (_gameSession.CurrentPlayer.Money == 0 && category.Equals("Trainer"))
+            {
+                MessageBox.Show("You have no money to challenge a trainer");
+                MenuBar.IsEnabled = true;
+                return;
+            }
+
             _gameSession.EnemyPokemon = _gameSession.AllPokemon.First(p => p.Id == id);
             _gameSession.EnemyPokemon.CurLevel = level;
             _gameSession.EnemyPokemon.Category = category;
@@ -112,31 +119,51 @@ namespace Bootleg_Pokémon
         private void Brock_Click(object sender, RoutedEventArgs e)
         {
             InitializeOpponent(74, "Trainer", 12);
-            FightStatus.Document.Blocks.Add(new Paragraph(new Run($"Brock chose {_gameSession.EnemyPokemon.Name}")));
+
+            if (_gameSession.EnemyPokemon.Name != null)
+            {
+                FightStatus.Document.Blocks.Add(new Paragraph(new Run($"Brock chose {_gameSession.EnemyPokemon.Name}")));
+            }
         }
 
         private void Misty_Click(object sender, RoutedEventArgs e)
         {
             InitializeOpponent(120, "Trainer", 18);
-            FightStatus.Document.Blocks.Add(new Paragraph(new Run($"Misty chose {_gameSession.EnemyPokemon.Name}")));
+
+            if (_gameSession.EnemyPokemon.Name != null)
+            {
+                FightStatus.Document.Blocks.Add(new Paragraph(new Run($"Misty chose {_gameSession.EnemyPokemon.Name}")));
+            }
         }
 
         private void Surge_Click(object sender, RoutedEventArgs e)
         {
             InitializeOpponent(26, "Trainer", 22);
-            FightStatus.Document.Blocks.Add(new Paragraph(new Run($"Lt. Surge chose {_gameSession.EnemyPokemon.Name}")));
+
+            if (_gameSession.EnemyPokemon.Name != null)
+            {
+                FightStatus.Document.Blocks.Add(new Paragraph(new Run($"Lt. Surge chose {_gameSession.EnemyPokemon.Name}")));   
+            }
         }
 
         private void Erika_Click(object sender, RoutedEventArgs e)
         {
             InitializeOpponent(45, "Trainer", 25);
-            FightStatus.Document.Blocks.Add(new Paragraph(new Run($"Erika chose {_gameSession.EnemyPokemon.Name}")));
+
+            if (_gameSession.EnemyPokemon.Name != null)
+            {
+                FightStatus.Document.Blocks.Add(new Paragraph(new Run($"Erika chose {_gameSession.EnemyPokemon.Name}")));
+            }
         }
 
         private void Sabrina_Click(object sender, RoutedEventArgs e)
         {
             InitializeOpponent(49, "Trainer", 28);
-            FightStatus.Document.Blocks.Add(new Paragraph(new Run($"Sabrina chose {_gameSession.EnemyPokemon.Name}")));
+
+            if (_gameSession.EnemyPokemon.Name != null)
+            {
+                FightStatus.Document.Blocks.Add(new Paragraph(new Run($"Sabrina chose {_gameSession.EnemyPokemon.Name}")));
+            }
         }
 
         private void Pokemon_Choose_Click(object sender, RoutedEventArgs e)
@@ -238,6 +265,13 @@ namespace Bootleg_Pokémon
             FightStatus.Document.Blocks.Clear();
         }
 
+        private void Buy_Items_Click(object sender, RoutedEventArgs e)
+        {
+            BuyItems buyItems = new BuyItems();
+            buyItems.Owner = this;
+            buyItems.DataContext = _gameSession;
+            buyItems.Show();
+        }
         private void RaiseBattleMessages(object sender, GameMessageEventArgs e)
         {
             FightStatus.Document.Blocks.Add(new Paragraph(new Run(e.Message)));

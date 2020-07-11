@@ -47,6 +47,8 @@
     <Compile Include="BaseStats.cs" />
     <Compile Include="GameMessageEventArgs.cs" />
     <Compile Include="GameSession.cs" />
+    <Compile Include="Item.cs" />
+    <Compile Include="ItemFactory.cs" />
     <Compile Include="Move.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Pokemon.cs" />

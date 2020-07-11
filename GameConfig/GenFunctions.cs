@@ -22,6 +22,7 @@ namespace GameConfig
             ivArr[5]= ((stats.Speed[0] - 5) * 100 / level) - 2 * stats.Speed[0] - Convert.ToInt32(Math.Floor(Convert.ToDecimal(evSum / 6)));
             return ivArr;
         }
+
         public static void BattleStatsGenerator(Pokemon pokemon)
         {
             int[] battleStats = IVGenerator(pokemon.Base, pokemon.CurLevel);

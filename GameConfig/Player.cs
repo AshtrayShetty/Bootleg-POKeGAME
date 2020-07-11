@@ -91,6 +91,20 @@ namespace GameConfig
 
         public ObservableCollection<Pokemon> PokemonCollection { get; set; } = new ObservableCollection<Pokemon>();
 
+        public ObservableCollection<Item> Inventory { get; set; } = new ObservableCollection<Item>();
+
+        public void AddItemInventory(Item item)
+        {
+            if(item != null)
+            {
+                if (Inventory.FirstOrDefault(i => i.ID == item.ID) != null)
+                {
+                    Inventory.First(i => i.ID == item.ID).Quantity += item.Quantity;
+                }
+                else { Inventory.Add(item); }
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged(string propertyName)

@@ -65,6 +65,7 @@ namespace Bootleg_Pokémon
                     Session.CurrentPlayer.PokemonCollection[0].CurLevel = 1;
                     Session.CurrentPlayer.PokemonCollection[0].XP = 0;
                     Session.CurrentPlayer.PokemonCollection[0].CurXp = 0;
+                    Session.CurrentPlayer.Money = 1000000;
                     Session.GeneratePokemonStats(Session.CurrentPlayer.PokemonCollection[0]);
                 }
                 else { MessageBox.Show("Fill all the required parameters"); }

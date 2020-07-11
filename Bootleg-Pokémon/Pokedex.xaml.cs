@@ -21,10 +21,12 @@ namespace Bootleg_Pokémon
     public partial class Pokedex : Window
     {
         public GameSession Session => DataContext as GameSession;
+
         public Pokedex()
         {
             InitializeComponent();
         }
+
         private void PokedexClose_Click(object sender, RoutedEventArgs e)
         {
             Session.PokedexImage = "/GameConfig;component/Sprites/001.png";
