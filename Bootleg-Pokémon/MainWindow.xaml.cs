@@ -27,6 +27,8 @@ namespace Bootleg_Pokémon
     public partial class MainWindow : Window
     {
         private readonly GameSession _gameSession = new GameSession();
+        private Random rnd = new Random();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -182,6 +184,7 @@ namespace Bootleg_Pokémon
                 else
                 {
                     MessageBox.Show($"{_gameSession.CurrentPlayer.ChosenPokemon.Name}: Level {_gameSession.CurrentPlayer.ChosenPokemon.CurLevel}");
+                    _gameSession.CurrentPlayer.ChosenPokemon = null;
                 }
             }
         }
@@ -237,7 +240,6 @@ namespace Bootleg_Pokémon
                     return;
                 }
 
-                Random rnd = new Random();
                 _gameSession.MoveOutcome(_gameSession.EnemyPokemon.Moves[rnd.Next(0, 4)], _gameSession.EnemyPokemon, _gameSession.CurrentPlayer.ChosenPokemon);
 
                 if (_gameSession.CurrentPlayer.ChosenPokemon.CurHp <= 0)
@@ -276,6 +278,36 @@ namespace Bootleg_Pokémon
         {
             FightStatus.Document.Blocks.Add(new Paragraph(new Run(e.Message)));
             FightStatus.ScrollToEnd();
+        }
+
+        private void WildPokemon_Click(object sender, RoutedEventArgs e)
+        {
+            int id = 0;
+            Pokemon pokemon;
+            double prob = rnd.NextDouble();
+            id = rnd.Next(1, _gameSession.AllPokemon.Count + 1);
+            pokemon = _gameSession.AllPokemon.First(p => p.Id == id);
+            int level;
+
+            if (
+                (pokemon.FindType.Equals("basic") && prob >= ((double)10 / 187.5)) ||
+                (pokemon.FindType.Equals("rare") && prob >= (6.75 / 187.5) && prob < ((double)10 / 187.5)) ||
+                (pokemon.FindType.Equals("legendary") && prob >= (3.33 / 187.5) && prob < (6.75 / 187.5)) ||
+                (pokemon.FindType.Equals("ultra beast") && prob >= (1.25 / 187.5) && prob < (3.33 / 187.5))
+            )
+            {
+                level = rnd.Next(pokemon.BaseLevel, pokemon.EvolutionLevel);
+            }
+            else
+            {
+                List<Pokemon> backup = _gameSession.AllPokemon.FindAll(p => p.FindType.Equals("basic"));
+                pokemon = backup[rnd.Next(0, backup.Count)];
+                id = pokemon.Id;
+                level = rnd.Next(pokemon.BaseLevel, pokemon.EvolutionLevel);
+            }
+
+            InitializeOpponent(id, "Wild", level);
+            FightStatus.Document.Blocks.Add(new Paragraph(new Run($"A wild {_gameSession.EnemyPokemon.Name} appeared!!")));
         }
     }
 }

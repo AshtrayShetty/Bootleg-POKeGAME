@@ -104,23 +104,20 @@ namespace GameConfig
 
                 for (int i = 0; i < 4; ++i)
                 {
+                    if((type.Length == 1 && normal >= 2) || (type.Length == 2 && normal >= 1))
+                    {
+                        moves = json.FindAll(m => type.Contains(m.Type));
+                    }
+
                     int index = rnd.Next(0, moves.Count);
                     Move move = moves[index];
 
-                    if (moveList.Any(m => m.Id == move.Id) || (move.Power == -1 || move.Accuracy == -1))
+                    if (moveList.Any(m => m.Id == move.Id) && (move.Power == -1 || move.Accuracy == -1))
                     {
                         i -= 1;
                         continue;
                     }
-                    if (move.Type == "Normal")
-                    {
-                        if ((type.Length == 1 && normal >= 2) || (type.Length == 2 && normal >= 1))
-                        {
-                            i -= 1;
-                            continue;
-                        }
-                        normal += 1;
-                    }
+                    if (move.Type == "Normal") { normal += 1; }
 
                     moveList.Add(move);
                 }

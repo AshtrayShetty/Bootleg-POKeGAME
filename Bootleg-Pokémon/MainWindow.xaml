@@ -87,7 +87,7 @@
                         </MenuItem>
                     </MenuItem>
                     <MenuItem Header="Fight a wild POKéMON">
-                        <MenuItem Header="Search for a POKéMON" x:Name="WildPokemon"/>
+                        <MenuItem Header="Search for a POKéMON" x:Name="WildPokemon" Click="WildPokemon_Click"/>
                         <MenuItem Header="Mewtwo" x:Name="Mewtwo" IsEnabled="False"/>
                     </MenuItem>
                     <MenuItem Header="_Tournaments">

@@ -93,7 +93,7 @@ namespace GameConfig
 
                 if (chanceHit >= 1 || chanceHit > chanceMiss)
                 {
-                    double attDefRatio = move.Category == "Physical" ? ((double)PokemonStats.Attack[3] / (double)PokemonStats.Defense[3]) : ((double)PokemonStats.SpecialAttack[3] / (double)PokemonStats.SpecialDefense[3]);
+                    double attDefRatio = move.Category.Equals("Physical") ? ((double)PokemonStats.Attack[3] / (double)PokemonStats.Defense[3]) : ((double)PokemonStats.SpecialAttack[3] / (double)PokemonStats.SpecialDefense[3]);
                     double probCritHit = (double)PokemonStats.Speed[0] / 256;
                     double critical = rnd.NextDouble() < probCritHit ? 2 : 1;
                     double STAB = defendingPokemon.Type.Any(m => m == move.Type) ? 1.5 : 1;
@@ -161,8 +161,13 @@ namespace GameConfig
 
             CurrentPlayer.Losses += 1;
             CurrentPlayer.WinPercentage = CurrentPlayer.Wins * 100 / CurrentPlayer.Fights;
-            CurrentPlayer.Money /= 2;
-            if (EnemyPokemon.Category.Equals("Trainer")) { RaiseMessage($"You lost {CurrentPlayer.Money}¥"); }
+
+            if (EnemyPokemon.Category.Equals("Trainer")) 
+            {
+                CurrentPlayer.Money /= 2;
+                RaiseMessage($"You lost {CurrentPlayer.Money}¥"); 
+            }
+
         }
 
         public bool IsBattle => EnemyPokemon != null && (CurrentPlayer.ChosenPokemon.CurHp > 0 && EnemyPokemon.CurHp > 0) ? true : false;
