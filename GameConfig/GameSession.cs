@@ -121,20 +121,23 @@ namespace GameConfig
             CurrentPlayer.Money += moneyEarned;
             RaiseMessage($"\nYou earned {moneyEarned}¥");
 
-            double trainer = EnemyPokemon.Category.Equals("Trainer") ? 1.5 : 1;
-            double wild = EnemyPokemon.Category.Equals("Wild") ? 1 : 1.5;
-
-            int xpEarned = Convert.ToInt32(trainer * EnemyPokemon.XP * EnemyPokemon.CurLevel * wild / 7);
-            Pokemon rewardedPokemon = CurrentPlayer.PokemonCollection.First(p => p.Id == CurrentPlayer.ChosenPokemon.Id);
-
-            if (rewardedPokemon.CurXp + xpEarned < rewardedPokemon.MAX_XP)
+            if (CurrentPlayer.ChosenPokemon != null && EnemyPokemon.Category != null)
             {
-                CurrentPlayer.PokemonCollection.First(p => p.Id == CurrentPlayer.ChosenPokemon.Id).CurXp += xpEarned;
-                RaiseMessage($"\nYour {CurrentPlayer.ChosenPokemon.Name} earned {xpEarned}XP");
-                if (rewardedPokemon.CurLevel < CurrentPlayer.PokemonCollection.First(p => p.Id == CurrentPlayer.ChosenPokemon.Id).CurLevel)
+                double trainer = EnemyPokemon.Category.Equals("Trainer") ? 1.5 : 1;
+                double wild = EnemyPokemon.Category.Equals("Wild") ? 1 : 1.5;
+
+                int xpEarned = Convert.ToInt32(trainer * EnemyPokemon.XP * EnemyPokemon.CurLevel * wild / 7);
+                Pokemon rewardedPokemon = CurrentPlayer.PokemonCollection.First(p => p.Id == CurrentPlayer.ChosenPokemon.Id);
+
+                if (rewardedPokemon.CurXp + xpEarned < rewardedPokemon.MAX_XP)
                 {
-                    rewardedPokemon = CurrentPlayer.PokemonCollection.First(p => p.Id == CurrentPlayer.ChosenPokemon.Id);
-                    RaiseMessage($"\nYour {rewardedPokemon.Name} grew to level {rewardedPokemon.CurLevel}");
+                    CurrentPlayer.PokemonCollection.First(p => p.Id == CurrentPlayer.ChosenPokemon.Id).CurXp += xpEarned;
+                    RaiseMessage($"\nYour {CurrentPlayer.ChosenPokemon.Name} earned {xpEarned}XP");
+                    if (rewardedPokemon.CurLevel < CurrentPlayer.PokemonCollection.First(p => p.Id == CurrentPlayer.ChosenPokemon.Id).CurLevel)
+                    {
+                        rewardedPokemon = CurrentPlayer.PokemonCollection.First(p => p.Id == CurrentPlayer.ChosenPokemon.Id);
+                        RaiseMessage($"\nYour {rewardedPokemon.Name} grew to level {rewardedPokemon.CurLevel}");
+                    }
                 }
             }
 
@@ -170,7 +173,66 @@ namespace GameConfig
 
         }
 
-        public bool IsBattle => EnemyPokemon != null && (CurrentPlayer.ChosenPokemon.CurHp > 0 && EnemyPokemon.CurHp > 0) ? true : false;
+        public void ItemEffect(string name)
+        {
+            Item item = CurrentPlayer.Inventory.FirstOrDefault(i => i.Name.Equals(name));
+
+            if (item != null && IsBattle)
+            {
+                if (EnemyPokemon.Category.Equals("Wild"))
+                {
+                    int a = Convert.ToInt32(((3 * EnemyPokemon.MaxHp) - (2 * EnemyPokemon.CurHp)) * EnemyPokemon.CatchRate * item.CatchRate / (3 * EnemyPokemon.MaxHp));
+
+                    if (a > 0 || item.ID == 8)
+                    {
+                        if (a > 0)
+                        {
+                            int b = 1048560 / Convert.ToInt32(Math.Sqrt(Math.Sqrt(16711680 / a)));
+                            Random rnd = new Random();
+                            for (int i = 0; i < 4; i++)
+                            {
+                                if (b <= rnd.Next(0, 65536)) 
+                                { 
+                                    RaiseMessage($"The {EnemyPokemon.Name} managed to break out!!!");
+                                    CurrentPlayer.RemoveFromInventory(item.ID);
+                                    return;
+                                }
+                            }
+                        }
+                        RaiseMessage($"You managed to catch the {EnemyPokemon.Name}");
+                        CurrentPlayer.RemoveFromInventory(item.ID);
+
+                        Pokemon captured = EnemyPokemon.Clone();
+                        
+                        captured.Category = null;
+                        PlayerWon();
+                        CurrentPlayer.PokemonCollection.Add(captured);
+                    }
+                }
+                else if (EnemyPokemon.Category.Equals("Trainer"))
+                {
+                    RaiseMessage("You can't capture a trainer's pokémon");
+                }
+
+                if ((item.Heal > 0 || item.ID == 7) && CurrentPlayer.ChosenPokemon != null)
+                {
+                    int pointsRestored = item.Heal;
+                    CurrentPlayer.ChosenPokemon.CurHp += item.Heal;
+                    CurrentPlayer.ChosenPokemon.CurHpPercent = CurrentPlayer.ChosenPokemon.CurHp * 100 / CurrentPlayer.ChosenPokemon.MaxHp;
+
+                    if (CurrentPlayer.ChosenPokemon.CurHp > CurrentPlayer.ChosenPokemon.MaxHp || item.ID == 7)
+                    {
+                        pointsRestored += CurrentPlayer.ChosenPokemon.MaxHp - CurrentPlayer.ChosenPokemon.CurHp;
+                        CurrentPlayer.ChosenPokemon.CurHp = CurrentPlayer.ChosenPokemon.MaxHp;
+                        CurrentPlayer.ChosenPokemon.CurHpPercent = 100;
+                    }
+                    RaiseMessage($"Your {CurrentPlayer.ChosenPokemon.Name} restored {pointsRestored} heath points");
+                    CurrentPlayer.RemoveFromInventory(item.ID);
+                }
+            }
+        }
+
+        public bool IsBattle => EnemyPokemon.Name != null && EnemyPokemon.CurHp > 0 && CurrentPlayer.ChosenPokemon != null && CurrentPlayer.ChosenPokemon.CurHp > 0 ? true : false;
 
         public event PropertyChangedEventHandler PropertyChanged;
         public event EventHandler<GameMessageEventArgs> Event;

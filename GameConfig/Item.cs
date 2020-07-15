@@ -37,13 +37,18 @@ namespace GameConfig
             }
         }
 
-        public Item(int id, string name, string desc, int quantity, int price)
+        public int Heal { get; set; }
+        public double CatchRate { get; set; }
+
+        public Item(int id, string name, string desc, int quantity, int price, int heal, double catchRate)
         {
             ID = id;
             Name = name;
             Description = desc;
             Quantity = quantity;
             Price = price;
+            Heal = heal;
+            CatchRate = catchRate;
         }
 
         public Item() { }

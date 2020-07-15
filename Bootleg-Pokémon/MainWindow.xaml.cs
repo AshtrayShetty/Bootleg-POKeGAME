@@ -170,7 +170,7 @@ namespace Bootleg_Pokémon
 
         private void Pokemon_Choose_Click(object sender, RoutedEventArgs e)
         {
-            if (PlayerPokemon.SelectedItem != null && _gameSession.CurrentPlayer.ChosenPokemon == null)
+            if(PlayerPokemon.SelectedItem != null)
             {
                 _gameSession.CurrentPlayer.ChosenPokemon = PlayerPokemon.SelectedItem as Pokemon;
 
@@ -180,10 +180,12 @@ namespace Bootleg_Pokémon
                     PlayerCorner.Visibility = Visibility.Visible;
                     _gameSession.CurrentPlayer.Fights += 1;
                     FightStatus.Document.Blocks.Add(new Paragraph(new Run($"You chose {_gameSession.CurrentPlayer.ChosenPokemon.Name}")));
+                
                 }
                 else
                 {
                     MessageBox.Show($"{_gameSession.CurrentPlayer.ChosenPokemon.Name}: Level {_gameSession.CurrentPlayer.ChosenPokemon.CurLevel}");
+                    MessageBox.Show($"{_gameSession.CurrentPlayer.ChosenPokemon.Name}: Level {_gameSession.CurrentPlayer.ChosenPokemon.MaxHp}");
                     _gameSession.CurrentPlayer.ChosenPokemon = null;
                 }
             }
@@ -253,12 +255,13 @@ namespace Bootleg_Pokémon
 
         private void End_Fight_Click(object sender, RoutedEventArgs e)
         {
-            _gameSession.EnemyPokemon = null;
+            foreach (Pokemon playerPokemon in _gameSession.CurrentPlayer.PokemonCollection)
+            {
+                if (playerPokemon.CurHp == playerPokemon.MaxHp) { continue; }
+                GenFunctions.BattleStatsGenerator(playerPokemon);
+            }
 
-            GenFunctions.BattleStatsGenerator(_gameSession.CurrentPlayer.PokemonCollection.First(p => p.Id == _gameSession.CurrentPlayer.ChosenPokemon.Id));
             GenFunctions.PokemonLeveller(_gameSession.CurrentPlayer.PokemonCollection.First(p => p.Id == _gameSession.CurrentPlayer.ChosenPokemon.Id));
-
-            _gameSession.CurrentPlayer.ChosenPokemon = null;
 
             PlayerCorner.Visibility = Visibility.Hidden;
             EnemyCorner.Visibility = Visibility.Hidden;
@@ -274,6 +277,15 @@ namespace Bootleg_Pokémon
             buyItems.DataContext = _gameSession;
             buyItems.Show();
         }
+
+        private void Item_Use_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = (Button)sender;
+            MessageBox.Show((_gameSession.CurrentPlayer.ChosenPokemon == null).ToString());
+            _gameSession.ItemEffect(btn.Content.ToString());
+            if (_gameSession.EnemyPokemon.CurHp == 0) { EndFight.Visibility = Visibility.Visible; }
+        }
+
         private void RaiseBattleMessages(object sender, GameMessageEventArgs e)
         {
             FightStatus.Document.Blocks.Add(new Paragraph(new Run(e.Message)));

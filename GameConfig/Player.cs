@@ -105,6 +105,17 @@ namespace GameConfig
             }
         }
 
+        public void RemoveFromInventory(int id)
+        {
+            if (Inventory.FirstOrDefault(i => i.ID == id) != null)
+            {
+                Inventory.First(i => i.ID == id).Quantity -= 1;
+                Item inventoryItem = Inventory.First(i => i.ID == id);
+
+                if (inventoryItem.Quantity <= 0) { Inventory.Remove(inventoryItem); }
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged(string propertyName)

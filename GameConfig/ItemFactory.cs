@@ -19,7 +19,9 @@ namespace GameConfig
                         "PokéBall",
                         "A device for catching wild Pokémon.",
                         quantity,
-                        200
+                        200,
+                        0,
+                        1.0
                     );
                     return item;
 
@@ -29,7 +31,9 @@ namespace GameConfig
                         "GreatBall",
                         "A high-performance Ball with a higher catch rate than a standard Poké Ball.",
                         quantity,
-                        600
+                        600,
+                        0,
+                        1.5
                     );
                     return item;
 
@@ -39,7 +43,9 @@ namespace GameConfig
                         "UltraBall",
                         "An ultra-performance Ball with a higher catch rate than a Great Ball.",
                         quantity,
-                        1200
+                        1200,
+                        0,
+                        2.0
                     );
                     return item;
 
@@ -50,7 +56,9 @@ namespace GameConfig
                         "Potion",
                         "Restores the HP of a Pokémon by 20 points.",
                         quantity,
-                        300
+                        300,
+                        20,
+                        0
                     );
                     return item;
 
@@ -60,7 +68,9 @@ namespace GameConfig
                         "SuperPotion",
                         "Restores the HP of a Pokémon by 50 points.",
                         quantity,
-                        500
+                        500,
+                        50,
+                        0
                     );
                     return item;
 
@@ -70,7 +80,9 @@ namespace GameConfig
                         "HyperPotion",
                         "Restores the HP of a Pokémon by 200 points.",
                         quantity,
-                        1500
+                        1500,
+                        200,
+                        0
                     );
                     return item;
 
@@ -80,7 +92,9 @@ namespace GameConfig
                         "MaxPotion",
                         "Fully restores the HP of a Pokémon.",
                         quantity,
-                        2500
+                        2500,
+                        0,
+                        0
                     );
                     return item;
 
@@ -90,7 +104,9 @@ namespace GameConfig
                         "MasterBall",
                         "With this, you will catch any wild Pokémon without fail.",
                         quantity,
-                        10000
+                        10000,
+                        0,
+                        0
                     );
                     return item;
 

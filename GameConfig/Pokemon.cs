@@ -251,6 +251,32 @@ namespace GameConfig
 
         public int MAX_XP { get; private set; }
 
+        public Pokemon Clone()
+        {
+            return new Pokemon()
+            {
+                Id = this.Id,
+                Name = this.Name,
+                Type = this.Type,
+                Base = this.Base,
+                XP = this.XP,
+                CatchRate = this.CatchRate,
+                Growth = this.Growth,
+                EvolutionLevel = this.EvolutionLevel,
+                BaseLevel = this.BaseLevel,
+                EvolutionId = this.EvolutionId,
+                Image = this.Image,
+                FindType = this.FindType,
+                CurLevel = this.CurLevel,
+                CurHp = this.CurHp,
+                MaxHp = this.MaxHp,
+                CurHpPercent = this.CurHpPercent,
+                CurXp = this.CurXp,
+                Moves = this.Moves,
+                Category = this.Category
+            };
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected void OnPropertyChanged(string propertyName)

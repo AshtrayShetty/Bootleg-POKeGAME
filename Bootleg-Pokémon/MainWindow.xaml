@@ -348,7 +348,7 @@
                         <DataGridTemplateColumn Header="Name" Width="*">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button Content="{Binding Name}" HorizontalContentAlignment="Center"/>
+                                    <Button Content="{Binding Name}" HorizontalContentAlignment="Center" Click="Item_Use_Click"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
