@@ -70,12 +70,12 @@
                             <MenuItem Header="Misty" x:Name="Misty" IsEnabled="False" Click="Misty_Click"/>
                             <MenuItem Header="Lt.Surge" x:Name="Surge" IsEnabled="False" Click="Surge_Click"/>
                             <MenuItem Header="Erika" x:Name="Erika" IsEnabled="False" Click="Erika_Click"/>
+                            <MenuItem Header="Janine" x:Name="Janine" IsEnabled="False" Click="Janine_Click"/>
                             <MenuItem Header="Sabrina" x:Name="Sabrina" IsEnabled="False" Click="Sabrina_Click"/>
-                            <MenuItem Header="Janine" x:Name="Janine" IsEnabled="False"/>
-                            <MenuItem Header="Blaine" x:Name="Blaine" IsEnabled="False"/>
-                            <MenuItem Header="Gary" x:Name="Gary" IsEnabled="False"/>
+                            <MenuItem Header="Blaine" x:Name="Blaine" IsEnabled="False" Click="Blaine_Click"/>
+                            <MenuItem Header="Gary" x:Name="Gary" IsEnabled="False" Click="Gary_Click"/>
                         </MenuItem>
-                        <MenuItem Header="G/S/C Elite Four" x:Name="EliteFour" IsEnabled="False"/>
+                        <MenuItem Header="G/S/C Elite Four" x:Name="EliteFour" IsEnabled="False" Click="Elite_Four_Click"/>
                         <MenuItem Header="Johto Gym Leaders" x:Name="JohtoLeaders" IsEnabled="False">
                             <MenuItem Header=""/>
                         </MenuItem>

@@ -129,7 +129,7 @@ namespace GameConfig
                 int xpEarned = Convert.ToInt32(trainer * EnemyPokemon.XP * EnemyPokemon.CurLevel * wild / 7);
                 Pokemon rewardedPokemon = CurrentPlayer.PokemonCollection.First(p => p.Id == CurrentPlayer.ChosenPokemon.Id);
 
-                if (rewardedPokemon.CurXp + xpEarned < rewardedPokemon.MAX_XP)
+                if (rewardedPokemon.CurXp + xpEarned <= rewardedPokemon.MAX_XP)
                 {
                     CurrentPlayer.PokemonCollection.First(p => p.Id == CurrentPlayer.ChosenPokemon.Id).CurXp += xpEarned;
                     RaiseMessage($"\nYour {CurrentPlayer.ChosenPokemon.Name} earned {xpEarned}XP");
@@ -143,6 +143,8 @@ namespace GameConfig
 
             CurrentPlayer.Wins += 1;
             CurrentPlayer.WinPercentage = Math.Round((double)CurrentPlayer.Wins * 100 / (double)CurrentPlayer.Fights, 2);
+
+            GenFunctions.PokemonLeveller(CurrentPlayer.PokemonCollection.First(p => p.Id == CurrentPlayer.ChosenPokemon.Id));
         }
 
         public void OpponentWon()
@@ -170,6 +172,8 @@ namespace GameConfig
                 CurrentPlayer.Money /= 2;
                 RaiseMessage($"You lost {CurrentPlayer.Money}¥"); 
             }
+
+            GenFunctions.PokemonLeveller(CurrentPlayer.PokemonCollection.First(p => p.Id == CurrentPlayer.ChosenPokemon.Id));
 
         }
 
@@ -209,7 +213,7 @@ namespace GameConfig
                         CurrentPlayer.PokemonCollection.Add(captured);
                     }
                 }
-                else if (EnemyPokemon.Category.Equals("Trainer"))
+                else if (EnemyPokemon.Category.Equals("Trainer") && item.Heal == 0)
                 {
                     RaiseMessage("You can't capture a trainer's pokémon");
                 }
