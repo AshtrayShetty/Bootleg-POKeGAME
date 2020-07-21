@@ -28,6 +28,10 @@ namespace Bootleg_Pokémon
     {
         private readonly GameSession _gameSession = new GameSession();
         private Random rnd = new Random();
+        private List<Pokemon> _enemyPokemons = new List<Pokemon>();
+        private List<int> _ids = new List<int>();
+        private List<int> _levels = new List<int>();
+        private string _trainer = "";
 
         public MainWindow()
         {
@@ -101,7 +105,7 @@ namespace Bootleg_Pokémon
             pokedex.Show();
         }
 
-        private void InitializeOpponent(int id, string category, int level)
+        private void InitializeOpponent(string category)
         {
             if (_gameSession.CurrentPlayer.Money == 0 && category.Equals("Trainer"))
             {
@@ -110,9 +114,20 @@ namespace Bootleg_Pokémon
                 return;
             }
 
-            _gameSession.EnemyPokemon = _gameSession.AllPokemon.First(p => p.Id == id);
-            _gameSession.EnemyPokemon.CurLevel = level;
-            _gameSession.EnemyPokemon.Category = category;
+            /*_gameSession.EnemyPokemon = _gameSession.AllPokemon.First(p => p.Id == id);
+            _gameSession.EnemyPokemon.CurLevel = level;*/
+
+            if(_enemyPokemons.Count == 0){
+                for (int i = 0; i < _ids.Count; ++i)
+                {
+                    Pokemon pokemon = _gameSession.AllPokemon.First(p => p.Id == _ids[i]);
+                    pokemon.Category = category;
+                    pokemon.CurLevel = _levels[i];
+                    _enemyPokemons.Add(pokemon);
+                }
+            }
+
+            _gameSession.EnemyPokemon = _enemyPokemons[rnd.Next(0, _enemyPokemons.Count)];
             _gameSession.GeneratePokemonStats(_gameSession.EnemyPokemon);
             EnemyCorner.Visibility = Visibility.Visible;
             MenuBar.IsEnabled = false;
@@ -120,7 +135,10 @@ namespace Bootleg_Pokémon
 
         private void Brock_Click(object sender, RoutedEventArgs e)
         {
-            InitializeOpponent(74, "Trainer", 12);
+            _ids.Add(74); _ids.Add(95);
+            _levels.Add(12); _levels.Add(14);
+            InitializeOpponent("Trainer");
+            _trainer = "Brock";
 
             if (_gameSession.EnemyPokemon.Name != null)
             {
@@ -130,7 +148,10 @@ namespace Bootleg_Pokémon
 
         private void Misty_Click(object sender, RoutedEventArgs e)
         {
-            InitializeOpponent(120, "Trainer", 18);
+            _ids.Add(120); _ids.Add(121);
+            _levels.Add(18); _levels.Add(21);
+            InitializeOpponent("Trainer");
+            _trainer = "Misty";
 
             if (_gameSession.EnemyPokemon.Name != null)
             {
@@ -140,7 +161,10 @@ namespace Bootleg_Pokémon
 
         private void Surge_Click(object sender, RoutedEventArgs e)
         {
-            InitializeOpponent(26, "Trainer", 24);
+            _ids.Add(100); _ids.Add(25); _ids.Add(26);
+            _levels.Add(21); _levels.Add(18); _levels.Add(24);
+            InitializeOpponent("Trainer");
+            _trainer = "Surge";
 
             if (_gameSession.EnemyPokemon.Name != null)
             {
@@ -150,7 +174,10 @@ namespace Bootleg_Pokémon
 
         private void Erika_Click(object sender, RoutedEventArgs e)
         {
-            InitializeOpponent(45, "Trainer", 29);
+            _ids.Add(71); _ids.Add(114); _ids.Add(45);
+            _levels.Add(29); _levels.Add(24); _levels.Add(29);
+            InitializeOpponent("Trainer");
+            _trainer = "Erika";
 
             if (_gameSession.EnemyPokemon.Name != null)
             {
@@ -160,7 +187,10 @@ namespace Bootleg_Pokémon
 
         private void Janine_Click(object sender, RoutedEventArgs e)
         {
-            InitializeOpponent(89, "Trainer", 32);
+            _ids.Add(169); _ids.Add(110); _ids.Add(110); _ids.Add(168); _ids.Add(49);
+            _levels.Add(36); _levels.Add(36); _levels.Add(36); _levels.Add(33); _levels.Add(39);
+            InitializeOpponent("Trainer");
+            _trainer = "Janine";
 
             if (_gameSession.EnemyPokemon.Name != null)
             {
@@ -170,7 +200,10 @@ namespace Bootleg_Pokémon
 
         private void Sabrina_Click(object sender, RoutedEventArgs e)
         {
-            InitializeOpponent(49, "Trainer", 38);
+            _ids.Add(64); _ids.Add(122); _ids.Add(49); _ids.Add(65);
+            _levels.Add(38); _levels.Add(37); _levels.Add(38); _levels.Add(43);
+            InitializeOpponent("Trainer");
+            _trainer = "Sabrina";
 
             if (_gameSession.EnemyPokemon.Name != null)
             {
@@ -180,7 +213,10 @@ namespace Bootleg_Pokémon
 
         private void Blaine_Click(object sender, RoutedEventArgs e)
         {
-            InitializeOpponent(126, "Trainer", 45);
+            _ids.Add(58); _ids.Add(77); _ids.Add(78); _ids.Add(59);
+            _levels.Add(42); _levels.Add(40); _levels.Add(42); _levels.Add(47);
+            InitializeOpponent("Trainer");
+            _trainer = "Blaine";
 
             if (_gameSession.EnemyPokemon.Name != null)
             {
@@ -190,7 +226,10 @@ namespace Bootleg_Pokémon
 
         private void Gary_Click(object sender, RoutedEventArgs e)
         {
-            InitializeOpponent(34, "Trainer", 50);
+            _ids.Add(18); _ids.Add(65); _ids.Add(112); _ids.Add(103); _ids.Add(130); _ids.Add(6);
+            _levels.Add(61); _levels.Add(59); _levels.Add(61); _levels.Add(61); _levels.Add(63); _levels.Add(65);
+            InitializeOpponent("Trainer");
+            _trainer = "Gary";
 
             if (_gameSession.EnemyPokemon.Name != null)
             {
@@ -200,7 +239,10 @@ namespace Bootleg_Pokémon
 
         private void Elite_Four_Click(object sender, RoutedEventArgs e)
         {
-            InitializeOpponent(178, "Trainer", 40);
+            _ids.Add(178); _ids.Add(103); _ids.Add(80); _ids.Add(124); _ids.Add(178);
+            _levels.Add(40); _levels.Add(42); _levels.Add(42); _levels.Add(41); _levels.Add(40);
+            InitializeOpponent("Trainer");
+            _trainer = "Will";
 
             if (_gameSession.EnemyPokemon.Name != null)
             {
@@ -241,98 +283,144 @@ namespace Bootleg_Pokémon
                 if (_gameSession.EnemyPokemon.CurHp <= 0)
                 {
                     _gameSession.PlayerWon();
+                    Pokemon remove = _enemyPokemons.First(p => p.Id == _gameSession.EnemyPokemon.Id && p.CurLevel == _gameSession.EnemyPokemon.CurLevel);
+                    _enemyPokemons.Remove(remove);
 
-                    if (_gameSession.EnemyPokemon.Category.Equals("Trainer"))
+                    if (_enemyPokemons.Count == 0)
                     {
-                        if (_gameSession.EnemyPokemon.Id == 74 && !_gameSession.CurrentPlayer.BadgeCollection.Any(b => b.Equals("Brock")))
+                        EndFight.Visibility = Visibility.Visible;
+                        _ids.Clear(); _levels.Clear(); _enemyPokemons.Clear();
+                        if (_gameSession.EnemyPokemon.Category.Equals("Trainer"))
                         {
-                            MessageBox.Show("You earned the BoulderBadge");
-                            _gameSession.CurrentPlayer.BadgeCollection.Add("Brock");
-                            Misty.IsEnabled = true;
+                            switch (_trainer)
+                            {
+                                case "Brock":
+                                    if (!_gameSession.CurrentPlayer.BadgeCollection.Any(b => b.Equals("Brock")))
+                                    {
+                                        MessageBox.Show("You earned the BoulderBadge");
+                                        _gameSession.CurrentPlayer.BadgeCollection.Add("Brock");
+                                        Misty.IsEnabled = true;
+                                    }
+                                    return;
+
+                                case "Misty":
+                                    if (!_gameSession.CurrentPlayer.BadgeCollection.Any(b => b.Equals("Misty")))
+                                    {
+                                        MessageBox.Show("You earned the CascadeBadge");
+                                        _gameSession.CurrentPlayer.BadgeCollection.Add("Misty");
+                                        Surge.IsEnabled = true;
+                                    }
+                                    return;
+
+                                case "Surge":
+                                    if(!_gameSession.CurrentPlayer.BadgeCollection.Any(b => b.Equals("Surge")))
+                                    {
+                                        MessageBox.Show("You earned the ThunderBadge");
+                                        _gameSession.CurrentPlayer.BadgeCollection.Add("Surge");
+                                        Erika.IsEnabled = true;
+                                    }
+                                    return;
+
+                                case "Erika":
+                                    if (!_gameSession.CurrentPlayer.BadgeCollection.Any(b => b.Equals("Erika")))
+                                    {
+                                        MessageBox.Show("You earned the RainbowBadge");
+                                        _gameSession.CurrentPlayer.BadgeCollection.Add("Erika");
+                                        Janine.IsEnabled = true;
+                                    }
+                                    return;
+
+                                case "Janine":
+                                    if (!_gameSession.CurrentPlayer.BadgeCollection.Any(b => b.Equals("Janine")))
+                                    {
+                                        MessageBox.Show("You earned the SoulBadge");
+                                        _gameSession.CurrentPlayer.BadgeCollection.Add("Janine");
+                                        Sabrina.IsEnabled = true;
+                                    }
+                                    return;
+
+                                case "Sabrina":
+                                    if (!_gameSession.CurrentPlayer.BadgeCollection.Any(b => b.Equals("Sabrina")))
+                                    {
+                                        MessageBox.Show("You earned the MarshBadge");
+                                        _gameSession.CurrentPlayer.BadgeCollection.Add("Sabrina");
+                                        Blaine.IsEnabled = true;
+                                    }
+                                    return;
+
+                                case "Blaine":
+                                    if (!_gameSession.CurrentPlayer.BadgeCollection.Any(b => b.Equals("Blaine")))
+                                    {
+                                        MessageBox.Show("You earned the VolcanoBadge");
+                                        _gameSession.CurrentPlayer.BadgeCollection.Add("Blaine");
+                                        Gary.IsEnabled = true;
+                                    }
+                                    return;
+
+                                case "Gary":
+                                    if (!_gameSession.CurrentPlayer.BadgeCollection.Any(b => b.Equals("Gary")))
+                                    {
+                                        MessageBox.Show("You earned the EarthBadge");
+                                        MessageBox.Show("Congratulations!!! You can now challenge the elite four");
+                                        _gameSession.CurrentPlayer.BadgeCollection.Add("Gary");
+                                        EliteFour.IsEnabled = true; 
+                                    }
+                                    return;
+
+                                case "Will":
+                                    MessageBox.Show("You beat Will!! Your Next Opponent is Koga");
+                                    EndFight.Visibility = Visibility.Hidden;
+                                    EnemyCorner.Visibility = Visibility.Hidden;
+                                    PlayerCorner.Visibility = Visibility.Hidden;
+                                    _ids.Add(168); _ids.Add(205); _ids.Add(89); _ids.Add(49); _ids.Add(169);
+                                    _levels.Add(41); _levels.Add(43); _levels.Add(43); _levels.Add(42); _levels.Add(40);
+                                    InitializeOpponent("Trainer");
+                                    _trainer = "Koga";
+                                    return;
+
+                                case "Koga":
+                                    MessageBox.Show("You beat Koga!! Your Next Opponent is Bruno");
+                                    EndFight.Visibility = Visibility.Hidden;
+                                    EnemyCorner.Visibility = Visibility.Hidden;
+                                    PlayerCorner.Visibility = Visibility.Hidden;
+                                    _ids.Add(237); _ids.Add(107); _ids.Add(106); _ids.Add(95); _ids.Add(68);
+                                    _levels.Add(43); _levels.Add(43); _levels.Add(43); _levels.Add(44); _levels.Add(44);
+                                    InitializeOpponent("Trainer");
+                                    _trainer = "Bruno";
+                                    return;
+
+                                case "Bruno":
+                                    MessageBox.Show("You beat Bruno!! Your Next Opponent is Karen");
+                                    EndFight.Visibility = Visibility.Hidden;
+                                    EnemyCorner.Visibility = Visibility.Hidden;
+                                    PlayerCorner.Visibility = Visibility.Hidden;
+                                    _ids.Add(197); _ids.Add(45); _ids.Add(198); _ids.Add(94); _ids.Add(229);
+                                    _levels.Add(49); _levels.Add(45); _levels.Add(41); _levels.Add(45); _levels.Add(44);
+                                    InitializeOpponent("Trainer");
+                                    _trainer = "Karen";
+                                    return;
+
+                                case "Karen":
+                                    MessageBox.Show("You have proven your worth against the G/S/C Elite Four. It's time for you to fight the G/S/C Elite Four Champion: Lance!");
+                                    EndFight.Visibility = Visibility.Hidden;
+                                    EnemyCorner.Visibility = Visibility.Hidden;
+                                    PlayerCorner.Visibility = Visibility.Hidden;
+                                    _ids.Add(117); _ids.Add(142); _ids.Add(130);_ids.Add(6); _ids.Add(149);
+                                    _levels.Add(43); _levels.Add(49); _levels.Add(52); _levels.Add(50); _levels.Add(55);
+                                    InitializeOpponent("Trainer");
+                                    _trainer = "Lance";
+                                    return;
+
+                                default:
+                                    return;
+
+                            }
+
                         }
 
-                        if (_gameSession.EnemyPokemon.Id == 120 && !_gameSession.CurrentPlayer.BadgeCollection.Any(b => b.Equals("Misty")))
-                        {
-                            MessageBox.Show("You earned the CascadeBadge");
-                            _gameSession.CurrentPlayer.BadgeCollection.Add("Misty");
-                            Surge.IsEnabled = true;
-                        }
-                        if(_gameSession.EnemyPokemon.Id == 26 && !_gameSession.CurrentPlayer.BadgeCollection.Any(b => b.Equals("Surge")))
-                        {
-                            MessageBox.Show("You earned the ThunderBadge");
-                            _gameSession.CurrentPlayer.BadgeCollection.Add("Surge");
-                            Erika.IsEnabled = true;
-                        }
-                        if (_gameSession.EnemyPokemon.Id == 45 && !_gameSession.CurrentPlayer.BadgeCollection.Any(b => b.Equals("Erika")))
-                        {
-                            MessageBox.Show("You earned the RainbowBadge");
-                            _gameSession.CurrentPlayer.BadgeCollection.Add("Erika");
-                            Janine.IsEnabled = true;
-                        }
-                        if (_gameSession.EnemyPokemon.Id == 89 && !_gameSession.CurrentPlayer.BadgeCollection.Any(b => b.Equals("Janine")))
-                        {
-                            MessageBox.Show("You earned the SoulBadge");
-                            _gameSession.CurrentPlayer.BadgeCollection.Add("Janine");
-                            Sabrina.IsEnabled = true;
-                        }
-                        if (_gameSession.EnemyPokemon.Id == 49 && !_gameSession.CurrentPlayer.BadgeCollection.Any(b => b.Equals("Sabrina")))
-                        {
-                            MessageBox.Show("You earned the MarshBadge");
-                            _gameSession.CurrentPlayer.BadgeCollection.Add("Sabrina");
-                            Blaine.IsEnabled = true;
-                        }
-                        if (_gameSession.EnemyPokemon.Id == 126 && !_gameSession.CurrentPlayer.BadgeCollection.Any(b => b.Equals("Blaine")))
-                        {
-                            MessageBox.Show("You earned the VolcanoBadge");
-                            _gameSession.CurrentPlayer.BadgeCollection.Add("Blaine");
-                            Gary.IsEnabled = true;
-                        }
-                        if (_gameSession.EnemyPokemon.Id == 34 && !_gameSession.CurrentPlayer.BadgeCollection.Any(b => b.Equals("Gary")))
-                        {
-                            MessageBox.Show("You earned the EarthBadge");
-                            MessageBox.Show("Congratulations!!! You can now challenge the elite four");
-                            _gameSession.CurrentPlayer.BadgeCollection.Add("Gary");
-                            EliteFour.IsEnabled = true;
-                        }
-                        if (_gameSession.EnemyPokemon.Id == 178)
-                        {
-                            MessageBox.Show("You beat Will!! Your Next Opponent is Koga");
-                            EndFight.Visibility = Visibility.Hidden;
-                            EnemyCorner.Visibility = Visibility.Hidden;
-                            PlayerCorner.Visibility = Visibility.Hidden;
-                            InitializeOpponent(205, "Trainer", 43);
-                            return;
-                        }
-                        if (_gameSession.EnemyPokemon.Id == 205)
-                        {
-                            MessageBox.Show("You beat Koga!! Your Next Opponent is Bruno");
-                            EndFight.Visibility = Visibility.Hidden;
-                            EnemyCorner.Visibility = Visibility.Hidden;
-                            PlayerCorner.Visibility = Visibility.Hidden;
-                            InitializeOpponent(95, "Trainer", 43);
-                            return;
-                        }
-                        if (_gameSession.EnemyPokemon.Id == 95)
-                        {
-                            MessageBox.Show("You beat Bruno!! Your Next Opponent is Karen");
-                            EndFight.Visibility = Visibility.Hidden;
-                            EnemyCorner.Visibility = Visibility.Hidden;
-                            PlayerCorner.Visibility = Visibility.Hidden;
-                            InitializeOpponent(94, "Trainer", 45);
-                            return;
-                        }
-                        if (_gameSession.EnemyPokemon.Id == 94)
-                        {
-                            MessageBox.Show("You have proven your worth against the G/S/C Elite Four. It's time for you to fight the G/S/C Elite Four Champion: Lance!");
-                            EndFight.Visibility = Visibility.Hidden;
-                            EnemyCorner.Visibility = Visibility.Hidden;
-                            PlayerCorner.Visibility = Visibility.Hidden;
-                            InitializeOpponent(149, "Trainer", 50);
-                            return;
-                        }
                     }
 
-                    EndFight.Visibility = Visibility.Visible;
+                    InitializeOpponent(_gameSession.EnemyPokemon.Category);
                     return;
                 }
 
@@ -341,6 +429,7 @@ namespace Bootleg_Pokémon
                 if (_gameSession.CurrentPlayer.ChosenPokemon.CurHp <= 0)
                 {
                     _gameSession.OpponentWon();
+                    _ids.Clear(); _levels.Clear(); _enemyPokemons.Clear();
                     EndFight.Visibility = Visibility.Visible;
                     return;
                 }
@@ -359,6 +448,7 @@ namespace Bootleg_Pokémon
             EnemyCorner.Visibility = Visibility.Hidden;
             EndFight.Visibility = Visibility.Hidden;
             _gameSession.CurrentPlayer.ChosenPokemon = null;
+            _trainer = "";
             MenuBar.IsEnabled = true;
             FightStatus.Document.Blocks.Clear();
         }
@@ -375,7 +465,10 @@ namespace Bootleg_Pokémon
         {
             Button btn = (Button)sender;
             if (EnemyCorner.Visibility == Visibility.Visible) { _gameSession.ItemEffect(btn.Content.ToString()); }
-            if (_gameSession.EnemyPokemon.CurHp == 0) { EndFight.Visibility = Visibility.Visible; }
+            if (_gameSession.EnemyPokemon.CurHp == 0) { 
+                EndFight.Visibility = Visibility.Visible;
+                _ids.Clear(); _levels.Clear(); _enemyPokemons.Clear();
+            }
         }
 
         private void RaiseBattleMessages(object sender, GameMessageEventArgs e)
@@ -410,7 +503,9 @@ namespace Bootleg_Pokémon
                 level = rnd.Next(pokemon.BaseLevel, pokemon.EvolutionLevel);
             }
 
-            InitializeOpponent(id, "Wild", level);
+            _ids.Add(id); _levels.Add(level);
+            _trainer = "";
+            InitializeOpponent("Wild");
             FightStatus.Document.Blocks.Add(new Paragraph(new Run($"A wild {_gameSession.EnemyPokemon.Name} appeared!!")));
         }
     }
