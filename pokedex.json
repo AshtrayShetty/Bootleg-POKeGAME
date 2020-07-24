@@ -122,7 +122,7 @@
     "Name": "Charizard",
     "Type": [
       "Fire",
-      "Flying",
+      "Flying"
     ],
     "Base": {
       "HP": [ 78, 0 ],

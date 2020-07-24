@@ -255,19 +255,53 @@ namespace Bootleg_Pokémon
             if(PlayerPokemon.SelectedItem != null)
             {
                 _gameSession.CurrentPlayer.ChosenPokemon = PlayerPokemon.SelectedItem as Pokemon;
+                Player curPlayer = _gameSession.CurrentPlayer;
+
+                if (Evolve.IsChecked)
+                {
+                    if(curPlayer.ChosenPokemon.CurLevel > curPlayer.ChosenPokemon.EvolutionLevel)
+                    {
+                        Pokemon toEvolve = curPlayer.PokemonCollection[PlayerPokemon.SelectedIndex];
+                        Pokemon evolved = _gameSession.AllPokemon.First(p => p.Id == toEvolve.EvolutionId[0]);
+                        MessageBox.Show($"Your {toEvolve.Name} evolved to a {evolved.Name}!!");
+                        toEvolve.Id = evolved.Id;
+                        toEvolve.Name = evolved.Name;
+                        toEvolve.Image = evolved.Image;
+                        toEvolve.FindType = evolved.FindType;
+                        toEvolve.Type = evolved.Type;
+                        toEvolve.BaseLevel = evolved.BaseLevel;
+                        toEvolve.EvolutionLevel = evolved.EvolutionLevel;
+                        toEvolve.EvolutionId = evolved.EvolutionId;
+                        toEvolve.CatchRate = evolved.CatchRate;
+                        toEvolve.Base.HP.Insert(0, evolved.Base.HP[0]);
+                        toEvolve.Base.Attack.Insert(0, evolved.Base.Attack[0]);
+                        toEvolve.Base.Defense.Insert(0, evolved.Base.Defense[0]);
+                        toEvolve.Base.SpecialAttack.Insert(0, evolved.Base.SpecialAttack[0]);
+                        toEvolve.Base.SpecialDefense.Insert(0, evolved.Base.SpecialDefense[0]);
+                        toEvolve.Base.Speed.Insert(0, evolved.Base.Speed[0]);
+                    }
+                    else if (curPlayer.ChosenPokemon.EvolutionLevel == 100)
+                    {
+                        MessageBox.Show("This Pokémon cannot evolve");
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Your {curPlayer.ChosenPokemon.Name} still needs {curPlayer.ChosenPokemon.EvolutionLevel - curPlayer.ChosenPokemon.CurLevel} level(s) to evolve.");
+                    }
+                }
 
                 if (_gameSession.IsBattle && EnemyCorner.Visibility == Visibility.Visible)
                 {
-                    _gameSession.CurrentPlayer.ChosenPokemon.Moves = _gameSession.CurrentPlayer.PokemonCollection[PlayerPokemon.SelectedIndex].Moves;
+                    curPlayer.ChosenPokemon.Moves = curPlayer.PokemonCollection[PlayerPokemon.SelectedIndex].Moves;
                     PlayerCorner.Visibility = Visibility.Visible;
-                    _gameSession.CurrentPlayer.Fights += 1;
-                    FightStatus.Document.Blocks.Add(new Paragraph(new Run($"You chose {_gameSession.CurrentPlayer.ChosenPokemon.Name}")));
+                    curPlayer.Fights += 1;
+                    FightStatus.Document.Blocks.Add(new Paragraph(new Run($"You chose {curPlayer.ChosenPokemon.Name}")));
                 
                 }
                 else
                 {
-                    MessageBox.Show($"{_gameSession.CurrentPlayer.ChosenPokemon.Name}: Level {_gameSession.CurrentPlayer.ChosenPokemon.CurLevel}");
-                    _gameSession.CurrentPlayer.ChosenPokemon = null;
+                    MessageBox.Show($"{curPlayer.ChosenPokemon.Name}: Level {curPlayer.ChosenPokemon.CurLevel}");
+                    curPlayer.ChosenPokemon = null;
                 }
             }
         }
@@ -507,6 +541,16 @@ namespace Bootleg_Pokémon
             _trainer = "";
             InitializeOpponent("Wild");
             FightStatus.Document.Blocks.Add(new Paragraph(new Run($"A wild {_gameSession.EnemyPokemon.Name} appeared!!")));
+        }
+
+        private void Evolve_Checked(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Evolution Mode On. Choose Pokemon to evolve.");
+        }
+
+        private void Evolve_Unchecked(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Evolution Mode Cancelled.");
         }
     }
 }
