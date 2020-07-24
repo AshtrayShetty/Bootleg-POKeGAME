@@ -100,7 +100,7 @@
                     </MenuItem>
                     <MenuItem Header="Buy Items" Click="Buy_Items_Click"/>
                     <MenuItem Header="Evolve a POKéMON" x:Name="Evolve" IsCheckable="True" Checked="Evolve_Checked" Unchecked="Evolve_Unchecked"/>
-                    <MenuItem Header="Release a POKéMON" x:Name="Release"/>
+                    <MenuItem Header="Release a POKéMON" x:Name="Release" IsCheckable="True" Checked="Release_Checked"/>
                     <MenuItem Header="View POKéDEX" Click="Pokedex_Click"/>
                 </MenuItem>
             </Menu>

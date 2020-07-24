@@ -254,15 +254,15 @@ namespace Bootleg_Pokémon
         {
             if(PlayerPokemon.SelectedItem != null)
             {
-                _gameSession.CurrentPlayer.ChosenPokemon = PlayerPokemon.SelectedItem as Pokemon;
                 Player curPlayer = _gameSession.CurrentPlayer;
+                curPlayer.ChosenPokemon = PlayerPokemon.SelectedItem as Pokemon;
 
                 if (Evolve.IsChecked)
                 {
                     if(curPlayer.ChosenPokemon.CurLevel > curPlayer.ChosenPokemon.EvolutionLevel)
                     {
                         Pokemon toEvolve = curPlayer.PokemonCollection[PlayerPokemon.SelectedIndex];
-                        Pokemon evolved = _gameSession.AllPokemon.First(p => p.Id == toEvolve.EvolutionId[0]);
+                        Pokemon evolved = _gameSession.AllPokemon.First(p => p.Id == toEvolve.EvolutionId[rnd.Next(0, toEvolve.EvolutionId.Length)]);
                         MessageBox.Show($"Your {toEvolve.Name} evolved to a {evolved.Name}!!");
                         toEvolve.Id = evolved.Id;
                         toEvolve.Name = evolved.Name;
@@ -288,6 +288,19 @@ namespace Bootleg_Pokémon
                     {
                         MessageBox.Show($"Your {curPlayer.ChosenPokemon.Name} still needs {curPlayer.ChosenPokemon.EvolutionLevel - curPlayer.ChosenPokemon.CurLevel} level(s) to evolve.");
                     }
+                }
+                else if (Release.IsChecked)
+                {
+                    if(curPlayer.PokemonCollection.Count > 1) 
+                    { 
+                        curPlayer.PokemonCollection.RemoveAt(PlayerPokemon.SelectedIndex);
+                        MessageBox.Show($"You let your {curPlayer.ChosenPokemon.Name} into the wild");
+                    }
+                    else { MessageBox.Show("You need to have at least one Pokémon"); }
+
+                    curPlayer.ChosenPokemon = null;
+                    Release.IsChecked = false;
+                    return;
                 }
 
                 if (_gameSession.IsBattle && EnemyCorner.Visibility == Visibility.Visible)
@@ -545,12 +558,36 @@ namespace Bootleg_Pokémon
 
         private void Evolve_Checked(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Evolution Mode On. Choose Pokemon to evolve.");
+            if (Release.IsChecked)
+            {
+                MessageBox.Show("Turn off Release mode to evolve Pokémon");
+                Evolve.IsChecked = false;
+            }
+            else
+            {
+                MessageBox.Show("Evolution Mode On. Choose Pokémon to evolve.");
+            }
         }
 
         private void Evolve_Unchecked(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Evolution Mode Cancelled.");
+            if (!Release.IsChecked)
+            {
+                MessageBox.Show("Evolution Mode Cancelled.");
+            }
+        }
+
+        private void Release_Checked(object sender, RoutedEventArgs e)
+        {
+            if (!Evolve.IsChecked)
+            {
+                MessageBox.Show("Choose a Pokémon to let go");
+            }
+            else
+            {
+                Release.IsChecked = false;
+                MessageBox.Show("Turn off Evolution mode to release a Pokémon");
+            }
         }
     }
 }
