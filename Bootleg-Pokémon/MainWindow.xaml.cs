@@ -133,122 +133,72 @@ namespace Bootleg_Pokémon
             MenuBar.IsEnabled = false;
         }
 
-        private void Brock_Click(object sender, RoutedEventArgs e)
+        private void GenerateTrainerBattle(List<int> ids, List<int> levels, string trainer)
         {
-            _ids.Add(74); _ids.Add(95);
-            _levels.Add(12); _levels.Add(14);
+            for (int i = 0; i < ids.Count; i++)
+            {
+                _ids.Add(ids[i]); _levels.Add(levels[i]);
+            }
             InitializeOpponent("Trainer");
-            _trainer = "Brock";
+            _trainer = trainer;
 
             if (_gameSession.EnemyPokemon.Name != null)
             {
-                FightStatus.Document.Blocks.Add(new Paragraph(new Run($"Brock chose {_gameSession.EnemyPokemon.Name}")));
+                FightStatus.Document.Blocks.Add(new Paragraph(new Run($"Red chose {_gameSession.EnemyPokemon.Name}")));
             }
         }
 
-        private void Misty_Click(object sender, RoutedEventArgs e)
-        {
-            _ids.Add(120); _ids.Add(121);
-            _levels.Add(18); _levels.Add(21);
-            InitializeOpponent("Trainer");
-            _trainer = "Misty";
+        private void Red_Click(object sender, RoutedEventArgs e) { GenerateTrainerBattle(new List<int>() { 4 }, new List<int>() { 5 }, ""); }
 
-            if (_gameSession.EnemyPokemon.Name != null)
-            {
-                FightStatus.Document.Blocks.Add(new Paragraph(new Run($"Misty chose {_gameSession.EnemyPokemon.Name}")));
-            }
-        }
+        private void Blue_Click(object sender, RoutedEventArgs e) { GenerateTrainerBattle(new List<int>() { 7 }, new List<int>() { 5 }, ""); }
 
-        private void Surge_Click(object sender, RoutedEventArgs e)
-        {
-            _ids.Add(100); _ids.Add(25); _ids.Add(26);
-            _levels.Add(21); _levels.Add(18); _levels.Add(24);
-            InitializeOpponent("Trainer");
-            _trainer = "Surge";
+        private void Green_Click(object sender, RoutedEventArgs e) { GenerateTrainerBattle(new List<int>() { 1 }, new List<int>() { 5 }, ""); }
 
-            if (_gameSession.EnemyPokemon.Name != null)
-            {
-                FightStatus.Document.Blocks.Add(new Paragraph(new Run($"Lt. Surge chose {_gameSession.EnemyPokemon.Name}")));   
-            }
-        }
+        private void Yellow_Click(object sender, RoutedEventArgs e) { GenerateTrainerBattle(new List<int>() { 25 }, new List<int>() { 5 }, ""); }
 
-        private void Erika_Click(object sender, RoutedEventArgs e)
-        {
-            _ids.Add(71); _ids.Add(114); _ids.Add(45);
-            _levels.Add(29); _levels.Add(24); _levels.Add(29);
-            InitializeOpponent("Trainer");
-            _trainer = "Erika";
+        private void Gold_Click(object sender, RoutedEventArgs e) { GenerateTrainerBattle(new List<int>() { 152 }, new List<int>() { 10 }, ""); }
 
-            if (_gameSession.EnemyPokemon.Name != null)
-            {
-                FightStatus.Document.Blocks.Add(new Paragraph(new Run($"Erika chose {_gameSession.EnemyPokemon.Name}")));
-            }
-        }
+        private void Silver_Click(object sender, RoutedEventArgs e) { GenerateTrainerBattle(new List<int>() { 155 }, new List<int>() { 10 }, ""); }
 
-        private void Janine_Click(object sender, RoutedEventArgs e)
-        {
-            _ids.Add(169); _ids.Add(110); _ids.Add(110); _ids.Add(168); _ids.Add(49);
-            _levels.Add(36); _levels.Add(36); _levels.Add(36); _levels.Add(33); _levels.Add(39);
-            InitializeOpponent("Trainer");
-            _trainer = "Janine";
+        private void Crystal_Click(object sender, RoutedEventArgs e) { GenerateTrainerBattle(new List<int>() { 158 }, new List<int>() { 10 }, ""); }
 
-            if (_gameSession.EnemyPokemon.Name != null)
-            {
-                FightStatus.Document.Blocks.Add(new Paragraph(new Run($"Janine chose {_gameSession.EnemyPokemon.Name}")));
-            }
-        }
+        private void Ruby_Click(object sender, RoutedEventArgs e) { GenerateTrainerBattle(new List<int>() { 256 }, new List<int>() { 25 }, ""); }
+        
+        private void Sapphire_Click(object sender, RoutedEventArgs e) { GenerateTrainerBattle(new List<int>() { 259 }, new List<int>() { 25 }, ""); }
+        
+        private void Emerald_Click(object sender, RoutedEventArgs e) { GenerateTrainerBattle(new List<int>() { 253 }, new List<int>() { 25 }, ""); }
+        
+        private void Oak_Click(object sender, RoutedEventArgs e) { GenerateTrainerBattle(new List<int>() { 128, 103, 59, 9, 130 }, new List<int>() { 66, 67, 68, 69, 70 }, ""); }
+        
+        private void Elm_Click(object sender, RoutedEventArgs e) { GenerateTrainerBattle(new List<int>() { 152, 155, 158 }, new List<int>() { 66, 66, 66 }, ""); }
+        
+        private void Birch_Click(object sender, RoutedEventArgs e) { GenerateTrainerBattle(new List<int>() { 252, 255, 258 }, new List<int>() { 66, 66, 66 }, ""); }
+        
+        private void Jesse_Click(object sender, RoutedEventArgs e) { GenerateTrainerBattle(new List<int>() { 24 }, new List<int>() { 67 }, ""); }
+        
+        private void James_Click(object sender, RoutedEventArgs e) { GenerateTrainerBattle(new List<int>() { 110 }, new List<int>() { 67 }, ""); }
 
-        private void Sabrina_Click(object sender, RoutedEventArgs e)
-        {
-            _ids.Add(64); _ids.Add(122); _ids.Add(49); _ids.Add(65);
-            _levels.Add(38); _levels.Add(37); _levels.Add(38); _levels.Add(43);
-            InitializeOpponent("Trainer");
-            _trainer = "Sabrina";
+        private void Giovanni_Click(object sender, RoutedEventArgs e) { GenerateTrainerBattle(new List<int>() { 51, 34, 31, 464, 150 }, new List<int>() { 68, 68, 68, 68, 70 }, ""); }
 
-            if (_gameSession.EnemyPokemon.Name != null)
-            {
-                FightStatus.Document.Blocks.Add(new Paragraph(new Run($"Sabrina chose {_gameSession.EnemyPokemon.Name}")));
-            }
-        }
+        private void Brock_Click(object sender, RoutedEventArgs e) { GenerateTrainerBattle(new List<int>() { 74, 95 }, new List<int>() { 12, 14 }, "Brock"); }
 
-        private void Blaine_Click(object sender, RoutedEventArgs e)
-        {
-            _ids.Add(58); _ids.Add(77); _ids.Add(78); _ids.Add(59);
-            _levels.Add(42); _levels.Add(40); _levels.Add(42); _levels.Add(47);
-            InitializeOpponent("Trainer");
-            _trainer = "Blaine";
+        private void Misty_Click(object sender, RoutedEventArgs e) { GenerateTrainerBattle(new List<int>() { 120, 121 }, new List<int>() { 18, 21 }, "Misty"); }
 
-            if (_gameSession.EnemyPokemon.Name != null)
-            {
-                FightStatus.Document.Blocks.Add(new Paragraph(new Run($"Blaine chose {_gameSession.EnemyPokemon.Name}")));
-            }
-        }
+        private void Surge_Click(object sender, RoutedEventArgs e) { GenerateTrainerBattle(new List<int>() { 100, 25, 26 }, new List<int>() { 21, 18, 24 }, "Surge"); }
 
-        private void Gary_Click(object sender, RoutedEventArgs e)
-        {
-            _ids.Add(18); _ids.Add(65); _ids.Add(112); _ids.Add(103); _ids.Add(130); _ids.Add(6);
-            _levels.Add(61); _levels.Add(59); _levels.Add(61); _levels.Add(61); _levels.Add(63); _levels.Add(65);
-            InitializeOpponent("Trainer");
-            _trainer = "Gary";
+        private void Erika_Click(object sender, RoutedEventArgs e) { GenerateTrainerBattle(new List<int>() { 71, 114, 45 }, new List<int>() { 29, 24, 29 }, "Erika"); }
 
-            if (_gameSession.EnemyPokemon.Name != null)
-            {
-                FightStatus.Document.Blocks.Add(new Paragraph(new Run($"Blaine chose {_gameSession.EnemyPokemon.Name}")));
-            }
-        }
+        private void Janine_Click(object sender, RoutedEventArgs e) { GenerateTrainerBattle(new List<int>() { 169, 110, 110, 168, 49 }, new List<int>() { 36, 36, 36, 33, 39 }, "Janine"); }
 
-        private void Elite_Four_Click(object sender, RoutedEventArgs e)
-        {
-            _ids.Add(178); _ids.Add(103); _ids.Add(80); _ids.Add(124); _ids.Add(178);
-            _levels.Add(40); _levels.Add(42); _levels.Add(42); _levels.Add(41); _levels.Add(40);
-            InitializeOpponent("Trainer");
-            _trainer = "Will";
+        private void Sabrina_Click(object sender, RoutedEventArgs e) { GenerateTrainerBattle(new List<int>() { 64, 122, 49, 65 }, new List<int>() { 38, 37, 38, 43 }, "Sabrina"); }
 
-            if (_gameSession.EnemyPokemon.Name != null)
-            {
-                FightStatus.Document.Blocks.Add(new Paragraph(new Run($"Will chose {_gameSession.EnemyPokemon.Name}")));
-            }
-        }
+        private void Blaine_Click(object sender, RoutedEventArgs e) { GenerateTrainerBattle(new List<int>() { 58, 77, 78, 59 }, new List<int>() { 42, 40, 42, 47 }, "Blaine"); }
+
+        private void Gary_Click(object sender, RoutedEventArgs e) { GenerateTrainerBattle(new List<int>() { 18, 65, 112, 103, 130, 6 }, new List<int>() { 61, 59, 61, 61, 63, 65 }, "Gary"); }
+
+        private void Elite_Four_Click(object sender, RoutedEventArgs e) { GenerateTrainerBattle(new List<int>() { 178, 103, 80, 124, 178 }, new List<int>() { 40, 42, 42, 41, 40 }, "Will"); }
+
+        private void Falkner_Click(object sender, RoutedEventArgs e) { GenerateTrainerBattle(new List<int>() { 16, 17 }, new List<int>() { 7, 9 }, "Falkner"); }
 
         private void Pokemon_Choose_Click(object sender, RoutedEventArgs e)
         {
@@ -307,7 +257,6 @@ namespace Bootleg_Pokémon
                 {
                     curPlayer.ChosenPokemon.Moves = curPlayer.PokemonCollection[PlayerPokemon.SelectedIndex].Moves;
                     PlayerCorner.Visibility = Visibility.Visible;
-                    curPlayer.Fights += 1;
                     FightStatus.Document.Blocks.Add(new Paragraph(new Run($"You chose {curPlayer.ChosenPokemon.Name}")));
                 
                 }
@@ -414,15 +363,21 @@ namespace Bootleg_Pokémon
                                     }
                                     return;
 
+                                case "Falkner":
+                                    if (!_gameSession.CurrentPlayer.BadgeCollection.Any(b => b.Equals("Falkner")))
+                                    {
+                                        MessageBox.Show("You earned the ZephyrBadge");
+                                        _gameSession.CurrentPlayer.BadgeCollection.Add("Falkner");
+                                        Bugsy.IsEnabled = true;
+                                    }
+                                    return;
+
                                 case "Will":
                                     MessageBox.Show("You beat Will!! Your Next Opponent is Koga");
                                     EndFight.Visibility = Visibility.Hidden;
                                     EnemyCorner.Visibility = Visibility.Hidden;
                                     PlayerCorner.Visibility = Visibility.Hidden;
-                                    _ids.Add(168); _ids.Add(205); _ids.Add(89); _ids.Add(49); _ids.Add(169);
-                                    _levels.Add(41); _levels.Add(43); _levels.Add(43); _levels.Add(42); _levels.Add(40);
-                                    InitializeOpponent("Trainer");
-                                    _trainer = "Koga";
+                                    GenerateTrainerBattle(new List<int>() { 168, 205, 89, 49, 169 }, new List<int>() { 41, 43, 43, 42, 40 }, "Koga");
                                     return;
 
                                 case "Koga":
@@ -430,10 +385,7 @@ namespace Bootleg_Pokémon
                                     EndFight.Visibility = Visibility.Hidden;
                                     EnemyCorner.Visibility = Visibility.Hidden;
                                     PlayerCorner.Visibility = Visibility.Hidden;
-                                    _ids.Add(237); _ids.Add(107); _ids.Add(106); _ids.Add(95); _ids.Add(68);
-                                    _levels.Add(43); _levels.Add(43); _levels.Add(43); _levels.Add(44); _levels.Add(44);
-                                    InitializeOpponent("Trainer");
-                                    _trainer = "Bruno";
+                                    GenerateTrainerBattle(new List<int>() { 237, 107, 106, 95, 68 }, new List<int>() { 43, 43, 43, 44, 44 }, "Bruno");
                                     return;
 
                                 case "Bruno":
@@ -441,10 +393,7 @@ namespace Bootleg_Pokémon
                                     EndFight.Visibility = Visibility.Hidden;
                                     EnemyCorner.Visibility = Visibility.Hidden;
                                     PlayerCorner.Visibility = Visibility.Hidden;
-                                    _ids.Add(197); _ids.Add(45); _ids.Add(198); _ids.Add(94); _ids.Add(229);
-                                    _levels.Add(49); _levels.Add(45); _levels.Add(41); _levels.Add(45); _levels.Add(44);
-                                    InitializeOpponent("Trainer");
-                                    _trainer = "Karen";
+                                    GenerateTrainerBattle(new List<int>() { 197, 45, 198, 94, 229 }, new List<int>() { 49, 45, 41, 45, 44 }, "Karen");
                                     return;
 
                                 case "Karen":
@@ -452,10 +401,17 @@ namespace Bootleg_Pokémon
                                     EndFight.Visibility = Visibility.Hidden;
                                     EnemyCorner.Visibility = Visibility.Hidden;
                                     PlayerCorner.Visibility = Visibility.Hidden;
-                                    _ids.Add(117); _ids.Add(142); _ids.Add(130);_ids.Add(6); _ids.Add(149);
-                                    _levels.Add(43); _levels.Add(49); _levels.Add(52); _levels.Add(50); _levels.Add(55);
-                                    InitializeOpponent("Trainer");
-                                    _trainer = "Lance";
+                                    GenerateTrainerBattle(new List<int>() { 117, 142, 130, 6, 149 }, new List<int>() { 43, 49, 52, 50, 55 }, "Lance");
+                                    return;
+
+                                case "Lance":
+                                    if(!_gameSession.CurrentPlayer.BadgeCollection.Any(b => b.Equals("Lance")))
+                                    {
+                                        MessageBox.Show("You beat the G/S/C Elite Champion!! You received a Master Ball");
+                                        EndFight.Visibility = Visibility.Visible;
+                                        _gameSession.CurrentPlayer.AddItemInventory(ItemFactory.GenerateItem(8, 1));
+                                        MessageBox.Show("A Master Ball can catch any wild pokémon with any HP. Use it wisely");
+                                    }
                                     return;
 
                                 default:
@@ -464,7 +420,7 @@ namespace Bootleg_Pokémon
                             }
 
                         }
-
+                        return;
                     }
 
                     InitializeOpponent(_gameSession.EnemyPokemon.Category);

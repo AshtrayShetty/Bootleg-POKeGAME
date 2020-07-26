@@ -39,34 +39,34 @@
                     <MenuItem Header="Fight a Trainer">
                         <MenuItem Header="_Trainers">
                             <MenuItem Header="_Beginner">
-                                <MenuItem Header="Red" x:Name="Red"/>
-                                <MenuItem Header="Blue" x:Name="Blue"/>
-                                <MenuItem Header="Green" x:Name="Green"/>
-                                <MenuItem Header="Yellow" x:Name="Yellow"/>
-                                <MenuItem Header="Gold" x:Name="Gold"/>
-                                <MenuItem Header="Silver" x:Name="Silver"/>
-                                <MenuItem Header="Crystal" x:Name="Crystal"/>
+                                <MenuItem Header="Red" Click="Red_Click"/>
+                                <MenuItem Header="Blue" Click="Blue_Click"/>
+                                <MenuItem Header="Green" Click="Green_Click"/>
+                                <MenuItem Header="Yellow" Click="Yellow_Click"/>
+                                <MenuItem Header="Gold" Click="Gold_Click"/>
+                                <MenuItem Header="Silver" Click="Silver_Click"/>
+                                <MenuItem Header="Crystal" Click="Crystal_Click"/>
                             </MenuItem>
                             <MenuItem Header="_Novice">
-                                <MenuItem Header="Ruby" x:Name="Ruby"/>
-                                <MenuItem Header="Sapphire" x:Name="Sapphire"/>
-                                <MenuItem Header="Emrald" x:Name="Emrald"/>
+                                <MenuItem Header="Ruby" Click="Ruby_Click"/>
+                                <MenuItem Header="Sapphire" Click="Sapphire_Click"/>
+                                <MenuItem Header="Emerald" Click="Emerald_Click"/>
                             </MenuItem>
                             <MenuItem Header="_Intermediate">
-                                <MenuItem Header="Prof.Oak" x:Name="Oak"/>
-                                <MenuItem Header="Prof.Elm" x:Name="Elm"/>
-                                <MenuItem Header="Prof.Birch" x:Name="Birch"/>
+                                <MenuItem Header="Prof.Oak" Click="Oak_Click"/>
+                                <MenuItem Header="Prof.Elm" Click="Elm_Click"/>
+                                <MenuItem Header="Prof.Birch" Click="Birch_Click"/>
                             </MenuItem>
                             <MenuItem Header="_Advanced">
-                                <MenuItem Header="Jesse" x:Name="Jesse"/>
-                                <MenuItem Header="James" x:Name="James"/>
+                                <MenuItem Header="Jesse" Click="Jesse_Click"/>
+                                <MenuItem Header="James" Click="James_Click"/>
                             </MenuItem>
                             <MenuItem Header="_Expert">
-                                <MenuItem Header="Giovanni" x:Name="Giovanni"/>
+                                <MenuItem Header="Giovanni" Click="Giovanni_Click"/>
                             </MenuItem>
                         </MenuItem>
                         <MenuItem Header="Kanto Gym Leaders">
-                            <MenuItem Header="Brock" x:Name="Brock" Click="Brock_Click"/>
+                            <MenuItem Header="Brock" Click="Brock_Click"/>
                             <MenuItem Header="Misty" x:Name="Misty" IsEnabled="False" Click="Misty_Click"/>
                             <MenuItem Header="Lt.Surge" x:Name="Surge" IsEnabled="False" Click="Surge_Click"/>
                             <MenuItem Header="Erika" x:Name="Erika" IsEnabled="False" Click="Erika_Click"/>
@@ -76,8 +76,15 @@
                             <MenuItem Header="Gary" x:Name="Gary" IsEnabled="False" Click="Gary_Click"/>
                         </MenuItem>
                         <MenuItem Header="G/S/C Elite Four" x:Name="EliteFour" IsEnabled="False" Click="Elite_Four_Click"/>
-                        <MenuItem Header="Johto Gym Leaders" x:Name="JohtoLeaders" IsEnabled="False">
-                            <MenuItem Header=""/>
+                        <MenuItem Header="Johto Gym Leaders">
+                            <MenuItem Header="Falkner" Click="Falkner_Click"/>
+                            <MenuItem Header="Bugsy" x:Name="Bugsy" IsEnabled="False"/>
+                            <MenuItem Header="Whitney" x:Name="Whitney" IsEnabled="False"/>
+                            <MenuItem Header="Morty" x:Name="Morty" IsEnabled="False"/>
+                            <MenuItem Header="Chuck" x:Name="Chuck" IsEnabled="False"/>
+                            <MenuItem Header="Jasmine" x:Name="Jasmine" IsEnabled="False"/>
+                            <MenuItem Header="Pryce" x:Name="Pryce" IsEnabled="False"/>
+                            <MenuItem Header="Clair" x:Name="Clair" IsEnabled="False"/>
                         </MenuItem>
                         <MenuItem Header="Hoenn Gym Leaders (Lv.100)" x:Name="HoennLeaders" IsEnabled="False">
                             <MenuItem Header=""/>

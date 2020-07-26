@@ -4,7 +4,7 @@
     "Name": "Bulbasaur",
     "Type": [
       "Grass",
-      "Poison",
+      "Poison"
     ],
     "Base": {
       "HP": [ 45, 0 ],
@@ -28,7 +28,7 @@
     "Name": "Ivysaur",
     "Type": [
       "Grass",
-      "Poison",
+      "Poison"
     ],
     "Base": {
       "HP": [ 60, 0 ],
@@ -52,7 +52,7 @@
     "Name": "Venusaur",
     "Type": [
       "Grass",
-      "Poison",
+      "Poison"
     ],
     "Base": {
       "HP": [ 80, 0 ],

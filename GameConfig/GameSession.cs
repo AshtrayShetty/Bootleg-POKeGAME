@@ -93,7 +93,11 @@ namespace GameConfig
 
                 if (chanceHit >= 1 || chanceHit > chanceMiss)
                 {
-                    double attDefRatio = move.Category.Equals("Physical") ? ((double)PokemonStats.Attack[3] / (double)PokemonStats.Defense[3]) : ((double)PokemonStats.SpecialAttack[3] / (double)PokemonStats.SpecialDefense[3]);
+                    double attDefRatio = 
+                        move.Category.Equals("Physical") ? 
+                            ((double)PokemonStats.Attack[3] / (double)PokemonStats.Defense[3]) : 
+                            ((double)PokemonStats.SpecialAttack[3] / (double)PokemonStats.SpecialDefense[3]);
+
                     double probCritHit = (double)PokemonStats.Speed[0] / 256;
                     double critical = rnd.NextDouble() < probCritHit ? 2 : 1;
                     double STAB = defendingPokemon.Type.Any(m => m == move.Type) ? 1.5 : 1;
@@ -114,6 +118,7 @@ namespace GameConfig
             Random rnd = new Random();
             EnemyPokemon.CurHp = 0;
             EnemyPokemon.CurHpPercent = 0;
+            CurrentPlayer.Fights += 1;
             RaiseMessage($"\nOpponent {EnemyPokemon.Name} has fainted");
             RaiseMessage($"You won the battle");
 
@@ -152,6 +157,7 @@ namespace GameConfig
             Random rnd = new Random();
             CurrentPlayer.ChosenPokemon.CurHp = 0;
             CurrentPlayer.ChosenPokemon.CurHpPercent = 0;
+            CurrentPlayer.Fights += 1;
             RaiseMessage($"\nYour {CurrentPlayer.ChosenPokemon.Name} has fainted");
             RaiseMessage($"You lost the battle");
 
