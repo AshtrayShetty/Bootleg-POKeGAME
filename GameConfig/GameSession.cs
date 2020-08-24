@@ -11,6 +11,7 @@ namespace GameConfig
     {
         private Player _player = new Player();
         private Pokemon _enemy = new Pokemon();
+        private TypeDamage _typeDamage = new TypeDamage();
         private bool _isGameCreated;
         private string _pokedexImage;
 
@@ -101,7 +102,7 @@ namespace GameConfig
                     double probCritHit = (double)PokemonStats.Speed[0] / 256;
                     double critical = rnd.NextDouble() < probCritHit ? 2 : 1;
                     double STAB = defendingPokemon.Type.Any(m => m == move.Type) ? 1.5 : 1;
-                    double modifier = critical * (double)rnd.Next(217, 255) * STAB / 255 ;
+                    double modifier = critical * (double)rnd.Next(217, 255) * STAB * _typeDamage.TypeMultiplier(attackingPokemon.Type, defendingPokemon.Type) / 255;
                     int damage = Convert.ToInt32(((2 * attackingPokemon.CurLevel / 5 + 2) * move.Power * attDefRatio / 50 + 2) * modifier);
                     defendingPokemon.CurHp -= damage;
                     defendingPokemon.CurHpPercent = defendingPokemon.CurHp * 100 / defendingPokemon.MaxHp;

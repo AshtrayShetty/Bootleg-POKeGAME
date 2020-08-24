@@ -54,6 +54,7 @@
     <Compile Include="Pokemon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GenFunctions.cs" />
+    <Compile Include="TypeDamage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Sprites\001.png" />
