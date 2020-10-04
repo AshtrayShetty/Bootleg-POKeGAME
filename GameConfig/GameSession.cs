@@ -114,6 +114,34 @@ namespace GameConfig
             }
         }
 
+        public bool TryToFlee()
+		{
+            Random rnd = new Random();
+            int chance = 100;
+            if (EnemyPokemon.CurLevel >= CurrentPlayer.ChosenPokemon.CurLevel)
+            {
+                // 80% chance to flee at the same level, 20% when the enemy is 10 levels (or more) above the player pokemon
+                int diff = Math.Min(10, EnemyPokemon.CurLevel - CurrentPlayer.ChosenPokemon.CurLevel);
+                chance = -6 * diff + 80;
+            }
+            if (rnd.Next(1, 101) <= chance)
+            {
+                CurrentPlayer.Fights += 1;
+                RaiseMessage($"You fled successfully!");
+                CurrentPlayer.Losses += 1;
+                EnemyPokemon.CurHp = 0;
+                CurrentPlayer.WinPercentage = CurrentPlayer.Wins * 100 / (double) CurrentPlayer.Fights;
+
+                GenFunctions.PokemonLeveller(CurrentPlayer.PokemonCollection.First(p => p.Id == CurrentPlayer.ChosenPokemon.Id));
+                return true;
+            }
+            else
+            {
+                RaiseMessage($"You did not manage to get away!");
+                return false;
+            }
+        }
+
         public void PlayerWon()
         {
             Random rnd = new Random();
@@ -172,7 +200,7 @@ namespace GameConfig
             CurrentPlayer.PokemonCollection.First(p => p.Id == CurrentPlayer.ChosenPokemon.Id).Base = CurrentPlayer.ChosenPokemon.Base;
 
             CurrentPlayer.Losses += 1;
-            CurrentPlayer.WinPercentage = CurrentPlayer.Wins * 100 / CurrentPlayer.Fights;
+            CurrentPlayer.WinPercentage = CurrentPlayer.Wins * 100 / (double)CurrentPlayer.Fights;
 
             if (EnemyPokemon.Category.Equals("Trainer")) 
             {
@@ -243,7 +271,7 @@ namespace GameConfig
             }
         }
 
-        public bool IsBattle => EnemyPokemon.Name != null && EnemyPokemon.CurHp > 0 && CurrentPlayer.ChosenPokemon != null && CurrentPlayer.ChosenPokemon.CurHp > 0 ? true : false;
+        public bool IsBattle => EnemyPokemon != null && EnemyPokemon.Name != null && EnemyPokemon.CurHp > 0 && CurrentPlayer.ChosenPokemon != null && CurrentPlayer.ChosenPokemon.CurHp > 0;
 
         public event PropertyChangedEventHandler PropertyChanged;
         public event EventHandler<GameMessageEventArgs> Event;

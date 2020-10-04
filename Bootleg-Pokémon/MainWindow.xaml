@@ -195,7 +195,7 @@
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>
                             </ItemsControl>
-                            <RadioButton Grid.Row="4" GroupName="PlayerMoves" Content="Run" Margin="45 0 0 0"/>
+							<RadioButton Grid.Row="4" GroupName="PlayerMoves" IsChecked="{Binding CurrentPlayer.TryToRun}" Content="Run" Margin="45 0 0 0"/>
                         </Grid>
                         
                     </Grid>
