@@ -17,6 +17,7 @@ namespace GameConfig
         private int _losses;
         private double _winPercentage;
         private Pokemon _chosenPokemon;
+        private bool _tryToRun;
 
         public string Name
         {
@@ -86,6 +87,17 @@ namespace GameConfig
                 OnPropertyChanged(nameof(ChosenPokemon));
             }
         }
+
+        public bool TryToRun
+		{
+            get => _tryToRun;
+            set
+			{
+                if (_tryToRun == value) return;
+                _tryToRun = value;
+                OnPropertyChanged(nameof(TryToRun));
+			}
+		}
 
         public List<string> BadgeCollection { get; set; } = new List<string>();
 

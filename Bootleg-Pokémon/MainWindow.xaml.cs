@@ -272,25 +272,38 @@ namespace Bootleg_Pokémon
 
         private void Move_Click(object sender, RoutedEventArgs e)
         {
-            if (_gameSession.IsBattle && PlayerMoveSelected != null)
+            bool triedToFlee = false;
+            if(_gameSession.IsBattle && _gameSession.CurrentPlayer.TryToRun && _gameSession.EnemyPokemon.Category.Equals("Wild"))
+			{
+                if(_gameSession.TryToFlee())
+				{
+                    _ids.Clear(); _levels.Clear(); _enemyPokemons.Clear();
+                    EndFight.Visibility = Visibility.Visible;
+                }
+                triedToFlee = true;
+			}
+
+            if (_gameSession.IsBattle && (PlayerMoveSelected != null || triedToFlee))
             {
-                _gameSession.MoveOutcome(PlayerMoveSelected, _gameSession.CurrentPlayer.ChosenPokemon, _gameSession.EnemyPokemon);
+                if(!triedToFlee)
+				{
+                    _gameSession.MoveOutcome(PlayerMoveSelected, _gameSession.CurrentPlayer.ChosenPokemon, _gameSession.EnemyPokemon);
 
-                if (_gameSession.EnemyPokemon.CurHp <= 0)
-                {
-                    _gameSession.PlayerWon();
-                    Pokemon remove = _enemyPokemons.First(p => p.Id == _gameSession.EnemyPokemon.Id && p.CurLevel == _gameSession.EnemyPokemon.CurLevel);
-                    _enemyPokemons.Remove(remove);
-
-                    if (_enemyPokemons.Count == 0)
+                    if (_gameSession.EnemyPokemon.CurHp <= 0)
                     {
-                        EndFight.Visibility = Visibility.Visible;
-                        _ids.Clear(); _levels.Clear(); _enemyPokemons.Clear();
-                        if (_gameSession.EnemyPokemon.Category.Equals("Trainer"))
+                        _gameSession.PlayerWon();
+                        Pokemon remove = _enemyPokemons.First(p => p.Id == _gameSession.EnemyPokemon.Id && p.CurLevel == _gameSession.EnemyPokemon.CurLevel);
+                        _enemyPokemons.Remove(remove);
+
+                        if (_enemyPokemons.Count == 0)
                         {
-                            switch (_trainer)
+                            EndFight.Visibility = Visibility.Visible;
+                            _ids.Clear(); _levels.Clear(); _enemyPokemons.Clear();
+                            if (_gameSession.EnemyPokemon.Category.Equals("Trainer"))
                             {
-                                case "Brock":
+                                switch (_trainer)
+                                {
+                                    case "Brock":
                                     if (!_gameSession.CurrentPlayer.BadgeCollection.Any(b => b.Equals("Brock")))
                                     {
                                         MessageBox.Show("You earned the BoulderBadge");
@@ -299,7 +312,7 @@ namespace Bootleg_Pokémon
                                     }
                                     return;
 
-                                case "Misty":
+                                    case "Misty":
                                     if (!_gameSession.CurrentPlayer.BadgeCollection.Any(b => b.Equals("Misty")))
                                     {
                                         MessageBox.Show("You earned the CascadeBadge");
@@ -308,8 +321,8 @@ namespace Bootleg_Pokémon
                                     }
                                     return;
 
-                                case "Surge":
-                                    if(!_gameSession.CurrentPlayer.BadgeCollection.Any(b => b.Equals("Surge")))
+                                    case "Surge":
+                                    if (!_gameSession.CurrentPlayer.BadgeCollection.Any(b => b.Equals("Surge")))
                                     {
                                         MessageBox.Show("You earned the ThunderBadge");
                                         _gameSession.CurrentPlayer.BadgeCollection.Add("Surge");
@@ -317,7 +330,7 @@ namespace Bootleg_Pokémon
                                     }
                                     return;
 
-                                case "Erika":
+                                    case "Erika":
                                     if (!_gameSession.CurrentPlayer.BadgeCollection.Any(b => b.Equals("Erika")))
                                     {
                                         MessageBox.Show("You earned the RainbowBadge");
@@ -326,7 +339,7 @@ namespace Bootleg_Pokémon
                                     }
                                     return;
 
-                                case "Janine":
+                                    case "Janine":
                                     if (!_gameSession.CurrentPlayer.BadgeCollection.Any(b => b.Equals("Janine")))
                                     {
                                         MessageBox.Show("You earned the SoulBadge");
@@ -335,7 +348,7 @@ namespace Bootleg_Pokémon
                                     }
                                     return;
 
-                                case "Sabrina":
+                                    case "Sabrina":
                                     if (!_gameSession.CurrentPlayer.BadgeCollection.Any(b => b.Equals("Sabrina")))
                                     {
                                         MessageBox.Show("You earned the MarshBadge");
@@ -344,7 +357,7 @@ namespace Bootleg_Pokémon
                                     }
                                     return;
 
-                                case "Blaine":
+                                    case "Blaine":
                                     if (!_gameSession.CurrentPlayer.BadgeCollection.Any(b => b.Equals("Blaine")))
                                     {
                                         MessageBox.Show("You earned the VolcanoBadge");
@@ -353,17 +366,17 @@ namespace Bootleg_Pokémon
                                     }
                                     return;
 
-                                case "Gary":
+                                    case "Gary":
                                     if (!_gameSession.CurrentPlayer.BadgeCollection.Any(b => b.Equals("Gary")))
                                     {
                                         MessageBox.Show("You earned the EarthBadge");
                                         MessageBox.Show("Congratulations!!! You can now challenge the elite four");
                                         _gameSession.CurrentPlayer.BadgeCollection.Add("Gary");
-                                        EliteFour.IsEnabled = true; 
+                                        EliteFour.IsEnabled = true;
                                     }
                                     return;
 
-                                case "Falkner":
+                                    case "Falkner":
                                     if (!_gameSession.CurrentPlayer.BadgeCollection.Any(b => b.Equals("Falkner")))
                                     {
                                         MessageBox.Show("You earned the ZephyrBadge");
@@ -372,7 +385,7 @@ namespace Bootleg_Pokémon
                                     }
                                     return;
 
-                                case "Will":
+                                    case "Will":
                                     MessageBox.Show("You beat Will!! Your Next Opponent is Koga");
                                     EndFight.Visibility = Visibility.Hidden;
                                     EnemyCorner.Visibility = Visibility.Hidden;
@@ -380,7 +393,7 @@ namespace Bootleg_Pokémon
                                     GenerateTrainerBattle(new List<int>() { 168, 205, 89, 49, 169 }, new List<int>() { 41, 43, 43, 42, 40 }, "Koga");
                                     return;
 
-                                case "Koga":
+                                    case "Koga":
                                     MessageBox.Show("You beat Koga!! Your Next Opponent is Bruno");
                                     EndFight.Visibility = Visibility.Hidden;
                                     EnemyCorner.Visibility = Visibility.Hidden;
@@ -388,7 +401,7 @@ namespace Bootleg_Pokémon
                                     GenerateTrainerBattle(new List<int>() { 237, 107, 106, 95, 68 }, new List<int>() { 43, 43, 43, 44, 44 }, "Bruno");
                                     return;
 
-                                case "Bruno":
+                                    case "Bruno":
                                     MessageBox.Show("You beat Bruno!! Your Next Opponent is Karen");
                                     EndFight.Visibility = Visibility.Hidden;
                                     EnemyCorner.Visibility = Visibility.Hidden;
@@ -396,7 +409,7 @@ namespace Bootleg_Pokémon
                                     GenerateTrainerBattle(new List<int>() { 197, 45, 198, 94, 229 }, new List<int>() { 49, 45, 41, 45, 44 }, "Karen");
                                     return;
 
-                                case "Karen":
+                                    case "Karen":
                                     MessageBox.Show("You have proven your worth against the G/S/C Elite Four. It's time for you to fight the G/S/C Elite Four Champion: Lance!");
                                     EndFight.Visibility = Visibility.Hidden;
                                     EnemyCorner.Visibility = Visibility.Hidden;
@@ -404,8 +417,8 @@ namespace Bootleg_Pokémon
                                     GenerateTrainerBattle(new List<int>() { 117, 142, 130, 6, 149 }, new List<int>() { 43, 49, 52, 50, 55 }, "Lance");
                                     return;
 
-                                case "Lance":
-                                    if(!_gameSession.CurrentPlayer.BadgeCollection.Any(b => b.Equals("Lance")))
+                                    case "Lance":
+                                    if (!_gameSession.CurrentPlayer.BadgeCollection.Any(b => b.Equals("Lance")))
                                     {
                                         MessageBox.Show("You beat the G/S/C Elite Champion!! You received a Master Ball");
                                         EndFight.Visibility = Visibility.Visible;
@@ -414,17 +427,18 @@ namespace Bootleg_Pokémon
                                     }
                                     return;
 
-                                default:
+                                    default:
                                     return;
 
-                            }
+                                }
 
+                            }
+                            return;
                         }
+
+                        InitializeOpponent(_gameSession.EnemyPokemon.Category);
                         return;
                     }
-
-                    InitializeOpponent(_gameSession.EnemyPokemon.Category);
-                    return;
                 }
 
                 _gameSession.MoveOutcome(_gameSession.EnemyPokemon.Moves[rnd.Next(0, 4)], _gameSession.EnemyPokemon, _gameSession.CurrentPlayer.ChosenPokemon);
