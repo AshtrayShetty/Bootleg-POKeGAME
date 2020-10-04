@@ -35,7 +35,11 @@ namespace Bootleg_Pokémon
                 string path = $"..\\..\\..\\SaveFiles\\{SaveFile.Text}.txt";
 
                 try
-                {
+                {                 
+                    if(!Directory.Exists(System.IO.Path.GetDirectoryName(path)))
+					{
+                        Directory.CreateDirectory(System.IO.Path.GetDirectoryName(path));
+					}
                     if (File.Exists(path)) { File.Delete(path); }
 
                     using (StreamWriter sw = File.CreateText(path))
