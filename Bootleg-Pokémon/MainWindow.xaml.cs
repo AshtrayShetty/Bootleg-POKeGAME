@@ -120,7 +120,7 @@ namespace Bootleg_Pokémon
             if(_enemyPokemons.Count == 0){
                 for (int i = 0; i < _ids.Count; ++i)
                 {
-                    Pokemon pokemon = _gameSession.AllPokemon.First(p => p.Id == _ids[i]);
+                    Pokemon pokemon = _gameSession.AllPokemon.First(p => p.Id == _ids[i]).Clone();
                     pokemon.Category = category;
                     pokemon.CurLevel = _levels[i];
                     _enemyPokemons.Add(pokemon);
