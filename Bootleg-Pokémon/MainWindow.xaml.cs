@@ -510,20 +510,32 @@ namespace Bootleg_Pokémon
                 (pokemon.FindType.Equals("ultra beast") && prob >= (1.25 / 187.5) && prob < (3.33 / 187.5))
             )
             {
-                level = rnd.Next(pokemon.BaseLevel, pokemon.EvolutionLevel);
+                level = GetWildPokemonLevel(_gameSession.CurrentPlayer.PokemonCollection.Select(p => p.CurLevel));
             }
             else
             {
                 List<Pokemon> backup = _gameSession.AllPokemon.FindAll(p => p.FindType.Equals("basic"));
                 pokemon = backup[rnd.Next(0, backup.Count)];
                 id = pokemon.Id;
-                level = rnd.Next(pokemon.BaseLevel, pokemon.EvolutionLevel);
+                level = GetWildPokemonLevel(_gameSession.CurrentPlayer.PokemonCollection.Select(p => p.CurLevel));
             }
 
             _ids.Add(id); _levels.Add(level);
             _trainer = "";
             InitializeOpponent("Wild");
             FightStatus.Document.Blocks.Add(new Paragraph(new Run($"A wild {_gameSession.EnemyPokemon.Name} appeared!!")));
+        }
+
+        private int GetWildPokemonLevel(IEnumerable<int> partyLevels)
+        {
+            var highestPartyLevel = partyLevels.Max(x => x);
+            var averagePartyLevel = (int)partyLevels.Average(x => x);
+
+            var highestWildLevel = highestPartyLevel
+                + (averagePartyLevel * partyLevels.Count() / 6);
+            var halfRange = highestWildLevel - highestPartyLevel;
+
+            return rnd.Next(Math.Max(highestPartyLevel - halfRange, 0), Math.Min(highestPartyLevel + halfRange, 101));
         }
 
         private void Evolve_Checked(object sender, RoutedEventArgs e)
