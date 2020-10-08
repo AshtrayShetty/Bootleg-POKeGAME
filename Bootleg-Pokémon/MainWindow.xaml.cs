@@ -496,12 +496,34 @@ namespace Bootleg_Pokémon
 
         private void WildPokemon_Click(object sender, RoutedEventArgs e)
         {
+            int index = 0;
             int id = 0;
             Pokemon pokemon;
+            IEnumerable<Pokemon> pokemonList;
+            int avgpartylvl = 0;
             double prob = rnd.NextDouble();
-            id = rnd.Next(1, _gameSession.AllPokemon.Count + 1);
-            pokemon = _gameSession.AllPokemon.First(p => p.Id == id);
+
+            //Gathering average level of the parties level so we can more accurately have wild pokemon appear.
+            foreach (var poke in _gameSession.CurrentPlayer.PokemonCollection)
+            {
+                poke.CurLevel += avgpartylvl;
+            }
+            avgpartylvl /= _gameSession.CurrentPlayer.PokemonCollection.Count;
+            pokemonList = _gameSession.AllPokemon.Where(p => Math.Abs(avgpartylvl - p.BaseLevel) < 20);
+            index = rnd.Next(1, pokemonList.Count() -1);
+            pokemon = pokemonList.ElementAt(index);
+
             int level;
+
+            int maxlevel = pokemon.EvolutionLevel.CompareTo(avgpartylvl + 20);
+            if(maxlevel == 1)
+            {
+                maxlevel = avgpartylvl + 20;
+            }
+            else
+            {
+                maxlevel = pokemon.EvolutionLevel;
+            }
 
             if (
                 (pokemon.FindType.Equals("basic") && prob >= ((double)10 / 187.5)) ||
@@ -510,17 +532,16 @@ namespace Bootleg_Pokémon
                 (pokemon.FindType.Equals("ultra beast") && prob >= (1.25 / 187.5) && prob < (3.33 / 187.5))
             )
             {
-                level = rnd.Next(pokemon.BaseLevel, pokemon.EvolutionLevel);
+                level  = rnd.Next(pokemon.BaseLevel, maxlevel);
             }
             else
             {
                 List<Pokemon> backup = _gameSession.AllPokemon.FindAll(p => p.FindType.Equals("basic"));
                 pokemon = backup[rnd.Next(0, backup.Count)];
-                id = pokemon.Id;
-                level = rnd.Next(pokemon.BaseLevel, pokemon.EvolutionLevel);
+                level = rnd.Next(pokemon.BaseLevel, maxlevel);
             }
 
-            _ids.Add(id); _levels.Add(level);
+            _ids.Add(pokemon.Id); _levels.Add(level);
             _trainer = "";
             InitializeOpponent("Wild");
             FightStatus.Document.Blocks.Add(new Paragraph(new Run($"A wild {_gameSession.EnemyPokemon.Name} appeared!!")));
