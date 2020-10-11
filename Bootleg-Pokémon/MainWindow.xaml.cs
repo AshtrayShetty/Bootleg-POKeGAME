@@ -257,8 +257,7 @@ namespace Bootleg_Pokémon
                 {
                     curPlayer.ChosenPokemon.Moves = curPlayer.PokemonCollection[PlayerPokemon.SelectedIndex].Moves;
                     PlayerCorner.Visibility = Visibility.Visible;
-                    FightStatus.Document.Blocks.Add(new Paragraph(new Run($"You chose {curPlayer.ChosenPokemon.Name}")));
-                
+                    FightStatus.Document.Blocks.Add(new Paragraph(new Run($"You chose {curPlayer.ChosenPokemon.Name}")));                    
                 }
                 else
                 {

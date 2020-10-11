@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bootleg_Pokémon"
         mc:Ignorable="d"
-        Title="Pokémon" Height="550" Width="800"
+        Title="Pokémon" Height="550" Width="850"
         ResizeMode="NoResize">
     
     <Window.Resources>
@@ -115,23 +115,88 @@
         
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             
             <Grid Grid.Column="0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="1.5*"/>
+                    <RowDefinition Height="2*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 
                 <Grid Grid.Row="0">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+						<RowDefinition Height="50"/>
+						<RowDefinition Height="Auto"/>
+					</Grid.RowDefinitions>
 
-                    <Grid Grid.Row="0" x:Name="PlayerCorner" Visibility="Hidden">
+					<Grid Grid.Row="0" Margin="100,0,0,0"  x:Name="EnemyCorner" Visibility="Hidden">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="3*"/>
+						</Grid.ColumnDefinitions>
+
+						<Grid Grid.Column="0">
+							<Grid.RowDefinitions>
+								<RowDefinition Height="*"/>
+								<RowDefinition Height="auto"/>
+							</Grid.RowDefinitions>
+							<Image Grid.Row="0" Source="{Binding EnemyPokemon.Image}" HorizontalAlignment="Center" Width="75" x:Name="EnemyPokemonImage"/>
+							<Grid Grid.Row="1">
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="*"/>
+									<ColumnDefinition Width="auto"/>
+									<ColumnDefinition Width="*"/>
+								</Grid.ColumnDefinitions>
+								<Label Grid.Column="0" Content="{Binding EnemyPokemon.CurHp}" Padding="0"  HorizontalAlignment="Right"/>
+								<Label Grid.Column="1" Content="/" Padding="0"/>
+								<Label Grid.Column="2" Content="{Binding EnemyPokemon.MaxHp}" Padding="0"/>
+							</Grid>
+
+						</Grid>
+
+						<Grid Grid.Column="1">
+							<Grid.RowDefinitions>
+								<RowDefinition Height="auto"/>
+								<RowDefinition Height="auto"/>
+								<RowDefinition Height="auto"/>
+								<RowDefinition Height="auto"/>
+								<RowDefinition Height="auto"/>
+							</Grid.RowDefinitions>
+							<Label Content="" Padding="0" Visibility="Hidden"/>
+							<Grid Grid.Row="1">
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="auto"/>
+									<ColumnDefinition Width="auto"/>
+									<ColumnDefinition Width="auto"/>
+									<ColumnDefinition Width="auto"/>
+									<ColumnDefinition Width="auto"/>
+									<ColumnDefinition Width="auto"/>
+									<ColumnDefinition Width="auto"/>
+								</Grid.ColumnDefinitions>
+								<Label Grid.Column="0" Content="Enemy" Padding="0"/>
+								<Label Grid.Column="1" Content="{Binding EnemyPokemon.Name}" Padding="0" Margin="2 0"/>
+								<Label Grid.Column="2" Content="Level" Padding="0" Margin="2 0"/>
+								<Label Grid.Column="3" Content="{Binding EnemyPokemon.CurLevel}" Padding="0" Margin="2 0"/>
+								<ProgressBar Grid.Column="4" Value="100" Width="260" local:ProgressBarExtension.AnimatedValue="{Binding EnemyPokemon.CurHpPercent}"/>
+								<Label Grid.Column="5" Content="{Binding EnemyPokemon.CurHpPercent}" Padding="0" Margin="5 0"/>
+								<Label Grid.Column="6" Content="%" Padding="0"/>
+							</Grid>
+							<Label Grid.Row="2" Content="" Visibility="Hidden"/>
+							<ItemsControl Grid.Row="3" ItemsSource="{Binding EnemyPokemon.Moves}">
+								<ItemsControl.ItemTemplate>
+									<DataTemplate>
+										<RadioButton GroupName="EnemyMoves" Content="{Binding Ename}" Margin="45 0 0 0" IsEnabled="False"/>
+									</DataTemplate>
+								</ItemsControl.ItemTemplate>
+							</ItemsControl>
+						</Grid>
+
+					</Grid>
+
+					<Grid Grid.Row="2" x:Name="PlayerCorner" Visibility="Hidden">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="3*"/>
@@ -183,7 +248,7 @@
                                 <Label Grid.Column="0" Content="{Binding CurrentPlayer.ChosenPokemon.Name}" Padding="0"/>
                                 <Label Grid.Column="1" Content="Level" Padding="0" Margin="5 0"/>
                                 <Label Grid.Column="2" Content="{Binding CurrentPlayer.ChosenPokemon.CurLevel}" Padding="0" Margin="5 0"/>
-                                <ProgressBar Grid.Column="3" Width="292.6" Value="{Binding CurrentPlayer.ChosenPokemon.CurHpPercent}"/>
+								<ProgressBar Grid.Column="3" Value="100" local:ProgressBarExtension.AnimatedValue="{Binding CurrentPlayer.ChosenPokemon.CurHpPercent}" Width="292.6"/>
                                 <Label Grid.Column="4" Content="{Binding CurrentPlayer.ChosenPokemon.CurHpPercent}" Padding="0" Margin="5 0"/>
                                 <Label Grid.Column="5" Content="%" Padding="0"/>
                             </Grid>
@@ -199,74 +264,10 @@
                         </Grid>
                         
                     </Grid>
-
-                    <Grid Grid.Row="1"  x:Name="EnemyCorner" Visibility="Hidden">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="3*"/>
-                        </Grid.ColumnDefinitions>
-                        
-                        <Grid Grid.Column="0">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="auto"/>
-                            </Grid.RowDefinitions>
-                            <Image Grid.Row="0" Source="{Binding EnemyPokemon.Image}" HorizontalAlignment="Center" Width="75" x:Name="EnemyPokemonImage"/>
-                            <Grid Grid.Row="1">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="auto"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Label Grid.Column="0" Content="{Binding EnemyPokemon.CurHp}" Padding="0"  HorizontalAlignment="Right"/>
-                                <Label Grid.Column="1" Content="/" Padding="0"/>
-                                <Label Grid.Column="2" Content="{Binding EnemyPokemon.MaxHp}" Padding="0"/>
-                            </Grid>
-                            
-                        </Grid>
-
-                        <Grid Grid.Column="1">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="auto"/>
-                                <RowDefinition Height="auto"/>
-                                <RowDefinition Height="auto"/>
-                                <RowDefinition Height="auto"/>
-                                <RowDefinition Height="auto"/>
-                            </Grid.RowDefinitions>
-                            <Label Content="" Padding="0" Visibility="Hidden"/>
-                            <Grid Grid.Row="1">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="auto"/>
-                                    <ColumnDefinition Width="auto"/>
-                                    <ColumnDefinition Width="auto"/>
-                                    <ColumnDefinition Width="auto"/>
-                                    <ColumnDefinition Width="auto"/>
-                                    <ColumnDefinition Width="auto"/>
-                                    <ColumnDefinition Width="auto"/>
-                                </Grid.ColumnDefinitions>
-                                <Label Grid.Column="0" Content="Enemy" Padding="0"/>
-                                <Label Grid.Column="1" Content="{Binding EnemyPokemon.Name}" Padding="0" Margin="2 0"/>
-                                <Label Grid.Column="2" Content="Level" Padding="0" Margin="2 0"/>
-                                <Label Grid.Column="3" Content="{Binding EnemyPokemon.CurLevel}" Padding="0" Margin="2 0"/>
-                                <ProgressBar Grid.Column="4" Width="260" Value="{Binding EnemyPokemon.CurHpPercent}"/>
-                                <Label Grid.Column="5" Content="{Binding EnemyPokemon.CurHpPercent}" Padding="0" Margin="5 0"/>
-                                <Label Grid.Column="6" Content="%" Padding="0"/>
-                            </Grid>
-                            <Label Grid.Row="2" Content="" Visibility="Hidden"/>
-                            <ItemsControl Grid.Row="3" ItemsSource="{Binding EnemyPokemon.Moves}">
-                                <ItemsControl.ItemTemplate>
-                                    <DataTemplate>
-                                        <RadioButton GroupName="EnemyMoves" Content="{Binding Ename}" Margin="45 0 0 0" IsEnabled="False"/>
-                                    </DataTemplate>
-                                </ItemsControl.ItemTemplate>
-                            </ItemsControl>
-                        </Grid>
-
-                    </Grid>
                 </Grid>
                 
                 <Grid Grid.Row="1">
-                    <RichTextBox x:Name="FightStatus" IsReadOnly="True">
+                    <RichTextBox x:Name="FightStatus" VerticalScrollBarVisibility="Visible" MinHeight="80" MinWidth="400" IsReadOnly="True">
                         <RichTextBox.Resources>
                             <Style TargetType="{x:Type Paragraph}">
                                 <Setter Property="Margin" Value="0"/>
@@ -287,7 +288,8 @@
 
                 <Grid Grid.Row="0">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
@@ -301,11 +303,12 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Label Grid.Row="0" Grid.Column="0" Content="Name:" Padding="0"/>
-                    <Label Grid.Row="0" Grid.Column="1" Content="{Binding CurrentPlayer.Name}" Padding="0"/>
-                    <Label Grid.Row="1" Grid.Column="0" Content="Money:" Padding="0"/>
+					<Rectangle VerticalAlignment="Stretch" Width="1" Grid.Column="0" Grid.RowSpan="9" Margin="0,0,2,0" Stroke="Black" />
+					<Label Grid.Row="0" Grid.Column="1" Content="Name:" Padding="0"/>
+                    <Label Grid.Row="0" Grid.Column="2" Content="{Binding CurrentPlayer.Name}" Padding="0"/>
+                    <Label Grid.Row="1" Grid.Column="1" Content="Money:" Padding="0"/>
 
-                    <Grid Grid.Row="1" Grid.Column="1">
+                    <Grid Grid.Row="1" Grid.Column="2">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
@@ -314,17 +317,17 @@
                         <Label Grid.Column="1" Content="¥" Padding="0 0 10 0" HorizontalAlignment="Right"/>
                     </Grid>
 
-                    <Label Grid.Row="2" Grid.Column="0" Content="Fights:" Padding="0"/>
-                    <Label Grid.Row="2" Grid.Column="1" Content="{Binding CurrentPlayer.Fights}" Padding="0"/>
-                    <Label Grid.Row="3" Grid.Column="0" Content="Wins:" Padding="0"/>
-                    <Label Grid.Row="3" Grid.Column="1" Content="{Binding CurrentPlayer.Wins}" Padding="0"/>
-                    <Label Grid.Row="4" Grid.Column="0" Content="Catches:" Padding="0"/>
-                    <Label Grid.Row="4" Grid.Column="1" Content="{Binding CurrentPlayer.PokemonCollection.Count}" Padding="0"/>
-                    <Label Grid.Row="5" Grid.Column="0" Content="Losses/Flees:" Padding="0"/>
-                    <Label Grid.Row="5" Grid.Column="1" Content="{Binding CurrentPlayer.Losses}" Padding="0"/>
-                    <Label Grid.Row="6" Grid.Column="0" Content="Win Percentage:" Padding="0"/>
+                    <Label Grid.Row="2" Grid.Column="1" Content="Fights:" Padding="0"/>
+                    <Label Grid.Row="2" Grid.Column="2" Content="{Binding CurrentPlayer.Fights}" Padding="0"/>
+                    <Label Grid.Row="3" Grid.Column="1" Content="Wins:" Padding="0"/>
+                    <Label Grid.Row="3" Grid.Column="2" Content="{Binding CurrentPlayer.Wins}" Padding="0"/>
+                    <Label Grid.Row="4" Grid.Column="1" Content="Catches:" Padding="0"/>
+                    <Label Grid.Row="4" Grid.Column="2" Content="{Binding CurrentPlayer.PokemonCollection.Count}" Padding="0"/>
+                    <Label Grid.Row="5" Grid.Column="1" Content="Losses/Flees:" Padding="0"/>
+                    <Label Grid.Row="5" Grid.Column="2" Content="{Binding CurrentPlayer.Losses}" Padding="0"/>
+                    <Label Grid.Row="6" Grid.Column="1" Content="Win Percentage:" Padding="0"/>
 
-                    <Grid Grid.Row="6" Grid.Column="1">
+                    <Grid Grid.Row="6" Grid.Column="2">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
@@ -333,9 +336,9 @@
                         <Label Grid.Column="1" Content="%" Padding="0 0 10 0" HorizontalAlignment="Right"/>
                     </Grid>
 
-                    <Label Grid.Row="7" Grid.Column="0" Content="In POKéDEX" Padding="0"/>
+                    <Label Grid.Row="7" Grid.Column="1" Content="In POKéDEX" Padding="0"/>
 
-                    <Grid Grid.Row="7" Grid.Column="1">
+                    <Grid Grid.Row="7" Grid.Column="2">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
@@ -347,7 +350,7 @@
                         <Label Grid.Column="3" Content="{Binding AllPokemon.Count}" Padding="0"/>
                     </Grid>
 
-                    <Label Grid.Row="8" Grid.Column="0" Content="Items:" Padding="0"/>
+                    <Label Grid.Row="8" Grid.Column="1" Content="Items:" Padding="0"/>
                 </Grid>
 
                 <DataGrid Grid.Row="1" IsReadOnly="True" AutoGenerateColumns="False" HeadersVisibility="Column" ItemsSource="{Binding CurrentPlayer.Inventory}">
