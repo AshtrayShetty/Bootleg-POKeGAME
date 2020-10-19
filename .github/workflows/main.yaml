@@ -1,0 +1,26 @@
+name: Build
+ 
+on: [push]
+ 
+jobs:
+  build:
+ 
+    runs-on: windows-latest
+ 
+    steps:
+    - uses: actions/checkout@v1
+      name: Checkout Code
+     
+    - name: Setup MSBuild 
+      uses: microsoft/setup-msbuild@v1.0.2
+      with:
+        vs-version: '[16.0,17.0]'
+       
+    - name: Setup NuGet
+      uses: nuget/setup-nuget@v1.0.2
+     
+    - name: Restore NuGet Packages
+      run: nuget restore Bootleg-Pokémon.sln
+ 
+    - name: Build App
+      run: msbuild Bootleg-Pokémon.sln /p:Configuration=Release
