@@ -17,6 +17,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Schema;
 
 namespace Bootleg_Pokémon
 {
@@ -515,7 +516,8 @@ namespace Bootleg_Pokémon
             int level;
 
             int maxlevel = pokemon.EvolutionLevel.CompareTo(avgpartylvl + 20);
-            if(maxlevel == 1)
+            int minLevel = Math.Min(pokemon.BaseLevel, maxlevel);
+            if (maxlevel == 1)
             {
                 maxlevel = avgpartylvl + 20;
             }
@@ -531,13 +533,13 @@ namespace Bootleg_Pokémon
                 (pokemon.FindType.Equals("ultra beast") && prob >= (1.25 / 187.5) && prob < (3.33 / 187.5))
             )
             {
-                level  = rnd.Next(pokemon.BaseLevel, maxlevel);
+                level  = rnd.Next(minLevel, maxlevel);
             }
             else
             {
                 List<Pokemon> backup = _gameSession.AllPokemon.FindAll(p => p.FindType.Equals("basic"));
                 pokemon = backup[rnd.Next(0, backup.Count)];
-                level = rnd.Next(pokemon.BaseLevel, maxlevel);
+                level = rnd.Next(minLevel, maxlevel);
             }
 
             _ids.Add(pokemon.Id); _levels.Add(level);
