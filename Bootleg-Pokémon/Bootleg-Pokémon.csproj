@@ -93,6 +93,7 @@
     <Compile Include="Pokedex.xaml.cs">
       <DependentUpon>Pokedex.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ProgressBarExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
