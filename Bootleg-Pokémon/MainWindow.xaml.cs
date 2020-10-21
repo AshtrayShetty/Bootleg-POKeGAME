@@ -60,35 +60,36 @@ namespace Bootleg_Pokémon
         private void Load_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Filter = "Save Files|*.dat|All Files|*.*";
+
             if (openFile.ShowDialog() == true)
             {
-                string[] data = File.ReadAllLines(openFile.FileName);
-                _gameSession.CurrentPlayer.Name = data[0].Substring(6);
-                _gameSession.CurrentPlayer.Fights = int.Parse(data[1].Substring(data[1].IndexOf(':') + 2));
-                _gameSession.CurrentPlayer.Wins = int.Parse(data[2].Substring(data[2].IndexOf(':') + 2));
-                _gameSession.IsGameCreated = true;
-                _gameSession.CurrentPlayer.Losses = _gameSession.CurrentPlayer.Fights - _gameSession.CurrentPlayer.Wins;
+                string fileContent = File.ReadAllText(openFile.FileName);
+                fileContent = Cryptography.DecryptStringAES(fileContent, "PokémonYeeeehaaaa");
+                var saveObject = JsonConvert.DeserializeObject<SaveObject>(fileContent);
 
-                if (_gameSession.CurrentPlayer.Fights != 0)
-                {
-                    _gameSession.CurrentPlayer.WinPercentage = Math.Round(Convert.ToDouble(_gameSession.CurrentPlayer.Wins) * 100.0 / Convert.ToDouble(_gameSession.CurrentPlayer.Fights), 2);
-                }
-                else { _gameSession.CurrentPlayer.WinPercentage = 0.0; }
+                // Init Game from Save
+                _gameSession.CurrentPlayer = saveObject.CurrentPlayer;
+                _gameSession.IsGameCreated = true;
             }
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
             SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.Filter = "Save Files|*.dat";
+
             if (saveFile.ShowDialog() == true)
             {
-                using(StreamWriter sw = File.CreateText(saveFile.FileName))
+                SaveObject saveObject = new SaveObject()
                 {
-                    sw.WriteLine($"Name: {_gameSession.CurrentPlayer.Name}");
-                    sw.WriteLine($"Fights: {_gameSession.CurrentPlayer.Fights}");
-                    sw.WriteLine($"Wins: {_gameSession.CurrentPlayer.Wins}");
-                    sw.WriteLine($"Catches: {_gameSession.CurrentPlayer.PokemonCollection.Count}");
-                }
+                    CurrentPlayer = _gameSession.CurrentPlayer
+                };
+
+                string saveObjectJson = JsonConvert.SerializeObject(saveObject);
+                saveObjectJson = Cryptography.EncryptStringAES(saveObjectJson, "PokémonYeeeehaaaa");
+
+                File.WriteAllText(saveFile.FileName, saveObjectJson);
             }
         }
 
