@@ -32,7 +32,7 @@
                 <MenuItem Header="_File">
                     <MenuItem Header="_New" Click="New_Click"/>
                     <MenuItem Header="_Load" Click="Load_Click"/>
-                    <MenuItem Header="_Save" Click="Save_Click"/>
+                    <MenuItem Header="_Save" Name="btn_save" Click="Save_Click"/>
                     <MenuItem Header="_Close" Click="Close_Click"/>
                 </MenuItem>
                 <MenuItem Header="_Actions" IsEnabled="{Binding IsGameCreated}">
