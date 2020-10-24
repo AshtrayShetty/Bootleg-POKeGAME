@@ -37,6 +37,7 @@ namespace Bootleg_Pokémon
         public MainWindow()
         {
             InitializeComponent();
+            this.btn_save.IsEnabled = false;
             DataContext = _gameSession;
             _gameSession.IsGameCreated = false;
             _gameSession.Event += RaiseBattleMessages;
@@ -55,6 +56,7 @@ namespace Bootleg_Pokémon
             newGame.DataContext = _gameSession;
             newGame.Owner = this;
             newGame.Show();
+            this.btn_save.IsEnabled = true;
         }
         
         private void Load_Click(object sender, RoutedEventArgs e)
@@ -71,6 +73,7 @@ namespace Bootleg_Pokémon
                 // Init Game from Save
                 _gameSession.CurrentPlayer = saveObject.CurrentPlayer;
                 _gameSession.IsGameCreated = true;
+                this.btn_save.IsEnabled = true;
             }
         }
 
