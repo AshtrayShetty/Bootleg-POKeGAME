@@ -494,6 +494,8 @@ namespace Bootleg_Pokémon
 
         private void RaiseBattleMessages(object sender, GameMessageEventArgs e)
         {
+            SetHpColor(_gameSession.EnemyPokemon);
+            SetHpColor(_gameSession.CurrentPlayer.ChosenPokemon);
             FightStatus.Document.Blocks.Add(new Paragraph(new Run(e.Message)));
             FightStatus.ScrollToEnd();
         }
@@ -585,5 +587,32 @@ namespace Bootleg_Pokémon
                 MessageBox.Show("Turn off Evolution mode to release a Pokémon");
             }
         }
+
+        private void SetHpColor(Pokemon pkm)
+        {
+            if (pkm.CurHpPercent > 50)
+            {
+                if (pkm == _gameSession.EnemyPokemon)
+                {
+                    eProgressBar.Foreground = new SolidColorBrush(Color.FromArgb(255, (byte)(2 * (170 - pkm.CurHpPercent * 1.70)), 170, 0));
+                }
+                else if (pkm == _gameSession.CurrentPlayer.ChosenPokemon)
+                {
+                    pProgressBar.Foreground = new SolidColorBrush(Color.FromArgb(255, (byte)(2 * (170 - pkm.CurHpPercent * 1.70)), 170, 0));
+                }
+            }
+            else if (pkm.CurHpPercent <= 50)
+            {
+                if (pkm == _gameSession.EnemyPokemon)
+                {
+                    eProgressBar.Foreground = new SolidColorBrush(Color.FromArgb(255, 170, (byte)(2 * pkm.CurHpPercent * 1.70), 0));
+                }
+                else if (pkm == _gameSession.CurrentPlayer.ChosenPokemon)
+                {
+                    pProgressBar.Foreground = new SolidColorBrush(Color.FromArgb(255, 170, (byte)(2 * pkm.CurHpPercent * 1.70), 0));
+                }
+            }
+        }
+
     }
 }
