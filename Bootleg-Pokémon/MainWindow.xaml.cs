@@ -151,6 +151,8 @@ namespace Bootleg_Pokémon
             {
                 FightStatus.Document.Blocks.Add(new Paragraph(new Run($"Red chose {_gameSession.EnemyPokemon.Name}")));
             }
+
+            SetHpColor(_gameSession.EnemyPokemon);
         }
 
         private void Red_Click(object sender, RoutedEventArgs e) { GenerateTrainerBattle(new List<int>() { 4 }, new List<int>() { 5 }, ""); }
@@ -260,6 +262,7 @@ namespace Bootleg_Pokémon
 
                 if (_gameSession.IsBattle && EnemyCorner.Visibility == Visibility.Visible)
                 {
+                    SetHpColor(_gameSession.CurrentPlayer.ChosenPokemon);
                     curPlayer.ChosenPokemon.Moves = curPlayer.PokemonCollection[PlayerPokemon.SelectedIndex].Moves;
                     PlayerCorner.Visibility = Visibility.Visible;
                     FightStatus.Document.Blocks.Add(new Paragraph(new Run($"You chose {curPlayer.ChosenPokemon.Name}")));                    
