@@ -151,6 +151,8 @@ namespace Bootleg_Pokémon
             {
                 FightStatus.Document.Blocks.Add(new Paragraph(new Run($"Red chose {_gameSession.EnemyPokemon.Name}")));
             }
+
+            SetHpColor(_gameSession.EnemyPokemon, false);
         }
 
         private void Red_Click(object sender, RoutedEventArgs e) { GenerateTrainerBattle(new List<int>() { 4 }, new List<int>() { 5 }, ""); }
@@ -260,6 +262,7 @@ namespace Bootleg_Pokémon
 
                 if (_gameSession.IsBattle && EnemyCorner.Visibility == Visibility.Visible)
                 {
+                    SetHpColor(_gameSession.CurrentPlayer.ChosenPokemon, false);
                     curPlayer.ChosenPokemon.Moves = curPlayer.PokemonCollection[PlayerPokemon.SelectedIndex].Moves;
                     PlayerCorner.Visibility = Visibility.Visible;
                     FightStatus.Document.Blocks.Add(new Paragraph(new Run($"You chose {curPlayer.ChosenPokemon.Name}")));                    
@@ -295,6 +298,7 @@ namespace Bootleg_Pokémon
 
                     if (_gameSession.EnemyPokemon.CurHp <= 0)
                     {
+                        SetHpColor(_gameSession.EnemyPokemon, true);
                         _gameSession.PlayerWon();
                         Pokemon remove = _enemyPokemons.First(p => p.Id == _gameSession.EnemyPokemon.Id && p.CurLevel == _gameSession.EnemyPokemon.CurLevel);
                         _enemyPokemons.Remove(remove);
@@ -449,6 +453,7 @@ namespace Bootleg_Pokémon
 
                 if (_gameSession.CurrentPlayer.ChosenPokemon.CurHp <= 0)
                 {
+                    SetHpColor(_gameSession.CurrentPlayer.ChosenPokemon, true);
                     _gameSession.OpponentWon();
                     _ids.Clear(); _levels.Clear(); _enemyPokemons.Clear();
                     EndFight.Visibility = Visibility.Visible;
@@ -494,6 +499,8 @@ namespace Bootleg_Pokémon
 
         private void RaiseBattleMessages(object sender, GameMessageEventArgs e)
         {
+            SetHpColor(_gameSession.EnemyPokemon, false);
+            SetHpColor(_gameSession.CurrentPlayer.ChosenPokemon, false);
             FightStatus.Document.Blocks.Add(new Paragraph(new Run(e.Message)));
             FightStatus.ScrollToEnd();
         }
@@ -549,6 +556,7 @@ namespace Bootleg_Pokémon
             _ids.Add(pokemon.Id); _levels.Add(level);
             _trainer = "";
             InitializeOpponent("Wild");
+            SetHpColor(_gameSession.EnemyPokemon, false);
             FightStatus.Document.Blocks.Add(new Paragraph(new Run($"A wild {_gameSession.EnemyPokemon.Name} appeared!!")));
         }
 
@@ -585,5 +593,35 @@ namespace Bootleg_Pokémon
                 MessageBox.Show("Turn off Evolution mode to release a Pokémon");
             }
         }
+
+        private void SetHpColor(Pokemon pkm, bool reset)
+        {
+            if (reset)
+            {
+                if (pkm == _gameSession.EnemyPokemon)
+                    eProgressBar.Foreground = new SolidColorBrush(Color.FromArgb(255, 0, 170, 255));
+                else if (pkm == _gameSession.CurrentPlayer.ChosenPokemon)
+                    pProgressBar.Foreground = new SolidColorBrush(Color.FromArgb(255, 0, 170, 255));
+            }
+            else if (pkm.CurHpPercent > 50)
+            {
+                if (pkm == _gameSession.EnemyPokemon)
+                    eProgressBar.Foreground = new SolidColorBrush(Color.FromArgb(255, (byte)(2 * (170 - pkm.CurHpPercent * 1.70)), 170, 0));
+                else if (pkm == _gameSession.CurrentPlayer.ChosenPokemon)
+                    pProgressBar.Foreground = new SolidColorBrush(Color.FromArgb(255, (byte)(2 * (170 - pkm.CurHpPercent * 1.70)), 170, 0));                
+            }
+            else if (pkm.CurHpPercent <= 50)
+            {
+                if (pkm == _gameSession.EnemyPokemon)
+                {
+                    eProgressBar.Foreground = new SolidColorBrush(Color.FromArgb(255, 170, (byte)(2 * pkm.CurHpPercent * 1.70), 0));
+                }
+                else if (pkm == _gameSession.CurrentPlayer.ChosenPokemon)
+                {
+                    pProgressBar.Foreground = new SolidColorBrush(Color.FromArgb(255, 170, (byte)(2 * pkm.CurHpPercent * 1.70), 0));
+                }
+            }
+        }
+
     }
 }

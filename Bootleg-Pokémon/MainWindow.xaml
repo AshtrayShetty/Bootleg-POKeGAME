@@ -180,7 +180,7 @@
 								<Label Grid.Column="1" Content="{Binding EnemyPokemon.Name}" Padding="0" Margin="2 0"/>
 								<Label Grid.Column="2" Content="Level" Padding="0" Margin="2 0"/>
 								<Label Grid.Column="3" Content="{Binding EnemyPokemon.CurLevel}" Padding="0" Margin="2 0"/>
-								<ProgressBar Grid.Column="4" Value="100" Width="260" local:ProgressBarExtension.AnimatedValue="{Binding EnemyPokemon.CurHpPercent}"/>
+								<ProgressBar x:Name="eProgressBar" Grid.Column="4" Value="100" Width="260" local:ProgressBarExtension.AnimatedValue="{Binding EnemyPokemon.CurHpPercent}" Foreground="#FF00AA00"/>
 								<Label Grid.Column="5" Content="{Binding EnemyPokemon.CurHpPercent}" Padding="0" Margin="5 0"/>
 								<Label Grid.Column="6" Content="%" Padding="0"/>
 							</Grid>
@@ -248,7 +248,7 @@
                                 <Label Grid.Column="0" Content="{Binding CurrentPlayer.ChosenPokemon.Name}" Padding="0"/>
                                 <Label Grid.Column="1" Content="Level" Padding="0" Margin="5 0"/>
                                 <Label Grid.Column="2" Content="{Binding CurrentPlayer.ChosenPokemon.CurLevel}" Padding="0" Margin="5 0"/>
-								<ProgressBar Grid.Column="3" Value="100" local:ProgressBarExtension.AnimatedValue="{Binding CurrentPlayer.ChosenPokemon.CurHpPercent}" Width="292.6"/>
+								<ProgressBar x:Name="pProgressBar" Grid.Column="3" Value="100" local:ProgressBarExtension.AnimatedValue="{Binding CurrentPlayer.ChosenPokemon.CurHpPercent}" Width="292.6" Foreground="#FF00AA00"/>
                                 <Label Grid.Column="4" Content="{Binding CurrentPlayer.ChosenPokemon.CurHpPercent}" Padding="0" Margin="5 0"/>
                                 <Label Grid.Column="5" Content="%" Padding="0"/>
                             </Grid>
