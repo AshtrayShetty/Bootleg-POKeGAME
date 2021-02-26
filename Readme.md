@@ -17,7 +17,7 @@ Back when I was a kid (and even now), I was fascinated by the pokémon series. I
 
 - The **status bar** is below the battle screen. This shows which pokémon used which move, wheter or not it did damage, who won, how much money the player lost (in trainer battles and tournaments) and how much XP the pokemon gained.
 
-As is with the case with any aspiring pokémon trainer, you begin your journey by selecting a *stater pokémon*. You use this to catch other pokémon and fulfill your dream of becoming the greatest pokémon trainer to ever live ([cause Ash was in a coma the whole time](https://numoviesreview.info/2020/07/22/pokemon-theory-ash-is-actually-in-a-coma-the-whole-time/)).
+As is with the case with any aspiring pokémon trainer, you begin your journey by selecting a *stater pokémon*. You use this to catch other pokémon and fulfill your dream of becoming the greatest pokémon trainer to ever live ([cause Ash was in a coma the whole time](https://numoviesreview.info/2020/07/22/pokemon-theory-ash-is-actually-in-a-coma-the-whole-time/) :eyes::scream::skull::scream::skull::scream::skull::eyes:).
 
 ![Starter Pokemon Screen](./Screenshots/NewGame.png)
 
